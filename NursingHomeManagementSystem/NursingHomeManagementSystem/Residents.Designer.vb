@@ -67,7 +67,7 @@ Partial Class Residents
         Me.MedicalHistoryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CarePlanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FamilyContactNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FamilyContactPhoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+
         Me.AdmissionDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -323,7 +323,7 @@ Partial Class Residents
         Me.DataGridViewresidentlist.AllowUserToOrderColumns = True
         Me.DataGridViewresidentlist.AutoGenerateColumns = False
         Me.DataGridViewresidentlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewresidentlist.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ResidentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DateOfBirthDataGridViewTextBoxColumn, Me.MedicalHistoryDataGridViewTextBoxColumn, Me.CarePlanDataGridViewTextBoxColumn, Me.FamilyContactNameDataGridViewTextBoxColumn, Me.FamilyContactPhoneDataGridViewTextBoxColumn, Me.AdmissionDateDataGridViewTextBoxColumn})
+        Me.DataGridViewresidentlist.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ResidentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DateOfBirthDataGridViewTextBoxColumn, Me.MedicalHistoryDataGridViewTextBoxColumn, Me.CarePlanDataGridViewTextBoxColumn, Me.FamilyContactNameDataGridViewTextBoxColumn,  Me.AdmissionDateDataGridViewTextBoxColumn})
        
         Me.DataGridViewresidentlist.Location = New System.Drawing.Point(29, 142)
         Me.DataGridViewresidentlist.Name = "DataGridViewresidentlist"
@@ -441,11 +441,11 @@ Partial Class Residents
         '
         'FamilyContactNameDataGridViewTextBoxColumn
         '
-        Me.FamilyContactNameDataGridViewTextBoxColumn.DataPropertyName = "FamilyContactName"
-        Me.FamilyContactNameDataGridViewTextBoxColumn.HeaderText = "FamilyContactName"
+        Me.FamilyContactNameDataGridViewTextBoxColumn.DataPropertyName = "FamilyContact"
+        Me.FamilyContactNameDataGridViewTextBoxColumn.HeaderText = "FamilyContact"
         Me.FamilyContactNameDataGridViewTextBoxColumn.Name = "FamilyContactNameDataGridViewTextBoxColumn"
         '
-        
+
         '
         'AdmissionDateDataGridViewTextBoxColumn
         '
@@ -472,7 +472,7 @@ Partial Class Residents
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.DataGridViewresidentlist, System.ComponentModel.ISupportInitialize).EndInit()
-        
+
         Me.ResumeLayout(False)
 
     End Sub
@@ -541,7 +541,47 @@ Partial Class Residents
         End If
     End Sub
 
-    Private Sub Butsearch_Click(sender As Object, e As EventArgs) Handles Butsearch.Click
+   
+
+Private Sub Butsearch_Click(sender As Object, e As EventArgs) Handles Butsearch.Click
+    Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
+    Dim conn As New OleDbConnection(connString)
+
+    Try
+        ' Open the connection
+        conn.Open()
+
+        ' SQL query to fetch Resident details by ID or Name
+        Dim query As String = "SELECT * FROM ResidentsTable WHERE ResidentID LIKE @SearchText OR Name LIKE @SearchText"
+        Dim cmd As New OleDbCommand(query, conn)
+
+        ' Set search parameter (wildcard for partial matching)
+        cmd.Parameters.AddWithValue("@SearchText", "%" & textsearch.Text.Trim() & "%")
+
+        ' Execute the query and load data into a DataTable
+        Dim adapter As New OleDbDataAdapter(cmd)
+        Dim dt As New DataTable()
+        adapter.Fill(dt)
+
+        ' Bind the DataGridView to the filtered data
+        DataGridViewresidentlist.DataSource = dt
+
+        ' Check if any results were found
+        If dt.Rows.Count > 0 Then
+            MessageBox.Show("Resident(s) found!", "Search Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("No matching residents found.", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+
+    Catch ex As Exception
+        MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    Finally
+        conn.Close()
+    End Try
+End Sub
+
+
+    Private Sub Butadd_Click(sender As Object, e As EventArgs) Handles Butadd.Click
         Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
         Dim conn As New OleDbConnection(connString)
 
@@ -549,144 +589,98 @@ Partial Class Residents
             ' Open the connection
             conn.Open()
 
-            ' SQL query to fetch Residents details by ResidentID
-            Dim query As String = "SELECT * FROM ResidentsTable WHERE ResidentID = @ResidentID"
+            Dim query As String = "INSERT INTO ResidentsTable (ResidentID, Name, DateOfBirth, MedicalHistory, CarePlan, FamilyContact, AdmissionDate, Photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
             Dim cmd As New OleDbCommand(query, conn)
 
+            ' Use correct parameter order and provide default values
+            cmd.Parameters.AddWithValue("?", If(String.IsNullOrWhiteSpace(txtresidentsid.Text), "UnknownID", txtresidentsid.Text))
+            cmd.Parameters.AddWithValue("?", If(String.IsNullOrWhiteSpace(txtfulname.Text), "Unknown", txtfulname.Text))
+            cmd.Parameters.AddWithValue("?", If(dtpdateofbirth.Value = DateTimePicker.MinimumDateTime, "2020-01-01", dtpdateofbirth.Value.ToString("yyyy-MM-dd")))
+            cmd.Parameters.AddWithValue("?", If(String.IsNullOrWhiteSpace(txtmedicalhistory.Text), "No Medical History", txtmedicalhistory.Text))
+            cmd.Parameters.AddWithValue("?", If(String.IsNullOrWhiteSpace(txtcareplan.Text), "No Care Plan", txtcareplan.Text))
+            cmd.Parameters.AddWithValue("?", If(String.IsNullOrWhiteSpace(txtfamilycontact.Text), "0000000000", txtfamilycontact.Text))
+            cmd.Parameters.AddWithValue("?", If(dtpadmissiondate.Value = DateTimePicker.MinimumDateTime, Convert.ToDateTime("2020-01-01"), dtpadmissiondate.Value))
 
-
-            ' Execute the query
-            Dim reader As OleDbDataReader = cmd.ExecuteReader()
-
-            ' Check if a resident record exists
-            If reader.Read() Then
-                ' Assign values to TextBoxes or Labels
-                txtResidentName.Text = reader("ResidentName").ToString()
-                txtResidentName.Text = reader("Address").ToString()
-                txtResidentName.Text = reader("Phone").ToString()
-
-                ' Load and display the resident’s photo (assuming a file path is stored in the database)
-                Dim photoPath As String = reader("PhotoPath").ToString()
-                If System.IO.File.Exists(photoPath) Then
-                    picboxresidentphoto.Image = Image.FromFile(photoPath)
-                    picboxresidentphoto.SizeMode = PictureBoxSizeMode.StretchImage
-                Else
-                    picboxresidentphoto.Image = Nothing  ' Clear if file is missing
-                End If
-
-                MessageBox.Show("Resident found!", "Search Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' Convert the photo to a byte array before inserting
+            If picboxresidentphoto.Image IsNot Nothing Then
+                Using ms As New IO.MemoryStream()
+                    picboxresidentphoto.Image.Save(ms, picboxresidentphoto.Image.RawFormat)
+                    cmd.Parameters.AddWithValue("?", ms.ToArray()) ' Add the photo as byte array
+                End Using
             Else
-                MessageBox.Show("Resident not found.", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                ' If no photo selected, store a default image (optional)
+                cmd.Parameters.AddWithValue("?", DBNull.Value)
             End If
 
-            reader.Close()
+            ' Execute query
+            Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+            ' Show success message if rows were inserted
+            If rowsAffected > 0 Then
+                MessageBox.Show("Resident added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                ' Clear the input fields after success
+                txtresidentsid.Clear()
+                txtfulname.Clear()
+                txtmedicalhistory.Clear()
+                txtcareplan.Clear()
+                txtfamilycontact.Clear()
+                dtpdateofbirth.Value = DateTimePicker.MinimumDateTime
+                dtpadmissiondate.Value = DateTimePicker.MinimumDateTime
+                picboxresidentphoto.Image = Nothing ' Clear the picture box
+
+                ' Refresh DataGridView to show the newly inserted data
+                RefreshDataGridView()
+
+            Else
+                MessageBox.Show("Failed to add resident. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error adding resident: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
-            conn.Close()
+            ' Ensure connection is closed properly
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
 
-    Private Sub Butadd_Click(sender As Object, e As EventArgs) Handles Butadd.Click
-    Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
-    Dim conn As New OleDbConnection(connString)
+    Private Sub RefreshDataGridView()
+        Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
+        Dim conn As New OleDbConnection(connString)
 
-    Try
-        ' Open the connection
-        conn.Open()
+        Try
+            ' Open the connection
+            conn.Open()
 
-        Dim query As String = "INSERT INTO ResidentsTable (ResidentID, Name, DateOfBirth, MedicalHistory, CarePlan, FamilyContact, AdmissionDate, Photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
-        Dim cmd As New OleDbCommand(query, conn)
+            ' Define the query to fetch all residents
+            Dim query As String = "SELECT ResidentID, Name, DateOfBirth, MedicalHistory, CarePlan, FamilyContact, AdmissionDate FROM ResidentsTable"
+            Dim adapter As New OleDbDataAdapter(query, conn)
 
-        ' Use correct parameter order and provide default values
-        cmd.Parameters.AddWithValue("?", If(String.IsNullOrWhiteSpace(txtresidentsid.Text), "UnknownID", txtresidentsid.Text))
-        cmd.Parameters.AddWithValue("?", If(String.IsNullOrWhiteSpace(txtfulname.Text), "Unknown", txtfulname.Text))
-        cmd.Parameters.AddWithValue("?", If(dtpdateofbirth.Value = DateTimePicker.MinimumDateTime, "2020-01-01", dtpdateofbirth.Value.ToString("yyyy-MM-dd")))
-        cmd.Parameters.AddWithValue("?", If(String.IsNullOrWhiteSpace(txtmedicalhistory.Text), "No Medical History", txtmedicalhistory.Text))
-        cmd.Parameters.AddWithValue("?", If(String.IsNullOrWhiteSpace(txtcareplan.Text), "No Care Plan", txtcareplan.Text))
-        cmd.Parameters.AddWithValue("?", If(String.IsNullOrWhiteSpace(txtfamilycontact.Text), "0000000000", txtfamilycontact.Text))
-        cmd.Parameters.AddWithValue("?", If(dtpadmissiondate.Value = DateTimePicker.MinimumDateTime, Convert.ToDateTime("2020-01-01"), dtpadmissiondate.Value))
+            ' Create a DataTable to hold the data
+            Dim dataTable As New DataTable()
 
-        ' Convert the photo to a byte array before inserting
-        If picboxresidentphoto.Image IsNot Nothing Then
-            Using ms As New IO.MemoryStream()
-                picboxresidentphoto.Image.Save(ms, picboxresidentphoto.Image.RawFormat)
-                cmd.Parameters.AddWithValue("?", ms.ToArray()) ' Add the photo as byte array
-            End Using
-        Else
-            ' If no photo selected, store a default image (optional)
-            cmd.Parameters.AddWithValue("?", DBNull.Value)
-        End If
+            ' Fill the DataTable with data from the database
+            adapter.Fill(dataTable)
 
-        ' Execute query
-        Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+            ' Bind the DataTable to the DataGridView
+            DataGridViewresidentlist.DataSource = dataTable
 
-        ' Show success message if rows were inserted
-        If rowsAffected > 0 Then
-            MessageBox.Show("Resident added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            ' Clear the input fields after success
-            txtresidentsid.Clear()
-            txtfulname.Clear()
-            txtmedicalhistory.Clear()
-            txtcareplan.Clear()
-            txtfamilycontact.Clear()
-            dtpdateofbirth.Value = DateTimePicker.MinimumDateTime
-            dtpadmissiondate.Value = DateTimePicker.MinimumDateTime
-            picboxresidentphoto.Image = Nothing ' Clear the picture box
-
-            ' Refresh DataGridView to show the newly inserted data
-            RefreshDataGridView()
-
-        Else
-            MessageBox.Show("Failed to add resident. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
-
-    Catch ex As Exception
-        MessageBox.Show("Error adding resident: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    Finally
-        ' Ensure connection is closed properly
-        If conn.State = ConnectionState.Open Then
-            conn.Close()
-        End If
-    End Try
-End Sub
-
-Private Sub RefreshDataGridView()
-    Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
-    Dim conn As New OleDbConnection(connString)
-
-    Try
-        ' Open the connection
-        conn.Open()
-
-        ' Define the query to fetch all residents
-        Dim query As String = "SELECT ResidentID, Name, DateOfBirth, MedicalHistory, CarePlan, FamilyContact, AdmissionDate FROM ResidentsTable"
-        Dim adapter As New OleDbDataAdapter(query, conn)
-        
-        ' Create a DataTable to hold the data
-        Dim dataTable As New DataTable()
-
-        ' Fill the DataTable with data from the database
-        adapter.Fill(dataTable)
-
-        ' Bind the DataTable to the DataGridView
-        ResidentsDataGridView.DataSource = dataTable
-
-    Catch ex As Exception
-        MessageBox.Show("Error loading data: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    Finally
-        ' Ensure connection is closed properly
-        If conn.State = ConnectionState.Open Then
-            conn.Close()
-        End If
-    End Try
-End Sub
+        Catch ex As Exception
+            MessageBox.Show("Error loading data: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            ' Ensure connection is closed properly
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+        End Try
+    End Sub
 
 
 
     Private Sub Residents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        RefreshDataGridView()
     End Sub
     Friend WithEvents ResidentIDDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
