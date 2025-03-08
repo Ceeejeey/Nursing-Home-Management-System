@@ -27,11 +27,6 @@ Partial Class Residents
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-		
-		
-
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Residents))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -60,8 +55,8 @@ Partial Class Residents
         Me.Butadd = New System.Windows.Forms.Button()
         Me.Butsearch = New System.Windows.Forms.Button()
         Me.textsearch = New System.Windows.Forms.TextBox()
-        
-        Me.ResidentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
+		Me.ResidentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateOfBirthDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MedicalHistoryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -74,8 +69,6 @@ Partial Class Residents
         CType(Me.picboxresidentphoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridViewresidentlist, System.ComponentModel.ISupportInitialize).BeginInit()
-        
-       
         Me.SuspendLayout()
         '
         'Panel1
@@ -92,7 +85,7 @@ Partial Class Residents
         'Label1
         '
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Font = New System.Drawing.Font("News706 BT", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label1.Name = "Label1"
@@ -132,7 +125,7 @@ Partial Class Residents
         Me.Butupload.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Butupload.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.Butupload.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Butupload.Font = New System.Drawing.Font("News706 BT", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Butupload.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Butupload.Location = New System.Drawing.Point(482, 463)
         Me.Butupload.Name = "Butupload"
         Me.Butupload.Size = New System.Drawing.Size(93, 66)
@@ -142,7 +135,6 @@ Partial Class Residents
         '
         'picboxresidentphoto
         '
-        Me.picboxresidentphoto.Image = CType(resources.GetObject("picboxresidentphoto.Image"), System.Drawing.Image)
         Me.picboxresidentphoto.Location = New System.Drawing.Point(217, 311)
         Me.picboxresidentphoto.Name = "picboxresidentphoto"
         Me.picboxresidentphoto.Size = New System.Drawing.Size(259, 292)
@@ -161,19 +153,19 @@ Partial Class Residents
         '
         'dtpadmissiondate
         '
-        Me.dtpadmissiondate.Font = New System.Drawing.Font("News706 BT", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpadmissiondate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpadmissiondate.Location = New System.Drawing.Point(217, 221)
         Me.dtpadmissiondate.Name = "dtpadmissiondate"
-        Me.dtpadmissiondate.Size = New System.Drawing.Size(277, 31)
+        Me.dtpadmissiondate.Size = New System.Drawing.Size(277, 26)
         Me.dtpadmissiondate.TabIndex = 13
         Me.dtpadmissiondate.Value = New Date(2025, 2, 5, 21, 36, 26, 0)
         '
         'dtpdateofbirth
         '
-        Me.dtpdateofbirth.Font = New System.Drawing.Font("News706 BT", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpdateofbirth.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpdateofbirth.Location = New System.Drawing.Point(217, 95)
         Me.dtpdateofbirth.Name = "dtpdateofbirth"
-        Me.dtpdateofbirth.Size = New System.Drawing.Size(277, 31)
+        Me.dtpdateofbirth.Size = New System.Drawing.Size(277, 26)
         Me.dtpdateofbirth.TabIndex = 12
         '
         'txtfamilycontact
@@ -215,86 +207,87 @@ Partial Class Residents
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("News706 BT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(13, 311)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(193, 29)
+        Me.Label9.Size = New System.Drawing.Size(144, 25)
         Me.Label9.TabIndex = 7
         Me.Label9.Text = "Resident Photo"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("News706 BT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(13, 263)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(200, 29)
+        Me.Label8.Size = New System.Drawing.Size(148, 25)
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Family Contact:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("News706 BT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(13, 223)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(205, 29)
+        Me.Label7.Size = New System.Drawing.Size(155, 25)
         Me.Label7.TabIndex = 5
         Me.Label7.Text = "Admission Date:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("News706 BT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(13, 184)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(137, 29)
+        Me.Label6.Size = New System.Drawing.Size(105, 25)
         Me.Label6.TabIndex = 4
         Me.Label6.Text = "Care Plan:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("News706 BT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(13, 140)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(208, 29)
+        Me.Label5.Size = New System.Drawing.Size(151, 25)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Medical History:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("News706 BT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(13, 97)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(172, 29)
+        Me.Label4.Size = New System.Drawing.Size(124, 25)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Date of Birth:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("News706 BT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(13, 53)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(142, 29)
+        Me.Label3.Size = New System.Drawing.Size(106, 25)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Full Name:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("News706 BT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(13, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(160, 29)
+        Me.Label2.Size = New System.Drawing.Size(118, 25)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Resident ID:"
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.HighlightText
+        Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.Label10)
         Me.Panel3.Controls.Add(Me.DataGridViewresidentlist)
         Me.Panel3.Controls.Add(Me.Butdelete)
@@ -311,10 +304,10 @@ Partial Class Residents
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("News706 BT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(227, 110)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(169, 29)
+        Me.Label10.Size = New System.Drawing.Size(123, 25)
         Me.Label10.TabIndex = 6
         Me.Label10.Text = "Resident List"
         '
@@ -323,8 +316,8 @@ Partial Class Residents
         Me.DataGridViewresidentlist.AllowUserToOrderColumns = True
         Me.DataGridViewresidentlist.AutoGenerateColumns = False
         Me.DataGridViewresidentlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewresidentlist.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ResidentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DateOfBirthDataGridViewTextBoxColumn, Me.MedicalHistoryDataGridViewTextBoxColumn, Me.CarePlanDataGridViewTextBoxColumn, Me.FamilyContactNameDataGridViewTextBoxColumn,  Me.AdmissionDateDataGridViewTextBoxColumn})
-       
+        Me.DataGridViewresidentlist.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ResidentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DateOfBirthDataGridViewTextBoxColumn, Me.MedicalHistoryDataGridViewTextBoxColumn, Me.CarePlanDataGridViewTextBoxColumn, Me.FamilyContactNameDataGridViewTextBoxColumn, Me.AdmissionDateDataGridViewTextBoxColumn})
+
         Me.DataGridViewresidentlist.Location = New System.Drawing.Point(29, 142)
         Me.DataGridViewresidentlist.Name = "DataGridViewresidentlist"
         Me.DataGridViewresidentlist.RowTemplate.Height = 28
@@ -335,7 +328,7 @@ Partial Class Residents
         '
         Me.Butdelete.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Butdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Butdelete.Font = New System.Drawing.Font("News706 BT", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Butdelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Butdelete.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.Butdelete.Location = New System.Drawing.Point(529, 536)
         Me.Butdelete.Name = "Butdelete"
@@ -349,7 +342,7 @@ Partial Class Residents
         '
         Me.Butupdate.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Butupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Butupdate.Font = New System.Drawing.Font("News706 BT", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Butupdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Butupdate.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.Butupdate.Location = New System.Drawing.Point(302, 536)
         Me.Butupdate.Name = "Butupdate"
@@ -363,7 +356,7 @@ Partial Class Residents
         '
         Me.Butadd.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Butadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Butadd.Font = New System.Drawing.Font("News706 BT", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Butadd.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Butadd.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.Butadd.Location = New System.Drawing.Point(63, 536)
         Me.Butadd.Name = "Butadd"
@@ -377,8 +370,7 @@ Partial Class Residents
         '
         Me.Butsearch.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Butsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Butsearch.Font = New System.Drawing.Font("News706 BT", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Butsearch.Image = CType(resources.GetObject("Butsearch.Image"), System.Drawing.Image)
+        Me.Butsearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Butsearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.Butsearch.Location = New System.Drawing.Point(416, 17)
         Me.Butsearch.Name = "Butsearch"
@@ -393,22 +385,10 @@ Partial Class Residents
         '
         Me.textsearch.Location = New System.Drawing.Point(124, 15)
         Me.textsearch.Name = "textsearch"
-        Me.textsearch.Size = New System.Drawing.Size(286, 43)
+        Me.textsearch.Size = New System.Drawing.Size(286, 36)
         Me.textsearch.TabIndex = 0
         '
-        'NursingHomeManagemetSystemdbDataSet1
-        '
-        
-       
-        '
-        'ResidentsTableBindingSource
-        '
-        
-        '
-        'ResidentsTableTableAdapter
-        '
-        
-        '
+
         'ResidentIDDataGridViewTextBoxColumn
         '
         Me.ResidentIDDataGridViewTextBoxColumn.DataPropertyName = "ResidentID"
@@ -452,16 +432,29 @@ Partial Class Residents
         Me.AdmissionDateDataGridViewTextBoxColumn.DataPropertyName = "AdmissionDate"
         Me.AdmissionDateDataGridViewTextBoxColumn.HeaderText = "AdmissionDate"
         Me.AdmissionDateDataGridViewTextBoxColumn.Name = "AdmissionDateDataGridViewTextBoxColumn"
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Button1.Location = New System.Drawing.Point(63, 607)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(1)
+        Me.Button1.Size = New System.Drawing.Size(102, 43)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Discharge"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Residents
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(20.0!, 36.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(15.0!, 29.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1315, 713)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Font = New System.Drawing.Font("News706 BT", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(7, 5, 7, 5)
         Me.Name = "Residents"
         Me.Text = "Residents management"
@@ -472,7 +465,6 @@ Partial Class Residents
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.DataGridViewresidentlist, System.ComponentModel.ISupportInitialize).EndInit()
-
         Me.ResumeLayout(False)
 
     End Sub
@@ -541,44 +533,44 @@ Partial Class Residents
         End If
     End Sub
 
-   
 
-Private Sub Butsearch_Click(sender As Object, e As EventArgs) Handles Butsearch.Click
-    Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
-    Dim conn As New OleDbConnection(connString)
 
-    Try
-        ' Open the connection
-        conn.Open()
+    Private Sub Butsearch_Click(sender As Object, e As EventArgs) Handles Butsearch.Click
+        Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
+        Dim conn As New OleDbConnection(connString)
 
-        ' SQL query to fetch Resident details by ID or Name
-        Dim query As String = "SELECT * FROM ResidentsTable WHERE ResidentID LIKE @SearchText OR Name LIKE @SearchText"
-        Dim cmd As New OleDbCommand(query, conn)
+        Try
+            ' Open the connection
+            conn.Open()
 
-        ' Set search parameter (wildcard for partial matching)
-        cmd.Parameters.AddWithValue("@SearchText", "%" & textsearch.Text.Trim() & "%")
+            ' SQL query to fetch Resident details by ID or Name
+            Dim query As String = "SELECT * FROM ResidentsTable WHERE ResidentID LIKE @SearchText OR Name LIKE @SearchText"
+            Dim cmd As New OleDbCommand(query, conn)
 
-        ' Execute the query and load data into a DataTable
-        Dim adapter As New OleDbDataAdapter(cmd)
-        Dim dt As New DataTable()
-        adapter.Fill(dt)
+            ' Set search parameter (wildcard for partial matching)
+            cmd.Parameters.AddWithValue("@SearchText", "%" & textsearch.Text.Trim() & "%")
 
-        ' Bind the DataGridView to the filtered data
-        DataGridViewresidentlist.DataSource = dt
+            ' Execute the query and load data into a DataTable
+            Dim adapter As New OleDbDataAdapter(cmd)
+            Dim dt As New DataTable()
+            adapter.Fill(dt)
 
-        ' Check if any results were found
-        If dt.Rows.Count > 0 Then
-            MessageBox.Show("Resident(s) found!", "Search Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Else
-            MessageBox.Show("No matching residents found.", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        End If
+            ' Bind the DataGridView to the filtered data
+            DataGridViewresidentlist.DataSource = dt
 
-    Catch ex As Exception
-        MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    Finally
-        conn.Close()
-    End Try
-End Sub
+            ' Check if any results were found
+            If dt.Rows.Count > 0 Then
+                MessageBox.Show("Resident(s) found!", "Search Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("No matching residents found.", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            conn.Close()
+        End Try
+    End Sub
 
 
     Private Sub Butadd_Click(sender As Object, e As EventArgs) Handles Butadd.Click
@@ -677,6 +669,186 @@ End Sub
         End Try
     End Sub
 
+    Private Sub DataGridViewresidentlist_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewresidentlist.CellClick
+        ' Ensure a row is selected
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = DataGridViewresidentlist.Rows(e.RowIndex)
+
+            ' Populate text fields
+            txtresidentsid.Text = row.Cells("ResidentIDDataGridViewTextBoxColumn").Value.ToString()
+            txtfulname.Text = row.Cells("NameDataGridViewTextBoxColumn").Value.ToString()
+            dtpdateofbirth.Value = Convert.ToDateTime(row.Cells("DateOfBirthDataGridViewTextBoxColumn").Value)
+            txtmedicalhistory.Text = row.Cells("MedicalHistoryDataGridViewTextBoxColumn").Value.ToString()
+            txtcareplan.Text = row.Cells("CarePlanDataGridViewTextBoxColumn").Value.ToString()
+            txtfamilycontact.Text = row.Cells("FamilyContactNameDataGridViewTextBoxColumn").Value.ToString()
+            dtpadmissiondate.Value = Convert.ToDateTime(row.Cells("AdmissionDateDataGridViewTextBoxColumn").Value)
+
+            ' Load the image from the database
+            LoadResidentImage(txtresidentsid.Text)
+
+            ' Change update button color to green
+            Butupdate.BackColor = Color.Green
+			Butdelete.BackColor = Color.Red
+			
+        End If
+    End Sub
+
+    Private Sub LoadResidentImage(residentID As String)
+        Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
+        Dim conn As New OleDbConnection(connString)
+
+        Try
+            conn.Open()
+
+            ' SQL query to get the image based on ResidentID
+            Dim query As String = "SELECT Photo FROM ResidentsTable WHERE ResidentID = ?"
+            Dim cmd As New OleDbCommand(query, conn)
+            cmd.Parameters.AddWithValue("?", residentID)
+
+            ' Execute query and read image
+            Dim reader As OleDbDataReader = cmd.ExecuteReader()
+            If reader.Read() AndAlso Not IsDBNull(reader("Photo")) Then
+                Dim imageData As Byte() = DirectCast(reader("Photo"), Byte())
+                Dim ms As New System.IO.MemoryStream(imageData)
+                picboxresidentphoto.Image = Image.FromStream(ms)
+                picboxresidentphoto.SizeMode = PictureBoxSizeMode.StretchImage
+            Else
+                picboxresidentphoto.Image = Nothing ' Clear if no image is found
+            End If
+
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error loading resident image: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+
+
+    Private Sub Butupdate_Click(sender As Object, e As EventArgs) Handles Butupdate.Click
+    Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
+    Dim conn As New OleDbConnection(connString)
+
+    Try
+        ' Open the connection
+        conn.Open()
+
+        ' SQL query to update the resident’s details, including the photo
+        Dim query As String = "UPDATE ResidentsTable SET Name = ?, DateOfBirth = ?, MedicalHistory = ?, CarePlan = ?, FamilyContact = ?, AdmissionDate = ?, Photo = ? WHERE ResidentID = ?"
+        Dim cmd As New OleDbCommand(query, conn)
+
+        ' Assign parameters
+        cmd.Parameters.AddWithValue("?", txtfulname.Text)
+        cmd.Parameters.AddWithValue("?", dtpdateofbirth.Value.ToString("yyyy-MM-dd"))
+        cmd.Parameters.AddWithValue("?", txtmedicalhistory.Text)
+        cmd.Parameters.AddWithValue("?", txtcareplan.Text)
+        cmd.Parameters.AddWithValue("?", txtfamilycontact.Text)
+        cmd.Parameters.AddWithValue("?", dtpadmissiondate.Value.ToString("yyyy-MM-dd"))
+
+        ' Convert image to byte array and store in OLE Object
+        Dim imageData As Byte() = Nothing
+        If picboxresidentphoto.Image IsNot Nothing Then
+            Dim ms As New System.IO.MemoryStream()
+            picboxresidentphoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg)
+            imageData = ms.ToArray()
+        End If
+
+        ' If there is an image, store it in the database
+        If imageData IsNot Nothing Then
+            cmd.Parameters.AddWithValue("?", imageData)
+        Else
+            ' If no image is selected, set to NULL
+            cmd.Parameters.AddWithValue("?", DBNull.Value)
+        End If
+
+        ' ResidentID for updating the correct record
+        cmd.Parameters.AddWithValue("?", txtresidentsid.Text)
+
+        ' Execute update query
+        Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+        ' Show success message
+        If rowsAffected > 0 Then
+            MessageBox.Show("Resident information updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' Refresh DataGridView to show updated data
+            RefreshDataGridView()
+
+            ' Reset the button color after updating
+            Butupdate.BackColor = System.Drawing.Color.LightSkyBlue
+        Else
+            MessageBox.Show("Failed to update resident. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
+    Catch ex As Exception
+        MessageBox.Show("Error updating resident: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    Finally
+        ' Close the connection
+        If conn.State = ConnectionState.Open Then
+            conn.Close()
+        End If
+    End Try
+End Sub
+
+Private Sub ButDelete_Click(sender As Object, e As EventArgs) Handles ButDelete.Click
+    ' Check if a resident has been selected (i.e., ResidentID is not empty)
+    If String.IsNullOrEmpty(txtresidentsid.Text) Then
+        MessageBox.Show("Please select a resident from the list to delete.", "Delete Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Return
+    End If
+
+    Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
+    Dim conn As New OleDbConnection(connString)
+
+    Try
+        ' Open the connection
+        conn.Open()
+
+        ' SQL query to delete the resident's record
+        Dim query As String = "DELETE FROM ResidentsTable WHERE ResidentID = ?"
+        Dim cmd As New OleDbCommand(query, conn)
+
+        ' Add parameter for ResidentID
+        cmd.Parameters.AddWithValue("?", txtresidentsid.Text)
+
+        ' Execute delete query
+        Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+        ' Check if any rows were deleted
+        If rowsAffected > 0 Then
+            MessageBox.Show("Resident information deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' Refresh DataGridView to show updated data (after deletion)
+            RefreshDataGridView()
+
+            ' Clear the input fields after deletion
+            txtresidentsid.Clear()
+            txtfulname.Clear()
+            txtmedicalhistory.Clear()
+            txtcareplan.Clear()
+            txtfamilycontact.Clear()
+            dtpdateofbirth.Value = DateTimePicker.MinimumDateTime
+            dtpadmissiondate.Value = DateTimePicker.MinimumDateTime
+
+            ' Clear the photo in PictureBox
+            picboxresidentphoto.Image = Nothing
+			
+			Butdelete.BackColor = System.Drawing.Color.LightSkyBlue
+
+        Else
+            MessageBox.Show("Failed to delete resident. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
+    Catch ex As Exception
+        MessageBox.Show("Error deleting resident: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    Finally
+        ' Close the connection
+        If conn.State = ConnectionState.Open Then
+            conn.Close()
+        End If
+    End Try
+End Sub
+
 
 
     Private Sub Residents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -694,4 +866,6 @@ End Sub
     Private Sub DataGridViewresidentlist_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewresidentlist.CellContentClick
 
     End Sub
+
+    Friend WithEvents Button1 As Button
 End Class
