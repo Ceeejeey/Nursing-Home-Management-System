@@ -102,9 +102,7 @@
     <Compile Include="MedicinesForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="My Project\Residents.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="My Project\Residents.vb" />
     <Compile Include="My Project\MyApplication.vb" />
     <Compile Include="mysqli.vb" />
     <Compile Include="NursingHomeManagemetSystemdbDataSet.Designer.vb">
@@ -138,9 +136,7 @@
     <Compile Include="Residents.Designer.vb">
       <DependentUpon>Residents.vb</DependentUpon>
     </Compile>
-    <Compile Include="Residents.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Residents.vb" />
     <Compile Include="staff.Designer.vb">
       <DependentUpon>staff.vb</DependentUpon>
     </Compile>
