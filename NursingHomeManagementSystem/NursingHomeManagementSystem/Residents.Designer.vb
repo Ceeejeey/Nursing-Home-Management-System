@@ -62,8 +62,11 @@ Partial Class Residents
         Me.MedicalHistoryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CarePlanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FamilyContactNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		 
 
         Me.AdmissionDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.DischargeDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.picboxresidentphoto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -316,7 +319,7 @@ Partial Class Residents
         Me.DataGridViewresidentlist.AllowUserToOrderColumns = True
         Me.DataGridViewresidentlist.AutoGenerateColumns = False
         Me.DataGridViewresidentlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewresidentlist.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ResidentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DateOfBirthDataGridViewTextBoxColumn, Me.MedicalHistoryDataGridViewTextBoxColumn, Me.CarePlanDataGridViewTextBoxColumn, Me.FamilyContactNameDataGridViewTextBoxColumn, Me.AdmissionDateDataGridViewTextBoxColumn})
+        Me.DataGridViewresidentlist.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ResidentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DateOfBirthDataGridViewTextBoxColumn, Me.MedicalHistoryDataGridViewTextBoxColumn, Me.CarePlanDataGridViewTextBoxColumn, Me.FamilyContactNameDataGridViewTextBoxColumn, Me.AdmissionDateDataGridViewTextBoxColumn, Me.DischargeDateDataGridViewTextBoxColumn})
 
         Me.DataGridViewresidentlist.Location = New System.Drawing.Point(29, 142)
         Me.DataGridViewresidentlist.Name = "DataGridViewresidentlist"
@@ -432,6 +435,12 @@ Partial Class Residents
         Me.AdmissionDateDataGridViewTextBoxColumn.DataPropertyName = "AdmissionDate"
         Me.AdmissionDateDataGridViewTextBoxColumn.HeaderText = "AdmissionDate"
         Me.AdmissionDateDataGridViewTextBoxColumn.Name = "AdmissionDateDataGridViewTextBoxColumn"
+		
+		'AdmissionDateDataGridViewTextBoxColumn
+        '
+        Me.DischargeDateDataGridViewTextBoxColumn.DataPropertyName = "DischargeDate"
+        Me.DischargeDateDataGridViewTextBoxColumn.HeaderText = "DischargeDate"
+        Me.DischargeDateDataGridViewTextBoxColumn.Name = "DischargeDateDataGridViewTextBoxColumn"
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.LightSkyBlue
@@ -495,6 +504,7 @@ Partial Class Residents
     Friend WithEvents Butupdate As System.Windows.Forms.Button
     Friend WithEvents Butadd As System.Windows.Forms.Button
     Friend WithEvents Butsearch As System.Windows.Forms.Button
+	
     Friend WithEvents textsearch As System.Windows.Forms.TextBox
 
     Private Sub txtresidentsid_TextChanged(sender As Object, e As EventArgs) Handles txtresidentsid.TextChanged
@@ -647,7 +657,7 @@ Partial Class Residents
             conn.Open()
 
             ' Define the query to fetch all residents
-            Dim query As String = "SELECT ResidentID, Name, DateOfBirth, MedicalHistory, CarePlan, FamilyContact, AdmissionDate FROM ResidentsTable"
+            Dim query As String = "SELECT ResidentID, Name, DateOfBirth, MedicalHistory, CarePlan, FamilyContact, AdmissionDate, DischargeDate FROM ResidentsTable"
             Dim adapter As New OleDbDataAdapter(query, conn)
 
             ' Create a DataTable to hold the data
@@ -658,6 +668,8 @@ Partial Class Residents
 
             ' Bind the DataTable to the DataGridView
             DataGridViewresidentlist.DataSource = dataTable
+			
+			HighlightDischargedResidents()
 
         Catch ex As Exception
             MessageBox.Show("Error loading data: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -848,11 +860,74 @@ Private Sub ButDelete_Click(sender As Object, e As EventArgs) Handles ButDelete.
         End If
     End Try
 End Sub
+Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    ' Check if a resident is selected
+    If String.IsNullOrWhiteSpace(txtresidentsid.Text) Then
+        MessageBox.Show("Please select a resident to discharge.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Return
+    End If
+
+    ' Confirmation message box
+    Dim confirm As DialogResult = MessageBox.Show("Are you sure you want to discharge this resident?", "Confirm Discharge", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+    If confirm = DialogResult.Yes Then
+        Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
+        Dim conn As New OleDbConnection(connString)
+
+        Try
+            conn.Open()
+
+            ' SQL query to update DischargeDate to the current date
+            Dim query As String = "UPDATE ResidentsTable SET DischargeDate = ? WHERE ResidentID = ?"
+            Dim cmd As New OleDbCommand(query, conn)
+
+                ' Set parameters: formatted current date & time, and Resident ID
+                cmd.Parameters.AddWithValue("?", DateTime.Now.ToString("yyyy-MM-dd")) ' Format the current date
+                cmd.Parameters.AddWithValue("?", txtresidentsid.Text)
+
+                ' Execute update
+                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+                If rowsAffected > 0 Then
+                    MessageBox.Show("Resident discharged successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    RefreshDataGridView() ' Refresh DataGridView to show updated data
+                Else
+                    MessageBox.Show("Failed to discharge resident. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+
+            Catch ex As Exception
+                MessageBox.Show("Error discharging resident: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                conn.Close()
+            End Try
+        End If
+    End Sub
+
+
+    Private Sub HighlightDischargedResidents()
+        For Each row As DataGridViewRow In DataGridViewresidentlist.Rows
+            ' Check if the row is not a new row (to avoid errors)
+            If Not row.IsNewRow Then
+                ' Check if the column exists and has a value before accessing it
+                If row.Cells("DischargeDateDataGridViewTextBoxColumn").Value IsNot Nothing AndAlso Not IsDBNull(row.Cells("DischargeDateDataGridViewTextBoxColumn").Value) Then
+                    Dim dischargeDate As String = row.Cells("DischargeDateDataGridViewTextBoxColumn").Value.ToString()
+
+                    ' If the discharge date is not empty, change row color to Red
+                    If Not String.IsNullOrWhiteSpace(dischargeDate) Then
+                        row.DefaultCellStyle.BackColor = Color.Red
+                        row.DefaultCellStyle.ForeColor = Color.White ' Optional: Make text readable
+                    End If
+                End If
+            End If
+        Next
+    End Sub
+
 
 
 
     Private Sub Residents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RefreshDataGridView()
+
     End Sub
     Friend WithEvents ResidentIDDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -862,6 +937,7 @@ End Sub
     Friend WithEvents FamilyContactNameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FamilyContactPhoneDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents AdmissionDateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+	Friend WithEvents DischargeDateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
     Private Sub DataGridViewresidentlist_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewresidentlist.CellContentClick
 
