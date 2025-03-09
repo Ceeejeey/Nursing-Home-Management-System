@@ -29,4 +29,27 @@ Public Class mainform
         Dim residentsForm As New Residents()
         residentsForm.Show()
     End Sub
+	
+	Private Sub AddUpdateStaffToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddUpdateStaffToolStripMenuItem.Click
+    ' Check if the form is already open to prevent multiple instances
+    Dim staffForm As Staff = Nothing
+
+    ' Loop through open forms to check if Staff form is already opened
+    For Each openForm As Form In Application.OpenForms
+        If TypeOf openForm Is Staff Then
+            staffForm = CType(openForm, Staff)
+            Exit For
+        End If
+    Next
+
+    ' If the form is not open, create a new instance and show it
+    If staffForm Is Nothing Then
+        staffForm = New Staff()
+        staffForm.Show()
+    Else
+        ' If already open, bring it to front
+        staffForm.BringToFront()
+    End If
+End Sub
+
 End Class
