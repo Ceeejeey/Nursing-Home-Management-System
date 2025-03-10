@@ -52,4 +52,48 @@ Public Class mainform
     End If
 End Sub
 
+Private Sub AssignDutiesShiftsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AssignDutiesShiftsToolStripMenuItem.Click
+    ' Check if the form is already open to prevent multiple instances
+    Dim staffAttendanceForm As StaffAttendance = Nothing
+
+    ' Loop through open forms to check if Staff form is already opened
+    For Each openForm As Form In Application.OpenForms
+        If TypeOf openForm Is Staff Then
+            staffAttendanceForm = CType(openForm, StaffAttendance)
+            Exit For
+        End If
+    Next
+
+    ' If the form is not open, create a new instance and show it
+    If staffAttendanceForm Is Nothing Then
+        staffAttendanceForm = New StaffAttendance()
+        staffAttendanceForm.Show()
+    Else
+        ' If already open, bring it to front
+        staffAttendanceForm.BringToFront()
+    End If
+End Sub
+
+Private Sub StaffAttendanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StaffAttendanceToolStripMenuItem.Click
+    ' Check if the form is already open to prevent multiple instances
+    Dim staffAttendanceForm As StaffAttendance = Nothing
+
+    ' Loop through open forms to check if Staff form is already opened
+    For Each openForm As Form In Application.OpenForms
+        If TypeOf openForm Is Staff Then
+            staffAttendanceForm = CType(openForm, StaffAttendance)
+            Exit For
+        End If
+    Next
+
+    ' If the form is not open, create a new instance and show it
+    If staffAttendanceForm Is Nothing Then
+        staffAttendanceForm = New StaffAttendance()
+        staffAttendanceForm.Show()
+    Else
+        ' If already open, bring it to front
+        staffAttendanceForm.BringToFront()
+    End If
+End Sub
+
 End Class
