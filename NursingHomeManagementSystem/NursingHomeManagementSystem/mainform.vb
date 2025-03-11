@@ -96,4 +96,70 @@ Private Sub StaffAttendanceToolStripMenuItem_Click(sender As Object, e As EventA
     End If
 End Sub
 
+Private Sub TrackStatusOfRequestsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TrackStatusOfRequestsToolStripMenuItem.Click
+    ' Check if the form is already open to prevent multiple instances
+    Dim maintenanceRequestForm As MaintenanceRequests = Nothing
+
+    ' Loop through open forms to check if Staff form is already opened
+    For Each openForm As Form In Application.OpenForms
+        If TypeOf openForm Is Staff Then
+            maintenanceRequestForm = CType(openForm, MaintenanceRequests)
+            Exit For
+        End If
+    Next
+
+    ' If the form is not open, create a new instance and show it
+    If maintenanceRequestForm Is Nothing Then
+        maintenanceRequestForm = New MaintenanceRequests()
+        maintenanceRequestForm.Show()
+    Else
+        ' If already open, bring it to front
+        maintenanceRequestForm.BringToFront()
+    End If
+End Sub
+
+Private Sub AssignMaintenanceStaffToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AssignMaintenanceStaffToolStripMenuItem.Click
+    ' Check if the form is already open to prevent multiple instances
+    Dim maintenanceRequestForm As MaintenanceRequests = Nothing
+
+    ' Loop through open forms to check if Staff form is already opened
+    For Each openForm As Form In Application.OpenForms
+        If TypeOf openForm Is Staff Then
+            maintenanceRequestForm = CType(openForm, MaintenanceRequests)
+            Exit For
+        End If
+    Next
+
+    ' If the form is not open, create a new instance and show it
+    If maintenanceRequestForm Is Nothing Then
+        maintenanceRequestForm = New MaintenanceRequests()
+        maintenanceRequestForm.Show()
+    Else
+        ' If already open, bring it to front
+        maintenanceRequestForm.BringToFront()
+    End If
+End Sub
+
+Private Sub ReportMaintenanceIssuesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportMaintenanceIssuesToolStripMenuItem.Click
+     ' Check if the form is already open to prevent multiple instances
+    Dim maintenanceRequestForm As MaintenanceRequests = Nothing
+
+    ' Loop through open forms to check if Staff form is already opened
+    For Each openForm As Form In Application.OpenForms
+        If TypeOf openForm Is Staff Then
+            maintenanceRequestForm = CType(openForm, MaintenanceRequests)
+            Exit For
+        End If
+    Next
+
+    ' If the form is not open, create a new instance and show it
+    If maintenanceRequestForm Is Nothing Then
+        maintenanceRequestForm = New MaintenanceRequests()
+        maintenanceRequestForm.Show()
+    Else
+        ' If already open, bring it to front
+        maintenanceRequestForm.BringToFront()
+    End If
+End Sub
+
 End Class

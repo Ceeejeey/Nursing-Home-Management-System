@@ -62,3 +62,5 @@ D:\VB\Nursing-Home-Management-System\NursingHomeManagementSystem\NursingHomeMana
 D:\VB\Nursing-Home-Management-System\NursingHomeManagementSystem\NursingHomeManagementSystem\obj\Debug\NursingHomeManagementSystem.xml
 D:\VB\Nursing-Home-Management-System\NursingHomeManagementSystem\NursingHomeManagementSystem\obj\Debug\NursingHomeManagementSystem.pdb
 D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\obj\Debug\NursingHomeManagementSystem.StaffAttendance.resources
+D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\obj\Debug\NursingHomeManagementSystem.MaintenanceRequests.resources
+D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\obj\Debug\NursingHomeManagementSystem.RegisterForm.resources

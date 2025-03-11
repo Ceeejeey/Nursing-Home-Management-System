@@ -24,37 +24,42 @@ Partial Class MaintenanceRequests
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.MaintenanceRequests_TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NursingHomeManagemetSystemdbDataSet3 = New NursingHomeManagementSystem.NursingHomeManagemetSystemdbDataSet3()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Butgeneratereport = New System.Windows.Forms.Button()
+        Me.Butupdate = New System.Windows.Forms.Button()
+        Me.combomaintenancetype = New System.Windows.Forms.ComboBox()
+        Me.textassignedtechnician = New System.Windows.Forms.TextBox()
+        Me.textreportedby = New System.Windows.Forms.TextBox()
+        Me.labelassignedtechnician = New System.Windows.Forms.Label()
+        Me.labelstatus = New System.Windows.Forms.Label()
+        Me.labelmaintenancetype = New System.Windows.Forms.Label()
+        Me.labelreportedby = New System.Windows.Forms.Label()
+        Me.combostatus = New System.Windows.Forms.ComboBox()
+        Me.Butsearch = New System.Windows.Forms.Button()
+        Me.labelmaintenancelist = New System.Windows.Forms.Label()
+        Me.MaintenanceRequestDataGridView = New System.Windows.Forms.DataGridView()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.NursingHomeManagemetSystemdbDataSet3 = New NursingHomeManagementSystem.NursingHomeManagemetSystemdbDataSet3()
-        Me.MaintenanceRequests_TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MaintenanceRequests_TableTableAdapter = New NursingHomeManagementSystem.NursingHomeManagemetSystemdbDataSet3TableAdapters.MaintenanceRequests_TableTableAdapter()
-        Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NursingHomeManagemetSystemdbDataSet3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.labelissuedescription = New System.Windows.Forms.Label()
+        Me.textissuedescription = New System.Windows.Forms.TextBox()
         CType(Me.MaintenanceRequests_TableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NursingHomeManagemetSystemdbDataSet3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.MaintenanceRequestDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'MaintenanceRequests_TableBindingSource
+        '
+        Me.MaintenanceRequests_TableBindingSource.DataMember = "MaintenanceRequests Table"
+        Me.MaintenanceRequests_TableBindingSource.DataSource = Me.NursingHomeManagemetSystemdbDataSet3
+        '
+        'NursingHomeManagemetSystemdbDataSet3
+        '
+        Me.NursingHomeManagemetSystemdbDataSet3.DataSetName = "NursingHomeManagemetSystemdbDataSet3"
+        Me.NursingHomeManagemetSystemdbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Panel1
         '
@@ -62,179 +67,147 @@ Partial Class MaintenanceRequests
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1462, 46)
+        Me.Panel1.Size = New System.Drawing.Size(1300, 37)
         Me.Panel1.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Font = New System.Drawing.Font("News706 BT", 20.0!)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1462, 46)
+        Me.Label1.Size = New System.Drawing.Size(1300, 37)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Maintenance Requests"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button2
+        'Butgeneratereport
         '
-        Me.Button2.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(320, 275)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(89, 52)
-        Me.Button2.TabIndex = 25
-        Me.Button2.Text = "Generate Report"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Butgeneratereport.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Butgeneratereport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Butgeneratereport.Location = New System.Drawing.Point(243, 293)
+        Me.Butgeneratereport.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Butgeneratereport.Name = "Butgeneratereport"
+        Me.Butgeneratereport.Size = New System.Drawing.Size(79, 42)
+        Me.Butgeneratereport.TabIndex = 25
+        Me.Butgeneratereport.Text = "Generate Report"
+        Me.Butgeneratereport.UseVisualStyleBackColor = False
         '
-        'Button1
+        'Butupdate
         '
-        Me.Button1.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(159, 275)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 52)
-        Me.Button1.TabIndex = 24
-        Me.Button1.Text = "Update Status"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Butupdate.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Butupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Butupdate.Location = New System.Drawing.Point(136, 293)
+        Me.Butupdate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Butupdate.Name = "Butupdate"
+        Me.Butupdate.Size = New System.Drawing.Size(67, 42)
+        Me.Butupdate.TabIndex = 24
+        Me.Butupdate.Text = "Update Status"
+        Me.Butupdate.UseVisualStyleBackColor = False
         '
-        'ComboBox1
+        'combomaintenancetype
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(240, 165)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(122, 28)
-        Me.ComboBox1.TabIndex = 22
+        Me.combomaintenancetype.FormattingEnabled = True
+        Me.combomaintenancetype.Location = New System.Drawing.Point(213, 174)
+        Me.combomaintenancetype.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.combomaintenancetype.Name = "combomaintenancetype"
+        Me.combomaintenancetype.Size = New System.Drawing.Size(211, 24)
+        Me.combomaintenancetype.TabIndex = 22
         '
-        'TextBox3
+        'textassignedtechnician
         '
-        Me.TextBox3.Location = New System.Drawing.Point(240, 233)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(204, 26)
-        Me.TextBox3.TabIndex = 21
+        Me.textassignedtechnician.Location = New System.Drawing.Point(213, 247)
+        Me.textassignedtechnician.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.textassignedtechnician.Name = "textassignedtechnician"
+        Me.textassignedtechnician.Size = New System.Drawing.Size(211, 22)
+        Me.textassignedtechnician.TabIndex = 21
         '
-        'TextBox2
+        'textreportedby
         '
-        Me.TextBox2.Location = New System.Drawing.Point(240, 128)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(237, 26)
-        Me.TextBox2.TabIndex = 20
+        Me.textreportedby.Location = New System.Drawing.Point(213, 108)
+        Me.textreportedby.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.textreportedby.Name = "textreportedby"
+        Me.textreportedby.Size = New System.Drawing.Size(211, 22)
+        Me.textreportedby.TabIndex = 20
         '
-        'TextBox1
+        'labelassignedtechnician
         '
-        Me.TextBox1.Location = New System.Drawing.Point(240, 96)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(122, 26)
-        Me.TextBox1.TabIndex = 19
+        Me.labelassignedtechnician.AutoSize = True
+        Me.labelassignedtechnician.Location = New System.Drawing.Point(67, 253)
+        Me.labelassignedtechnician.Name = "labelassignedtechnician"
+        Me.labelassignedtechnician.Size = New System.Drawing.Size(136, 16)
+        Me.labelassignedtechnician.TabIndex = 18
+        Me.labelassignedtechnician.Text = "Assigned Technician:"
         '
-        'Label6
+        'labelstatus
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(75, 236)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(159, 20)
-        Me.Label6.TabIndex = 18
-        Me.Label6.Text = "Assigned Technician:"
+        Me.labelstatus.AutoSize = True
+        Me.labelstatus.Location = New System.Drawing.Point(67, 218)
+        Me.labelstatus.Name = "labelstatus"
+        Me.labelstatus.Size = New System.Drawing.Size(47, 16)
+        Me.labelstatus.TabIndex = 17
+        Me.labelstatus.Text = "Status:"
         '
-        'Label5
+        'labelmaintenancetype
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(75, 197)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(60, 20)
-        Me.Label5.TabIndex = 17
-        Me.Label5.Text = "Status:"
+        Me.labelmaintenancetype.AutoSize = True
+        Me.labelmaintenancetype.Location = New System.Drawing.Point(67, 182)
+        Me.labelmaintenancetype.Name = "labelmaintenancetype"
+        Me.labelmaintenancetype.Size = New System.Drawing.Size(122, 16)
+        Me.labelmaintenancetype.TabIndex = 16
+        Me.labelmaintenancetype.Text = "Maintenance Type:"
         '
-        'Label4
+        'labelreportedby
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(75, 165)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(143, 20)
-        Me.Label4.TabIndex = 16
-        Me.Label4.Text = "Maintenance Type:"
+        Me.labelreportedby.AutoSize = True
+        Me.labelreportedby.Location = New System.Drawing.Point(67, 114)
+        Me.labelreportedby.Name = "labelreportedby"
+        Me.labelreportedby.Size = New System.Drawing.Size(86, 16)
+        Me.labelreportedby.TabIndex = 15
+        Me.labelreportedby.Text = "Reported By:"
         '
-        'Label3
+        'combostatus
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(75, 134)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(102, 20)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Reported By:"
+        Me.combostatus.FormattingEnabled = True
+        Me.combostatus.Location = New System.Drawing.Point(213, 210)
+        Me.combostatus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.combostatus.Name = "combostatus"
+        Me.combostatus.Size = New System.Drawing.Size(211, 24)
+        Me.combostatus.TabIndex = 28
         '
-        'Label2
+        'Butsearch
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(75, 96)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(95, 20)
-        Me.Label2.TabIndex = 14
-        Me.Label2.Text = "Request ID:"
+        Me.Butsearch.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Butsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Butsearch.Location = New System.Drawing.Point(351, 293)
+        Me.Butsearch.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Butsearch.Name = "Butsearch"
+        Me.Butsearch.Size = New System.Drawing.Size(73, 42)
+        Me.Butsearch.TabIndex = 26
+        Me.Butsearch.Text = "Search Request"
+        Me.Butsearch.UseVisualStyleBackColor = False
         '
-        'ComboBox2
+        'labelmaintenancelist
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(240, 199)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(122, 28)
-        Me.ComboBox2.TabIndex = 28
+        Me.labelmaintenancelist.AutoSize = True
+        Me.labelmaintenancelist.Location = New System.Drawing.Point(210, 357)
+        Me.labelmaintenancelist.Name = "labelmaintenancelist"
+        Me.labelmaintenancelist.Size = New System.Drawing.Size(168, 16)
+        Me.labelmaintenancelist.TabIndex = 29
+        Me.labelmaintenancelist.Text = "Maintenance Requests List"
         '
-        'Button3
+        'MaintenanceRequestDataGridView
         '
-        Me.Button3.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(489, 275)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(82, 52)
-        Me.Button3.TabIndex = 26
-        Me.Button3.Text = "Search Request"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(236, 367)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(203, 20)
-        Me.Label7.TabIndex = 29
-        Me.Label7.Text = "Maintenance Requests List"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
-        Me.DataGridView1.Location = New System.Drawing.Point(79, 399)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(543, 175)
-        Me.DataGridView1.TabIndex = 30
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Request ID"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Reported By"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Type"
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Status"
-        Me.Column4.Name = "Column4"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Technician"
-        Me.Column5.Name = "Column5"
+        Me.MaintenanceRequestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.MaintenanceRequestDataGridView.Location = New System.Drawing.Point(70, 385)
+        Me.MaintenanceRequestDataGridView.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaintenanceRequestDataGridView.Name = "MaintenanceRequestDataGridView"
+        Me.MaintenanceRequestDataGridView.RowHeadersWidth = 51
+        Me.MaintenanceRequestDataGridView.RowTemplate.Height = 28
+        Me.MaintenanceRequestDataGridView.Size = New System.Drawing.Size(483, 140)
+        Me.MaintenanceRequestDataGridView.TabIndex = 30
         '
         'ReportViewer1
         '
@@ -242,81 +215,84 @@ Partial Class MaintenanceRequests
         ReportDataSource1.Value = Me.MaintenanceRequests_TableBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "NursingHomeManagementSystem.Report1.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(674, 181)
+        Me.ReportViewer1.Location = New System.Drawing.Point(599, 145)
+        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(764, 406)
+        Me.ReportViewer1.Size = New System.Drawing.Size(679, 325)
         Me.ReportViewer1.TabIndex = 31
-        '
-        'NursingHomeManagemetSystemdbDataSet3
-        '
-        Me.NursingHomeManagemetSystemdbDataSet3.DataSetName = "NursingHomeManagemetSystemdbDataSet3"
-        Me.NursingHomeManagemetSystemdbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'MaintenanceRequests_TableBindingSource
-        '
-        Me.MaintenanceRequests_TableBindingSource.DataMember = "MaintenanceRequests Table"
-        Me.MaintenanceRequests_TableBindingSource.DataSource = Me.NursingHomeManagemetSystemdbDataSet3
         '
         'MaintenanceRequests_TableTableAdapter
         '
         Me.MaintenanceRequests_TableTableAdapter.ClearBeforeFill = True
         '
+        'labelissuedescription
+        '
+        Me.labelissuedescription.AutoSize = True
+        Me.labelissuedescription.Location = New System.Drawing.Point(67, 147)
+        Me.labelissuedescription.Name = "labelissuedescription"
+        Me.labelissuedescription.Size = New System.Drawing.Size(110, 16)
+        Me.labelissuedescription.TabIndex = 32
+        Me.labelissuedescription.Text = "Issue Description"
+        '
+        'textissuedescription
+        '
+        Me.textissuedescription.Location = New System.Drawing.Point(213, 141)
+        Me.textissuedescription.Name = "textissuedescription"
+        Me.textissuedescription.Size = New System.Drawing.Size(211, 22)
+        Me.textissuedescription.TabIndex = 33
+        '
         'MaintenanceRequests
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1462, 685)
+        Me.ClientSize = New System.Drawing.Size(1300, 548)
+        Me.Controls.Add(Me.textissuedescription)
+        Me.Controls.Add(Me.labelissuedescription)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.MaintenanceRequestDataGridView)
+        Me.Controls.Add(Me.labelmaintenancelist)
+        Me.Controls.Add(Me.combostatus)
+        Me.Controls.Add(Me.Butsearch)
+        Me.Controls.Add(Me.Butgeneratereport)
+        Me.Controls.Add(Me.Butupdate)
+        Me.Controls.Add(Me.combomaintenancetype)
+        Me.Controls.Add(Me.textassignedtechnician)
+        Me.Controls.Add(Me.textreportedby)
+        Me.Controls.Add(Me.labelassignedtechnician)
+        Me.Controls.Add(Me.labelstatus)
+        Me.Controls.Add(Me.labelmaintenancetype)
+        Me.Controls.Add(Me.labelreportedby)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "MaintenanceRequests"
         Me.Text = "MaintenanceRequests"
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NursingHomeManagemetSystemdbDataSet3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MaintenanceRequests_TableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NursingHomeManagemetSystemdbDataSet3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.MaintenanceRequestDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Butgeneratereport As System.Windows.Forms.Button
+    Friend WithEvents Butupdate As System.Windows.Forms.Button
+    Friend WithEvents combomaintenancetype As System.Windows.Forms.ComboBox
+    Friend WithEvents textassignedtechnician As System.Windows.Forms.TextBox
+    Friend WithEvents textreportedby As System.Windows.Forms.TextBox
+    Friend WithEvents labelassignedtechnician As System.Windows.Forms.Label
+    Friend WithEvents labelstatus As System.Windows.Forms.Label
+    Friend WithEvents labelmaintenancetype As System.Windows.Forms.Label
+    Friend WithEvents labelreportedby As System.Windows.Forms.Label
+    Friend WithEvents combostatus As System.Windows.Forms.ComboBox
+    Friend WithEvents Butsearch As System.Windows.Forms.Button
+    Friend WithEvents labelmaintenancelist As System.Windows.Forms.Label
+    Friend WithEvents MaintenanceRequestDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents MaintenanceRequests_TableBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents NursingHomeManagemetSystemdbDataSet3 As NursingHomeManagementSystem.NursingHomeManagemetSystemdbDataSet3
     Friend WithEvents MaintenanceRequests_TableTableAdapter As NursingHomeManagementSystem.NursingHomeManagemetSystemdbDataSet3TableAdapters.MaintenanceRequests_TableTableAdapter
+    Friend WithEvents labelissuedescription As Label
+    Friend WithEvents textissuedescription As TextBox
 End Class
