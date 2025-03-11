@@ -178,8 +178,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceRequests.resx">
+      <DependentUpon>MaintenanceRequests.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MedicinesForm.resx">
       <DependentUpon>MedicinesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <DependentUpon>RegisterForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="mainform.resx">
