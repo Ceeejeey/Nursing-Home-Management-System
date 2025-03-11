@@ -21,7 +21,7 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.6in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -68,7 +68,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Staff ID</Value>
+                              <Value>Reported By</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -130,7 +130,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Status</Value>
+                              <Value>Maintenance Type</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -161,7 +161,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Request Date</Value>
+                              <Value>Status</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -192,7 +192,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Resident ID</Value>
+                              <Value>Assigned Technician</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -252,21 +252,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="StaffID">
+                    <Textbox Name="ReportedBy">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!StaffID.Value</Value>
+                              <Value>=Fields!ReportedBy.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>StaffID</rd:DefaultName>
+                      <rd:DefaultName>ReportedBy</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -314,6 +314,37 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="MaintenanceType">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!MaintenanceType.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>MaintenanceType</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Status">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -345,21 +376,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="RequestDate">
+                    <Textbox Name="AssignedTechnician">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!RequestDate.Value</Value>
+                              <Value>=Fields!AssignedTechnician.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>RequestDate</rd:DefaultName>
+                      <rd:DefaultName>AssignedTechnician</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -372,37 +403,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="ResidentID">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!ResidentID.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>ResidentID</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>White</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -432,8 +433,8 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>0.49528in</Top>
         <Left>0.13417in</Left>
-        <Height>0.76389in</Height>
-        <Width>7.75in</Width>
+        <Height>0.76388in</Height>
+        <Width>8.34999in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -444,7 +445,7 @@
     <Height>2.55556in</Height>
     <Style />
   </Body>
-  <Width>8.00917in</Width>
+  <Width>8.65084in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -473,30 +474,30 @@
           <DataField>RequestID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="StaffID">
-          <DataField>StaffID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="ReportedBy">
+          <DataField>ReportedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="IssueDescription">
           <DataField>IssueDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaintenanceType">
+          <DataField>MaintenanceType</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Status">
           <DataField>Status</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="RequestDate">
-          <DataField>RequestDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="ResidentID">
-          <DataField>ResidentID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="AssignedTechnician">
+          <DataField>AssignedTechnician</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>NursingHomeManagemetSystemdbDataSet3</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\b.a.shanika\OneDrive\Desktop\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdbDataSet3.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdbDataSet3.xsd</rd:SchemaPath>
         <rd:TableName>MaintenanceRequests Table</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

@@ -146,7 +146,7 @@ Private Sub Butgeneratereport_Click(sender As Object, e As EventArgs) Handles Bu
 
         ' Set up the ReportViewer
         Dim ReportDataSource1 As New Microsoft.Reporting.WinForms.ReportDataSource()
-        ReportDataSource1.Name = "Dataset1"  ' Must match the dataset name in RDLC
+        ReportDataSource1.Name = "DataSet1"  ' Must match the dataset name in RDLC
         ReportDataSource1.Value = dt
 
         ' Clear previous data sources and add the new one
