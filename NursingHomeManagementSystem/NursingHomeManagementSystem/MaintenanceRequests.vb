@@ -163,6 +163,45 @@ Private Sub Butgeneratereport_Click(sender As Object, e As EventArgs) Handles Bu
     End Try
 End Sub
 
+Private Sub Butsearch_Click(sender As Object, e As EventArgs) Handles Butsearch.Click
+    ' Database connection string
+    Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
+    Dim conn As New OleDbConnection(connString)
+
+    Try
+        ' Open the connection
+        conn.Open()
+
+        ' SQL query to fetch Maintenance Request details by RequestID or ReportedBy
+        Dim query As String = "SELECT * FROM MaintenanceRequestTable WHERE RequestID LIKE @SearchText OR ReportedBy LIKE @SearchText"
+        Dim cmd As New OleDbCommand(query, conn)
+
+        ' Set search parameter (wildcard for partial matching)
+        cmd.Parameters.AddWithValue("@SearchText", "%" & textsearch.Text.Trim() & "%")
+
+        ' Execute the query and load data into a DataTable
+        Dim adapter As New OleDbDataAdapter(cmd)
+        Dim dt As New DataTable()
+        adapter.Fill(dt)
+
+        ' Bind the DataGridView to the filtered data
+        MaintenanceRequestDataGridView.DataSource = dt
+
+        ' Check if any results were found
+        If dt.Rows.Count > 0 Then
+            MessageBox.Show("Maintenance request(s) found!", "Search Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("No matching maintenance requests found.", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+
+    Catch ex As Exception
+        MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    Finally
+        conn.Close()
+    End Try
+End Sub
+
+
 
 
 End Class
