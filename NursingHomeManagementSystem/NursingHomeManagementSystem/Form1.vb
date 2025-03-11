@@ -1,6 +1,32 @@
 ﻿Imports System.Data.OleDb
+Imports Microsoft.SqlServer.Types
 
 Public Class Form1
+	
+	Protected Overrides Sub OnLoad(e As EventArgs)
+    MyBase.OnLoad(e)
+
+    ' Manually load SQL Server Types DLLs
+    Dim path As String = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SqlServerTypes")
+    LoadNativeAssemblies(path)
+End Sub
+
+Private Sub LoadNativeAssemblies(basePath As String)
+    Dim nativePath As String = If(Environment.Is64BitProcess, "x64", "x86")
+    Dim fullPath As String = System.IO.Path.Combine(basePath, nativePath)
+
+    If System.IO.Directory.Exists(fullPath) Then
+        NativeMethods.LoadLibrary(System.IO.Path.Combine(fullPath, "SqlServerSpatial140.dll"))
+    End If
+End Sub
+
+Private Class NativeMethods
+    <Runtime.InteropServices.DllImport("kernel32.dll", SetLastError:=True)>
+    Public Shared Function LoadLibrary(ByVal lpFileName As String) As IntPtr
+    End Function
+End Class
+
+
 
     ' Connection String
     Private connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"

@@ -285,15 +285,15 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
         
         Private columnRequestID As Global.System.Data.DataColumn
         
-        Private columnStaffID As Global.System.Data.DataColumn
+        Private columnReportedBy As Global.System.Data.DataColumn
         
         Private columnIssueDescription As Global.System.Data.DataColumn
         
+        Private columnMaintenanceType As Global.System.Data.DataColumn
+        
         Private columnStatus As Global.System.Data.DataColumn
         
-        Private columnRequestDate As Global.System.Data.DataColumn
-        
-        Private columnResidentID As Global.System.Data.DataColumn
+        Private columnAssignedTechnician As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -340,9 +340,9 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property StaffIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ReportedByColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnStaffID
+                Return Me.columnReportedBy
             End Get
         End Property
         
@@ -356,6 +356,14 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property MaintenanceTypeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMaintenanceType
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public ReadOnly Property StatusColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnStatus
@@ -364,17 +372,9 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property RequestDateColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property AssignedTechnicianColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnRequestDate
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property ResidentIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnResidentID
+                Return Me.columnAssignedTechnician
             End Get
         End Property
         
@@ -415,9 +415,9 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddMaintenanceRequests_TableRow(ByVal StaffID As Integer, ByVal IssueDescription As String, ByVal Status As String, ByVal RequestDate As Date, ByVal ResidentID As Integer) As MaintenanceRequests_TableRow
+        Public Overloads Function AddMaintenanceRequests_TableRow(ByVal ReportedBy As String, ByVal IssueDescription As String, ByVal MaintenanceType As String, ByVal Status As String, ByVal AssignedTechnician As String) As MaintenanceRequests_TableRow
             Dim rowMaintenanceRequests_TableRow As MaintenanceRequests_TableRow = CType(Me.NewRow,MaintenanceRequests_TableRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, StaffID, IssueDescription, Status, RequestDate, ResidentID}
+            Dim columnValuesArray() As Object = New Object() {Nothing, ReportedBy, IssueDescription, MaintenanceType, Status, AssignedTechnician}
             rowMaintenanceRequests_TableRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowMaintenanceRequests_TableRow)
             Return rowMaintenanceRequests_TableRow
@@ -447,11 +447,11 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnRequestID = MyBase.Columns("RequestID")
-            Me.columnStaffID = MyBase.Columns("StaffID")
+            Me.columnReportedBy = MyBase.Columns("ReportedBy")
             Me.columnIssueDescription = MyBase.Columns("IssueDescription")
+            Me.columnMaintenanceType = MyBase.Columns("MaintenanceType")
             Me.columnStatus = MyBase.Columns("Status")
-            Me.columnRequestDate = MyBase.Columns("RequestDate")
-            Me.columnResidentID = MyBase.Columns("ResidentID")
+            Me.columnAssignedTechnician = MyBase.Columns("AssignedTechnician")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -459,24 +459,27 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
         Private Sub InitClass()
             Me.columnRequestID = New Global.System.Data.DataColumn("RequestID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnRequestID)
-            Me.columnStaffID = New Global.System.Data.DataColumn("StaffID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnStaffID)
+            Me.columnReportedBy = New Global.System.Data.DataColumn("ReportedBy", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnReportedBy)
             Me.columnIssueDescription = New Global.System.Data.DataColumn("IssueDescription", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIssueDescription)
+            Me.columnMaintenanceType = New Global.System.Data.DataColumn("MaintenanceType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMaintenanceType)
             Me.columnStatus = New Global.System.Data.DataColumn("Status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnStatus)
-            Me.columnRequestDate = New Global.System.Data.DataColumn("RequestDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnRequestDate)
-            Me.columnResidentID = New Global.System.Data.DataColumn("ResidentID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnResidentID)
+            Me.columnAssignedTechnician = New Global.System.Data.DataColumn("AssignedTechnician", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAssignedTechnician)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnRequestID}, true))
             Me.columnRequestID.AutoIncrement = true
             Me.columnRequestID.AutoIncrementSeed = -1
             Me.columnRequestID.AutoIncrementStep = -1
             Me.columnRequestID.AllowDBNull = false
             Me.columnRequestID.Unique = true
+            Me.columnReportedBy.MaxLength = 255
             Me.columnIssueDescription.MaxLength = 255
+            Me.columnMaintenanceType.MaxLength = 255
             Me.columnStatus.MaxLength = 255
+            Me.columnAssignedTechnician.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -634,16 +637,17 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property StaffID() As Integer
+        Public Property ReportedBy() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableMaintenanceRequests_Table.StaffIDColumn),Integer)
+                    Return CType(Me(Me.tableMaintenanceRequests_Table.ReportedByColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'StaffID' in table 'MaintenanceRequests Table' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ReportedBy' in table 'MaintenanceRequests Table' is DBNull."& _ 
+                            "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableMaintenanceRequests_Table.StaffIDColumn) = value
+                Me(Me.tableMaintenanceRequests_Table.ReportedByColumn) = value
             End Set
         End Property
         
@@ -665,6 +669,22 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property MaintenanceType() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableMaintenanceRequests_Table.MaintenanceTypeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MaintenanceType' in table 'MaintenanceRequests Table' is DB"& _ 
+                            "Null.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableMaintenanceRequests_Table.MaintenanceTypeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property Status() As String
             Get
                 Try 
@@ -680,46 +700,30 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property RequestDate() As Date
+        Public Property AssignedTechnician() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableMaintenanceRequests_Table.RequestDateColumn),Date)
+                    Return CType(Me(Me.tableMaintenanceRequests_Table.AssignedTechnicianColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'RequestDate' in table 'MaintenanceRequests Table' is DBNull"& _ 
-                            ".", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'AssignedTechnician' in table 'MaintenanceRequests Table' is"& _ 
+                            " DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableMaintenanceRequests_Table.RequestDateColumn) = value
+                Me(Me.tableMaintenanceRequests_Table.AssignedTechnicianColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property ResidentID() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableMaintenanceRequests_Table.ResidentIDColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ResidentID' in table 'MaintenanceRequests Table' is DBNull."& _ 
-                            "", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableMaintenanceRequests_Table.ResidentIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsStaffIDNull() As Boolean
-            Return Me.IsNull(Me.tableMaintenanceRequests_Table.StaffIDColumn)
+        Public Function IsReportedByNull() As Boolean
+            Return Me.IsNull(Me.tableMaintenanceRequests_Table.ReportedByColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetStaffIDNull()
-            Me(Me.tableMaintenanceRequests_Table.StaffIDColumn) = Global.System.Convert.DBNull
+        Public Sub SetReportedByNull()
+            Me(Me.tableMaintenanceRequests_Table.ReportedByColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -736,6 +740,18 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsMaintenanceTypeNull() As Boolean
+            Return Me.IsNull(Me.tableMaintenanceRequests_Table.MaintenanceTypeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetMaintenanceTypeNull()
+            Me(Me.tableMaintenanceRequests_Table.MaintenanceTypeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsStatusNull() As Boolean
             Return Me.IsNull(Me.tableMaintenanceRequests_Table.StatusColumn)
         End Function
@@ -748,26 +764,14 @@ Partial Public Class NursingHomeManagemetSystemdbDataSet3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsRequestDateNull() As Boolean
-            Return Me.IsNull(Me.tableMaintenanceRequests_Table.RequestDateColumn)
+        Public Function IsAssignedTechnicianNull() As Boolean
+            Return Me.IsNull(Me.tableMaintenanceRequests_Table.AssignedTechnicianColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetRequestDateNull()
-            Me(Me.tableMaintenanceRequests_Table.RequestDateColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsResidentIDNull() As Boolean
-            Return Me.IsNull(Me.tableMaintenanceRequests_Table.ResidentIDColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetResidentIDNull()
-            Me(Me.tableMaintenanceRequests_Table.ResidentIDColumn) = Global.System.Convert.DBNull
+        Public Sub SetAssignedTechnicianNull()
+            Me(Me.tableMaintenanceRequests_Table.AssignedTechnicianColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -938,11 +942,11 @@ Namespace NursingHomeManagemetSystemdbDataSet3TableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "MaintenanceRequests Table"
             tableMapping.ColumnMappings.Add("RequestID", "RequestID")
-            tableMapping.ColumnMappings.Add("StaffID", "StaffID")
+            tableMapping.ColumnMappings.Add("ReportedBy", "ReportedBy")
             tableMapping.ColumnMappings.Add("IssueDescription", "IssueDescription")
+            tableMapping.ColumnMappings.Add("MaintenanceType", "MaintenanceType")
             tableMapping.ColumnMappings.Add("Status", "Status")
-            tableMapping.ColumnMappings.Add("RequestDate", "RequestDate")
-            tableMapping.ColumnMappings.Add("ResidentID", "ResidentID")
+            tableMapping.ColumnMappings.Add("AssignedTechnician", "AssignedTechnician")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
