@@ -43,9 +43,7 @@ Partial Class mainform
         Me.StaffAttendanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StaffContactInformationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MedicinesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddNewMedicineToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IssueMedicinesToResidentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MedicineStockManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrescriptionHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CarePlansToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ResidentSpecificCarePlansToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -230,37 +228,23 @@ Partial Class mainform
         '
         'MedicinesToolStripMenuItem
         '
-        Me.MedicinesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNewMedicineToolStripMenuItem, Me.IssueMedicinesToResidentsToolStripMenuItem, Me.MedicineStockManagementToolStripMenuItem, Me.PrescriptionHistoryToolStripMenuItem})
+        Me.MedicinesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IssueMedicinesToResidentsToolStripMenuItem, Me.PrescriptionHistoryToolStripMenuItem})
         Me.MedicinesToolStripMenuItem.Name = "MedicinesToolStripMenuItem"
         Me.MedicinesToolStripMenuItem.Size = New System.Drawing.Size(90, 24)
         Me.MedicinesToolStripMenuItem.Text = "Medicines"
-        '
-        'AddNewMedicineToolStripMenuItem
-        '
-        Me.AddNewMedicineToolStripMenuItem.Image = CType(resources.GetObject("AddNewMedicineToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.AddNewMedicineToolStripMenuItem.Name = "AddNewMedicineToolStripMenuItem"
-        Me.AddNewMedicineToolStripMenuItem.Size = New System.Drawing.Size(285, 26)
-        Me.AddNewMedicineToolStripMenuItem.Text = "Add New Medicine"
         '
         'IssueMedicinesToResidentsToolStripMenuItem
         '
         Me.IssueMedicinesToResidentsToolStripMenuItem.Image = CType(resources.GetObject("IssueMedicinesToResidentsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.IssueMedicinesToResidentsToolStripMenuItem.Name = "IssueMedicinesToResidentsToolStripMenuItem"
-        Me.IssueMedicinesToResidentsToolStripMenuItem.Size = New System.Drawing.Size(285, 26)
+        Me.IssueMedicinesToResidentsToolStripMenuItem.Size = New System.Drawing.Size(280, 26)
         Me.IssueMedicinesToResidentsToolStripMenuItem.Text = "Issue Medicines to Residents"
-        '
-        'MedicineStockManagementToolStripMenuItem
-        '
-        Me.MedicineStockManagementToolStripMenuItem.Image = CType(resources.GetObject("MedicineStockManagementToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.MedicineStockManagementToolStripMenuItem.Name = "MedicineStockManagementToolStripMenuItem"
-        Me.MedicineStockManagementToolStripMenuItem.Size = New System.Drawing.Size(285, 26)
-        Me.MedicineStockManagementToolStripMenuItem.Text = "Medicine Stock Management"
         '
         'PrescriptionHistoryToolStripMenuItem
         '
         Me.PrescriptionHistoryToolStripMenuItem.Image = CType(resources.GetObject("PrescriptionHistoryToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PrescriptionHistoryToolStripMenuItem.Name = "PrescriptionHistoryToolStripMenuItem"
-        Me.PrescriptionHistoryToolStripMenuItem.Size = New System.Drawing.Size(285, 26)
+        Me.PrescriptionHistoryToolStripMenuItem.Size = New System.Drawing.Size(280, 26)
         Me.PrescriptionHistoryToolStripMenuItem.Text = "Prescription History"
         '
         'CarePlansToolStripMenuItem
@@ -628,7 +612,7 @@ Partial Class mainform
         Me.Controls.Add(Me.StatusStrip)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "mainform"
         Me.Text = "Nursing Home Management form"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -677,9 +661,7 @@ Partial Class mainform
     Friend WithEvents AssignDutiesShiftsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StaffAttendanceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StaffContactInformationToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AddNewMedicineToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents IssueMedicinesToResidentsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MedicineStockManagementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PrescriptionHistoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ResidentsToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StaffToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem

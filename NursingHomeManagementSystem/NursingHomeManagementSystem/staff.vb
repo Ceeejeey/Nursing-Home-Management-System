@@ -257,7 +257,8 @@ Private Sub Butsearch_Click(sender As Object, e As EventArgs) Handles Butsearch.
             conn.Close()
         End Try
     End Sub
-
+	
+	
 
 
     Private Sub Staff_Load(sender As Object, e As EventArgs) Handles MyBase.Load

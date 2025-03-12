@@ -162,4 +162,26 @@ Private Sub ReportMaintenanceIssuesToolStripMenuItem_Click(sender As Object, e A
     End If
 End Sub
 
+
+Private Sub IssueMedicinesToResidentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IssueMedicinesToResidentsToolStripMenuItem.Click
+     ' Check if the form is already open to prevent multiple instances
+    Dim medicinesForm As MedicinesForm = Nothing
+
+    ' Loop through open forms to check if Staff form is already opened
+    For Each openForm As Form In Application.OpenForms
+        If TypeOf openForm Is Staff Then
+            medicinesForm = CType(openForm, MedicinesForm)
+            Exit For
+        End If
+    Next
+
+    ' If the form is not open, create a new instance and show it
+    If medicinesForm Is Nothing Then
+        medicinesForm = New MedicinesForm()
+        medicinesForm.Show()
+    Else
+        ' If already open, bring it to front
+        medicinesForm.BringToFront()
+    End If
+End Sub
 End Class
