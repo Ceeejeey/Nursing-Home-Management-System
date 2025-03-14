@@ -22,21 +22,26 @@ Partial Class ResidentsReports
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.ResidentsDataDataGridView = New System.Windows.Forms.DataGridView()
-        Me.ResidentsDataReportViewer = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.buttonResidentsData = New System.Windows.Forms.Button()
-        Me.buttonGenerateReport = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.textsearch = New System.Windows.Forms.TextBox()
         Me.Butsearch = New System.Windows.Forms.Button()
+        Me.ResidentsDataDataGridView = New System.Windows.Forms.DataGridView()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ResidentsDataReportViewer = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.buttonGenerateReport = New System.Windows.Forms.Button()
+        Me.buttonResidentsData = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ResidentsReports_TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ResidentsDataDataSet = New NursingHomeManagementSystem.ResidentsDataDataSet()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.ResidentsDataDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.ResidentsReports_TableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ResidentsDataDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -49,6 +54,35 @@ Partial Class ResidentsReports
         Me.Panel1.Size = New System.Drawing.Size(629, 550)
         Me.Panel1.TabIndex = 0
         '
+        'textsearch
+        '
+        Me.textsearch.Location = New System.Drawing.Point(188, 40)
+        Me.textsearch.Name = "textsearch"
+        Me.textsearch.Size = New System.Drawing.Size(173, 22)
+        Me.textsearch.TabIndex = 2
+        '
+        'Butsearch
+        '
+        Me.Butsearch.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Butsearch.Location = New System.Drawing.Point(391, 33)
+        Me.Butsearch.Name = "Butsearch"
+        Me.Butsearch.Size = New System.Drawing.Size(100, 36)
+        Me.Butsearch.TabIndex = 3
+        Me.Butsearch.Text = "Search"
+        Me.Butsearch.UseVisualStyleBackColor = False
+        '
+        'ResidentsDataDataGridView
+        '
+        Me.ResidentsDataDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.ResidentsDataDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.ResidentsDataDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ResidentsDataDataGridView.Location = New System.Drawing.Point(27, 106)
+        Me.ResidentsDataDataGridView.Name = "ResidentsDataDataGridView"
+        Me.ResidentsDataDataGridView.RowHeadersWidth = 51
+        Me.ResidentsDataDataGridView.RowTemplate.Height = 24
+        Me.ResidentsDataDataGridView.Size = New System.Drawing.Size(582, 424)
+        Me.ResidentsDataDataGridView.TabIndex = 1
+        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.ResidentsDataReportViewer)
@@ -57,22 +91,12 @@ Partial Class ResidentsReports
         Me.Panel2.Size = New System.Drawing.Size(677, 347)
         Me.Panel2.TabIndex = 0
         '
-        'ResidentsDataDataGridView
-        '
-        Me.ResidentsDataDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ResidentsDataDataGridView.Location = New System.Drawing.Point(16, 97)
-        Me.ResidentsDataDataGridView.Name = "ResidentsDataDataGridView"
-        Me.ResidentsDataDataGridView.RowHeadersWidth = 51
-        Me.ResidentsDataDataGridView.RowTemplate.Height = 24
-        Me.ResidentsDataDataGridView.Size = New System.Drawing.Size(596, 502)
-        Me.ResidentsDataDataGridView.TabIndex = 1
-        '
         'ResidentsDataReportViewer
         '
-        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Name = "ResidentsDataSet"
         ReportDataSource1.Value = Nothing
         Me.ResidentsDataReportViewer.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ResidentsDataReportViewer.LocalReport.ReportEmbeddedResource = "NursingHomeManagementSystem.Report1.rdlc"
+        Me.ResidentsDataReportViewer.LocalReport.ReportEmbeddedResource = "NursingHomeManagementSystem.ResidentsReport.rdlc"
         Me.ResidentsDataReportViewer.Location = New System.Drawing.Point(14, 16)
         Me.ResidentsDataReportViewer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ResidentsDataReportViewer.Name = "ResidentsDataReportViewer"
@@ -89,23 +113,25 @@ Partial Class ResidentsReports
         Me.Panel3.Size = New System.Drawing.Size(677, 182)
         Me.Panel3.TabIndex = 1
         '
-        'buttonResidentsData
-        '
-        Me.buttonResidentsData.Location = New System.Drawing.Point(159, 97)
-        Me.buttonResidentsData.Name = "buttonResidentsData"
-        Me.buttonResidentsData.Size = New System.Drawing.Size(172, 51)
-        Me.buttonResidentsData.TabIndex = 0
-        Me.buttonResidentsData.Text = "Load All Residents Data"
-        Me.buttonResidentsData.UseVisualStyleBackColor = True
-        '
         'buttonGenerateReport
         '
+        Me.buttonGenerateReport.BackColor = System.Drawing.Color.LightSkyBlue
         Me.buttonGenerateReport.Location = New System.Drawing.Point(401, 97)
         Me.buttonGenerateReport.Name = "buttonGenerateReport"
         Me.buttonGenerateReport.Size = New System.Drawing.Size(158, 51)
         Me.buttonGenerateReport.TabIndex = 1
         Me.buttonGenerateReport.Text = "Generate Report"
-        Me.buttonGenerateReport.UseVisualStyleBackColor = True
+        Me.buttonGenerateReport.UseVisualStyleBackColor = False
+        '
+        'buttonResidentsData
+        '
+        Me.buttonResidentsData.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.buttonResidentsData.Location = New System.Drawing.Point(159, 97)
+        Me.buttonResidentsData.Name = "buttonResidentsData"
+        Me.buttonResidentsData.Size = New System.Drawing.Size(172, 51)
+        Me.buttonResidentsData.TabIndex = 0
+        Me.buttonResidentsData.Text = "Load All Residents Data"
+        Me.buttonResidentsData.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -119,21 +145,15 @@ Partial Class ResidentsReports
         Me.Label1.Text = "Residents Reports"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'textsearch
+        'ResidentsReports_TableBindingSource
         '
-        Me.textsearch.Location = New System.Drawing.Point(219, 40)
-        Me.textsearch.Name = "textsearch"
-        Me.textsearch.Size = New System.Drawing.Size(100, 22)
-        Me.textsearch.TabIndex = 2
+        Me.ResidentsReports_TableBindingSource.DataSource = Me.ResidentsDataDataSet
+        Me.ResidentsReports_TableBindingSource.Position = 0
         '
-        'Butsearch
+        'ResidentsDataDataSet
         '
-        Me.Butsearch.Location = New System.Drawing.Point(384, 39)
-        Me.Butsearch.Name = "Butsearch"
-        Me.Butsearch.Size = New System.Drawing.Size(75, 23)
-        Me.Butsearch.TabIndex = 3
-        Me.Butsearch.Text = "Search"
-        Me.Butsearch.UseVisualStyleBackColor = True
+        Me.ResidentsDataDataSet.DataSetName = "ResidentsDataDataSet"
+        Me.ResidentsDataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ResidentsReports
         '
@@ -148,9 +168,11 @@ Partial Class ResidentsReports
         Me.Text = "ResidentsReports"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         CType(Me.ResidentsDataDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        CType(Me.ResidentsReports_TableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ResidentsDataDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -165,4 +187,6 @@ Partial Class ResidentsReports
     Friend WithEvents Label1 As Label
     Friend WithEvents textsearch As TextBox
     Friend WithEvents Butsearch As Button
+    Friend WithEvents ResidentsReports_TableBindingSource As BindingSource
+    Friend WithEvents ResidentsDataDataSet As ResidentsDataDataSet
 End Class
