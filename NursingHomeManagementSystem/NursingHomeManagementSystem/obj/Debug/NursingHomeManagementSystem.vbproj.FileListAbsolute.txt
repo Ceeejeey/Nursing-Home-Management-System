@@ -113,3 +113,4 @@ D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\bin\Debug\ru\M
 D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\obj\Debug\NursingHomeManagementSystem.CarePlans.resources
+D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\obj\Debug\NursingHomeManagementSystem.FamilyCommunication.resources

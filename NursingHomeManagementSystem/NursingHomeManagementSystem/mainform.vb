@@ -207,4 +207,28 @@ Private Sub ResidentSpecificCarePlansToolStripMenuItem_Click(sender As Object, e
     End If
 End Sub
 
+
+
+Private Sub ResidentFamilyContactsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResidentFamilyContactsToolStripMenuItem.Click
+     ' Check if the form is already open to prevent multiple instances
+    Dim familyCommunication As FamilyCommunication = Nothing
+
+        ' Loop through open forms to check if Staff form is already opened
+        For Each openForm As Form In Application.OpenForms
+            If TypeOf openForm Is FamilyCommunication Then
+                familyCommunication = CType(familyCommunication, FamilyCommunication)
+                Exit For
+            End If
+        Next
+
+    ' If the form is not open, create a new instance and show it
+    If familyCommunication Is Nothing Then
+        familyCommunication = New FamilyCommunication()
+        familyCommunication.Show()
+    Else
+        ' If already open, bring it to front
+        familyCommunication.BringToFront()
+    End If
+End Sub
+
 End Class
