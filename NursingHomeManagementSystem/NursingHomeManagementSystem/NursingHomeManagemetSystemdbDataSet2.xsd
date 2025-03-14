@@ -86,30 +86,30 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="NursingHomeManagemetSystemdbDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="NursingHomeManagemetSystemdbDataSet2" msprop:Generator_DataSetName="NursingHomeManagemetSystemdbDataSet2">
+  <xs:element name="NursingHomeManagemetSystemdbDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="NursingHomeManagemetSystemdbDataSet2" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NursingHomeManagemetSystemdbDataSet2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="MaintenanceRequests_x0020_Table" msprop:Generator_RowClassName="MaintenanceRequests_TableRow" msprop:Generator_RowEvHandlerName="MaintenanceRequests_TableRowChangeEventHandler" msprop:Generator_RowDeletedName="MaintenanceRequests_TableRowDeleted" msprop:Generator_RowDeletingName="MaintenanceRequests_TableRowDeleting" msprop:Generator_RowEvArgName="MaintenanceRequests_TableRowChangeEvent" msprop:Generator_TablePropName="MaintenanceRequests_Table" msprop:Generator_RowChangedName="MaintenanceRequests_TableRowChanged" msprop:Generator_RowChangingName="MaintenanceRequests_TableRowChanging" msprop:Generator_TableClassName="MaintenanceRequests_TableDataTable" msprop:Generator_UserTableName="MaintenanceRequests Table" msprop:Generator_TableVarName="tableMaintenanceRequests_Table">
+        <xs:element name="MaintenanceRequests_x0020_Table" msprop:Generator_RowEvHandlerName="MaintenanceRequests_TableRowChangeEventHandler" msprop:Generator_RowDeletedName="MaintenanceRequests_TableRowDeleted" msprop:Generator_RowDeletingName="MaintenanceRequests_TableRowDeleting" msprop:Generator_RowEvArgName="MaintenanceRequests_TableRowChangeEvent" msprop:Generator_TablePropName="MaintenanceRequests_Table" msprop:Generator_RowChangedName="MaintenanceRequests_TableRowChanged" msprop:Generator_UserTableName="MaintenanceRequests Table" msprop:Generator_RowChangingName="MaintenanceRequests_TableRowChanging" msprop:Generator_RowClassName="MaintenanceRequests_TableRow" msprop:Generator_TableClassName="MaintenanceRequests_TableDataTable" msprop:Generator_TableVarName="tableMaintenanceRequests_Table">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="RequestID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="RequestID" msprop:Generator_ColumnPropNameInTable="RequestIDColumn" msprop:Generator_ColumnVarNameInTable="columnRequestID" msprop:Generator_UserColumnName="RequestID" type="xs:int" />
-              <xs:element name="ReportedBy" msprop:Generator_ColumnPropNameInRow="ReportedBy" msprop:Generator_ColumnPropNameInTable="ReportedByColumn" msprop:Generator_ColumnVarNameInTable="columnReportedBy" msprop:Generator_UserColumnName="ReportedBy" type="xs:int" minOccurs="0" />
-              <xs:element name="IssueDescription" msprop:Generator_ColumnPropNameInRow="IssueDescription" msprop:Generator_ColumnPropNameInTable="IssueDescriptionColumn" msprop:Generator_ColumnVarNameInTable="columnIssueDescription" msprop:Generator_UserColumnName="IssueDescription" minOccurs="0">
+              <xs:element name="RequestID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="RequestID" msprop:Generator_ColumnPropNameInTable="RequestIDColumn" msprop:Generator_ColumnPropNameInRow="RequestID" msprop:Generator_ColumnVarNameInTable="columnRequestID" type="xs:int" />
+              <xs:element name="ReportedBy" msprop:Generator_UserColumnName="ReportedBy" msprop:Generator_ColumnPropNameInTable="ReportedByColumn" msprop:Generator_ColumnPropNameInRow="ReportedBy" msprop:Generator_ColumnVarNameInTable="columnReportedBy" type="xs:int" minOccurs="0" />
+              <xs:element name="IssueDescription" msprop:Generator_UserColumnName="IssueDescription" msprop:Generator_ColumnPropNameInTable="IssueDescriptionColumn" msprop:Generator_ColumnPropNameInRow="IssueDescription" msprop:Generator_ColumnVarNameInTable="columnIssueDescription" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MaintenanceType" msprop:Generator_ColumnPropNameInRow="MaintenanceType" msprop:Generator_ColumnPropNameInTable="MaintenanceTypeColumn" msprop:Generator_ColumnVarNameInTable="columnMaintenanceType" msprop:Generator_UserColumnName="MaintenanceType" minOccurs="0">
+              <xs:element name="MaintenanceType" msprop:Generator_UserColumnName="MaintenanceType" msprop:Generator_ColumnPropNameInTable="MaintenanceTypeColumn" msprop:Generator_ColumnPropNameInRow="MaintenanceType" msprop:Generator_ColumnVarNameInTable="columnMaintenanceType" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_UserColumnName="Status" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="AssignedTechnician" msprop:Generator_ColumnPropNameInRow="AssignedTechnician" msprop:Generator_ColumnPropNameInTable="AssignedTechnicianColumn" msprop:Generator_ColumnVarNameInTable="columnAssignedTechnician" msprop:Generator_UserColumnName="AssignedTechnician" type="xs:int" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AssignedTechnician" msprop:Generator_UserColumnName="AssignedTechnician" msprop:Generator_ColumnPropNameInTable="AssignedTechnicianColumn" msprop:Generator_ColumnPropNameInRow="AssignedTechnician" msprop:Generator_ColumnVarNameInTable="columnAssignedTechnician" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

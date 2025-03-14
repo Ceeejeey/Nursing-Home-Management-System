@@ -162,6 +162,17 @@
     <Compile Include="Residents.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ResidentsDataDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResidentsDataDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentsReports.Designer.vb">
+      <DependentUpon>ResidentsReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentsReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Staff.Designer.vb">
       <DependentUpon>Staff.vb</DependentUpon>
     </Compile>
@@ -227,6 +238,10 @@
     <EmbeddedResource Include="Residents.resx">
       <DependentUpon>Residents.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResidentsReport.rdlc" />
+    <EmbeddedResource Include="ResidentsReports.resx">
+      <DependentUpon>ResidentsReports.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.vb</DependentUpon>
     </EmbeddedResource>
@@ -291,6 +306,17 @@
       <DependentUpon>NursingHomeManagemetSystemdbDataSet3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="ResidentsDataDataSet.xsc">
+      <DependentUpon>ResidentsDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ResidentsDataDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResidentsDataDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ResidentsDataDataSet.xss">
+      <DependentUpon>ResidentsDataDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\IHM-Sunshine-Carey-Home-offers-long-term-care-and-activities-for-senior-citizens.jpg" />
   </ItemGroup>
   <ItemGroup>
