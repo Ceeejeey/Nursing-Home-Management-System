@@ -91,6 +91,48 @@ Public Class MedicinesReport
     End Function
 
 
+ Private Sub Butsearch_Click(sender As Object, e As EventArgs) Handles Butsearch.Click
+        Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
+        Dim conn As New OleDbConnection(connString)
 
+        Try
+            ' Open the connection
+            conn.Open()
 
+            ' SQL query to fetch Resident details by ID or Name
+            Dim query As String = "SELECT * FROM Medicines WHERE ResidentID LIKE @SearchText"
+            Dim cmd As New OleDbCommand(query, conn)
+
+            ' Set search parameter (wildcard for partial matching)
+            cmd.Parameters.AddWithValue("@SearchText", "%" & textsearch.Text.Trim() & "%")
+
+            ' Execute the query and load data into a DataTable
+            Dim adapter As New OleDbDataAdapter(cmd)
+            Dim dt As New DataTable()
+            adapter.Fill(dt)
+
+            ' Bind the DataGridView to the filtered data
+            MedicinesUsageReportDataGridView.DataSource = dt
+
+            ' Check if any results were found
+            If dt.Rows.Count > 0 Then
+                MessageBox.Show("Resident(s) found!", "Search Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("No matching residents found.", "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+
+    Private Sub BindingSource1_CurrentChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ButSearch_Click_1(sender As Object, e As EventArgs) Handles ButSearch.Click
+
+    End Sub
 End Class

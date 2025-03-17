@@ -216,6 +216,20 @@
     <Compile Include="StaffAttendance.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="StaffPerfomanceDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaffPerfomanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StaffPerfomanceDataSet.vb">
+      <DependentUpon>StaffPerfomanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StaffPerfomanceReport.Designer.vb">
+      <DependentUpon>StaffPerfomanceReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffPerfomanceReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="txtResidentName.vb" />
     <Compile Include="xDBConnection.vb" />
     <Compile Include="xSQLCommandsNew.vb" />
@@ -266,6 +280,10 @@
     <EmbeddedResource Include="StaffAttendance.resx">
       <DependentUpon>StaffAttendance.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StaffPerfomanceReport.rdlc" />
+    <EmbeddedResource Include="StaffPerfomanceReport.resx">
+      <DependentUpon>StaffPerfomanceReport.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="MedicineUsageDataSet.xsc">
@@ -288,6 +306,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="StaffPerfomanceDataSet.xsc">
+      <DependentUpon>StaffPerfomanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StaffPerfomanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StaffPerfomanceDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="StaffPerfomanceDataSet.xss">
+      <DependentUpon>StaffPerfomanceDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="NursingHomeManagemetSystemdbDataSet.xsc">

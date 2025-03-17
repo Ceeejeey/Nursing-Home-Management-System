@@ -55,18 +55,19 @@ Partial Class MedicinesReport
         '
         'ButSearch
         '
-        Me.ButSearch.Location = New System.Drawing.Point(359, 32)
+        Me.ButSearch.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.ButSearch.Location = New System.Drawing.Point(352, 23)
         Me.ButSearch.Name = "ButSearch"
-        Me.ButSearch.Size = New System.Drawing.Size(75, 23)
+        Me.ButSearch.Size = New System.Drawing.Size(98, 40)
         Me.ButSearch.TabIndex = 5
         Me.ButSearch.Text = "Search"
-        Me.ButSearch.UseVisualStyleBackColor = True
+        Me.ButSearch.UseVisualStyleBackColor = False
         '
         'textsearch
         '
-        Me.textsearch.Location = New System.Drawing.Point(229, 32)
+        Me.textsearch.Location = New System.Drawing.Point(155, 32)
         Me.textsearch.Name = "textsearch"
-        Me.textsearch.Size = New System.Drawing.Size(100, 22)
+        Me.textsearch.Size = New System.Drawing.Size(174, 22)
         Me.textsearch.TabIndex = 2
         '
         'MedicinesUsageReportDataGridView
@@ -120,26 +121,23 @@ Partial Class MedicinesReport
         '
         'buttonGenerateReport
         '
+        Me.buttonGenerateReport.BackColor = System.Drawing.Color.LightSkyBlue
         Me.buttonGenerateReport.Location = New System.Drawing.Point(357, 103)
         Me.buttonGenerateReport.Name = "buttonGenerateReport"
         Me.buttonGenerateReport.Size = New System.Drawing.Size(155, 47)
         Me.buttonGenerateReport.TabIndex = 1
         Me.buttonGenerateReport.Text = "Generate Report"
-        Me.buttonGenerateReport.UseVisualStyleBackColor = True
+        Me.buttonGenerateReport.UseVisualStyleBackColor = False
         '
         'buttonLoadMedicines
         '
+        Me.buttonLoadMedicines.BackColor = System.Drawing.Color.LightSkyBlue
         Me.buttonLoadMedicines.Location = New System.Drawing.Point(115, 103)
         Me.buttonLoadMedicines.Name = "buttonLoadMedicines"
         Me.buttonLoadMedicines.Size = New System.Drawing.Size(161, 47)
         Me.buttonLoadMedicines.TabIndex = 0
         Me.buttonLoadMedicines.Text = "Load Medicineas Data"
-        Me.buttonLoadMedicines.UseVisualStyleBackColor = True
-        '
-        'MedicinesUsage
-        '
-        Me.MedicinesUsage.DataSource = Me.MedicineUsageDataSet
-        Me.MedicinesUsage.Position = 0
+        Me.buttonLoadMedicines.UseVisualStyleBackColor = False
         '
         'MedicineUsageDataSet
         '
