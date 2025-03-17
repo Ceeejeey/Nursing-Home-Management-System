@@ -377,7 +377,7 @@ Partial Class mainform
         '
         Me.DetailsViewToolStripMenuItem.Image = CType(resources.GetObject("DetailsViewToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DetailsViewToolStripMenuItem.Name = "DetailsViewToolStripMenuItem"
-        Me.DetailsViewToolStripMenuItem.Size = New System.Drawing.Size(174, 26)
+        Me.DetailsViewToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.DetailsViewToolStripMenuItem.Text = "Details View"
         '
         'ToolsMenu
@@ -391,7 +391,7 @@ Partial Class mainform
         '
         Me.OptionsToolStripMenuItem.Image = CType(resources.GetObject("OptionsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(144, 26)
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.OptionsToolStripMenuItem.Text = "&Options"
         '
         'WindowsMenu
@@ -405,38 +405,38 @@ Partial Class mainform
         '
         Me.NewWindowToolStripMenuItem.Image = CType(resources.GetObject("NewWindowToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NewWindowToolStripMenuItem.Name = "NewWindowToolStripMenuItem"
-        Me.NewWindowToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
+        Me.NewWindowToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.NewWindowToolStripMenuItem.Text = "&New Window"
         '
         'CascadeToolStripMenuItem
         '
         Me.CascadeToolStripMenuItem.Name = "CascadeToolStripMenuItem"
-        Me.CascadeToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
+        Me.CascadeToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.CascadeToolStripMenuItem.Text = "&Cascade"
         '
         'TileVerticalToolStripMenuItem
         '
         Me.TileVerticalToolStripMenuItem.Name = "TileVerticalToolStripMenuItem"
-        Me.TileVerticalToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
+        Me.TileVerticalToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.TileVerticalToolStripMenuItem.Text = "Tile &Vertical"
         '
         'TileHorizontalToolStripMenuItem
         '
         Me.TileHorizontalToolStripMenuItem.Name = "TileHorizontalToolStripMenuItem"
-        Me.TileHorizontalToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
+        Me.TileHorizontalToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.TileHorizontalToolStripMenuItem.Text = "Tile &Horizontal"
         '
         'CloseAllToolStripMenuItem
         '
         Me.CloseAllToolStripMenuItem.Image = CType(resources.GetObject("CloseAllToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CloseAllToolStripMenuItem.Name = "CloseAllToolStripMenuItem"
-        Me.CloseAllToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
+        Me.CloseAllToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.CloseAllToolStripMenuItem.Text = "C&lose All"
         '
         'ArrangeIconsToolStripMenuItem
         '
         Me.ArrangeIconsToolStripMenuItem.Name = "ArrangeIconsToolStripMenuItem"
-        Me.ArrangeIconsToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
+        Me.ArrangeIconsToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ArrangeIconsToolStripMenuItem.Text = "&Arrange Icons"
         '
         'HelpMenu
@@ -450,7 +450,7 @@ Partial Class mainform
         '
         Me.ContentsToolStripMenuItem.Name = "ContentsToolStripMenuItem"
         Me.ContentsToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.ContentsToolStripMenuItem.Size = New System.Drawing.Size(207, 26)
+        Me.ContentsToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ContentsToolStripMenuItem.Text = "&Contents"
         '
         'IndexToolStripMenuItem
@@ -458,7 +458,7 @@ Partial Class mainform
         Me.IndexToolStripMenuItem.Image = CType(resources.GetObject("IndexToolStripMenuItem.Image"), System.Drawing.Image)
         Me.IndexToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.IndexToolStripMenuItem.Name = "IndexToolStripMenuItem"
-        Me.IndexToolStripMenuItem.Size = New System.Drawing.Size(207, 26)
+        Me.IndexToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.IndexToolStripMenuItem.Text = "&Index"
         '
         'SearchToolStripMenuItem
@@ -466,18 +466,18 @@ Partial Class mainform
         Me.SearchToolStripMenuItem.Image = CType(resources.GetObject("SearchToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SearchToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(207, 26)
+        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.SearchToolStripMenuItem.Text = "&Search"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(204, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(221, 6)
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(207, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.AboutToolStripMenuItem.Text = "&About ..."
         '
         'ToolStrip
