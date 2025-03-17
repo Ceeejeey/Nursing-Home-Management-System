@@ -120,6 +120,20 @@
     <Compile Include="MedicinesForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MedicinesReport.Designer.vb">
+      <DependentUpon>MedicinesReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MedicinesReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicineUsageDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MedicineUsageDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MedicineUsageDataSet.vb">
+      <DependentUpon>MedicineUsageDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\Residents.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +236,10 @@
     <EmbeddedResource Include="MedicinesForm.resx">
       <DependentUpon>MedicinesForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MedicinesReport.resx">
+      <DependentUpon>MedicinesReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicineUsageReport.rdlc" />
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +268,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="MedicineUsageDataSet.xsc">
+      <DependentUpon>MedicineUsageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MedicineUsageDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MedicineUsageDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="MedicineUsageDataSet.xss">
+      <DependentUpon>MedicineUsageDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
     </None>
