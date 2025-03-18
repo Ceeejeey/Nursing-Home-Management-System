@@ -59,6 +59,18 @@ Partial Class Residents
         Me.textsearch = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.ResidentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateOfBirthDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MedicalHistoryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CarePlanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FamilyContactNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+
+
+        Me.AdmissionDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DischargeDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+
+
         CType(Me.picboxresidentphoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridViewresidentlist, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -338,10 +350,12 @@ Partial Class Residents
         'DataGridViewresidentlist
         '
         Me.DataGridViewresidentlist.AllowUserToOrderColumns = True
+        Me.DataGridViewresidentlist.AutoGenerateColumns = False
         Me.DataGridViewresidentlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewresidentlist.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ResidentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DateOfBirthDataGridViewTextBoxColumn, Me.MedicalHistoryDataGridViewTextBoxColumn, Me.CarePlanDataGridViewTextBoxColumn, Me.FamilyContactNameDataGridViewTextBoxColumn, Me.AdmissionDateDataGridViewTextBoxColumn, Me.DischargeDateDataGridViewTextBoxColumn})
+
         Me.DataGridViewresidentlist.Location = New System.Drawing.Point(29, 142)
         Me.DataGridViewresidentlist.Name = "DataGridViewresidentlist"
-        Me.DataGridViewresidentlist.RowHeadersWidth = 51
         Me.DataGridViewresidentlist.RowTemplate.Height = 28
         Me.DataGridViewresidentlist.Size = New System.Drawing.Size(640, 333)
         Me.DataGridViewresidentlist.TabIndex = 5
@@ -409,6 +423,56 @@ Partial Class Residents
         Me.textsearch.Name = "textsearch"
         Me.textsearch.Size = New System.Drawing.Size(286, 36)
         Me.textsearch.TabIndex = 0
+
+        'ResidentIDDataGridViewTextBoxColumn
+        '
+        Me.ResidentIDDataGridViewTextBoxColumn.DataPropertyName = "ResidentID"
+        Me.ResidentIDDataGridViewTextBoxColumn.HeaderText = "ResidentID"
+        Me.ResidentIDDataGridViewTextBoxColumn.Name = "ResidentIDDataGridViewTextBoxColumn"
+        '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "Name"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        '
+        'DateOfBirthDataGridViewTextBoxColumn
+        '
+        Me.DateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth"
+        Me.DateOfBirthDataGridViewTextBoxColumn.HeaderText = "DateOfBirth"
+        Me.DateOfBirthDataGridViewTextBoxColumn.Name = "DateOfBirthDataGridViewTextBoxColumn"
+        '
+        'MedicalHistoryDataGridViewTextBoxColumn
+        '
+        Me.MedicalHistoryDataGridViewTextBoxColumn.DataPropertyName = "MedicalHistory"
+        Me.MedicalHistoryDataGridViewTextBoxColumn.HeaderText = "MedicalHistory"
+        Me.MedicalHistoryDataGridViewTextBoxColumn.Name = "MedicalHistoryDataGridViewTextBoxColumn"
+        '
+        'CarePlanDataGridViewTextBoxColumn
+        '
+        Me.CarePlanDataGridViewTextBoxColumn.DataPropertyName = "CarePlan"
+        Me.CarePlanDataGridViewTextBoxColumn.HeaderText = "CarePlan"
+        Me.CarePlanDataGridViewTextBoxColumn.Name = "CarePlanDataGridViewTextBoxColumn"
+        '
+        'FamilyContactNameDataGridViewTextBoxColumn
+        '
+        Me.FamilyContactNameDataGridViewTextBoxColumn.DataPropertyName = "FamilyContact"
+        Me.FamilyContactNameDataGridViewTextBoxColumn.HeaderText = "FamilyContact"
+        Me.FamilyContactNameDataGridViewTextBoxColumn.Name = "FamilyContactNameDataGridViewTextBoxColumn"
+        '
+
+        '
+        'AdmissionDateDataGridViewTextBoxColumn
+        '
+        Me.AdmissionDateDataGridViewTextBoxColumn.DataPropertyName = "AdmissionDate"
+        Me.AdmissionDateDataGridViewTextBoxColumn.HeaderText = "AdmissionDate"
+        Me.AdmissionDateDataGridViewTextBoxColumn.Name = "AdmissionDateDataGridViewTextBoxColumn"
+
+        'DischargeDateDataGridViewTextBoxColumn
+        '
+        Me.DischargeDateDataGridViewTextBoxColumn.DataPropertyName = "DischargeDate"
+        Me.DischargeDateDataGridViewTextBoxColumn.HeaderText = "DischargeDate"
+        Me.DischargeDateDataGridViewTextBoxColumn.Name = "DischargeDateDataGridViewTextBoxColumn"
         '
         'Residents
         '

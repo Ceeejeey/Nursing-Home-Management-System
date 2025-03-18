@@ -22,59 +22,74 @@ Private Sub StaffAttendance_Load(sender As Object, e As EventArgs) Handles MyBas
 
     Private Sub currentdatebutton_Click(sender As Object, e As EventArgs) Handles currentdatebutton.Click
         Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
-        Dim conn As New OleDbConnection(connString)
 
         Try
-            conn.Open()
+            Using conn As New OleDbConnection(connString)
+                conn.Open()
 
-            ' Step 1: Get all staff details from StaffTable
-            Dim queryFetch As String = "SELECT StaffID, FullName, Role FROM StaffTable"
-            Dim cmdFetch As New OleDbCommand(queryFetch, conn)
-            Dim reader As OleDbDataReader = cmdFetch.ExecuteReader()
+                ' Step 1: Get all staff details from StaffTable
+                Dim queryFetch As String = "SELECT StaffID, FullName, Role FROM StaffTable"
+                Dim staffList As New List(Of Tuple(Of Integer, String, String))()
 
-            ' Step 2: Loop through each staff member and insert into StaffAttendanceTable
-            While reader.Read()
-                Dim staffID As String = reader("StaffID").ToString()
-                Dim fullName As String = reader("FullName").ToString()
-                Dim role As String = reader("Role").ToString()
-                Dim currentDate As String = DateTime.Now.ToString("yyyy-MM-dd") ' Store current date
+                Using cmdFetch As New OleDbCommand(queryFetch, conn)
+                    Using reader As OleDbDataReader = cmdFetch.ExecuteReader()
+                        While reader.Read()
+                            Dim staffID As Integer = Convert.ToInt32(reader("StaffID"))
+                            Dim fullName As String = reader("FullName").ToString()
+                            Dim role As String = reader("Role").ToString()
+                            staffList.Add(Tuple.Create(staffID, fullName, role))
+                        End While
+                    End Using
+                End Using
 
-                ' Check if staff already has an entry for today (to avoid duplicate entries)
-                Dim checkQuery As String = "SELECT COUNT(*) FROM StaffAttendanceTable WHERE StaffID = ? AND CurrentDate = ?"
-                Dim checkCmd As New OleDbCommand(checkQuery, conn)
-                checkCmd.Parameters.AddWithValue("?", staffID)
-                checkCmd.Parameters.AddWithValue("?", currentDate)
-                Dim count As Integer = Convert.ToInt32(checkCmd.ExecuteScalar())
+                ' Step 2: Insert new staff and update existing ones in StaffAttendanceTable
+                For Each staff In staffList
+                    Dim staffID As Integer = staff.Item1
+                    Dim fullName As String = staff.Item2
+                    Dim role As String = staff.Item3
+                    Dim currentDate As Date = DateTime.Now.Date ' Store as Date type
 
-                ' If no entry exists for today, insert the staff details into StaffAttendanceTable
-                If count = 0 Then
-                    Dim insertQuery As String = "INSERT INTO StaffAttendanceTable (StaffID, FullName, Role, CurrentDate) VALUES (?, ?, ?, ?)"
-                    Dim insertCmd As New OleDbCommand(insertQuery, conn)
+                    ' Check if the staff already exists in StaffAttendanceTable
+                    Dim checkQuery As String = "SELECT COUNT(*) FROM StaffAttendanceTable WHERE StaffID = ?"
+                    Using checkCmd As New OleDbCommand(checkQuery, conn)
+                        checkCmd.Parameters.AddWithValue("?", staffID)
 
-                    ' Assign values to parameters
-                    insertCmd.Parameters.AddWithValue("?", staffID)
-                    insertCmd.Parameters.AddWithValue("?", fullName)
-                    insertCmd.Parameters.AddWithValue("?", role)
-                    insertCmd.Parameters.AddWithValue("?", currentDate)
+                        Dim result As Object = checkCmd.ExecuteScalar()
+                        Dim count As Integer = If(result IsNot Nothing, Convert.ToInt32(result), 0)
 
-                    ' Execute insert
-                    insertCmd.ExecuteNonQuery()
-                End If
-            End While
-
-            reader.Close() ' Close the reader after use
+                        If count = 0 Then
+                            ' Insert new staff if they are not in the attendance table
+                            Dim insertQuery As String = "INSERT INTO StaffAttendanceTable (StaffID, FullName, Role, CurrentDate) VALUES (?, ?, ?, ?)"
+                            Using insertCmd As New OleDbCommand(insertQuery, conn)
+                                insertCmd.Parameters.AddWithValue("?", staffID)
+                                insertCmd.Parameters.AddWithValue("?", fullName)
+                                insertCmd.Parameters.AddWithValue("?", role)
+                                insertCmd.Parameters.AddWithValue("?", currentDate)
+                                insertCmd.ExecuteNonQuery()
+                            End Using
+                        Else
+                            ' Update existing staff's CurrentDate in the attendance table
+                            Dim updateQuery As String = "UPDATE StaffAttendanceTable SET CurrentDate = ? WHERE StaffID = ?"
+                            Using updateCmd As New OleDbCommand(updateQuery, conn)
+                                updateCmd.Parameters.AddWithValue("?", currentDate)
+                                updateCmd.Parameters.AddWithValue("?", staffID)
+                                updateCmd.ExecuteNonQuery()
+                            End Using
+                        End If
+                    End Using
+                Next
+            End Using
 
             ' Refresh DataGridView to show updated records
             RefreshDataGridView()
-
-            MessageBox.Show("Attendance records initialized for today!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Attendance records updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            conn.Close()
         End Try
     End Sub
+
+
 
     Private Sub RefreshDataGridView()
         Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
@@ -197,7 +212,7 @@ Private Sub StaffAttendance_Load(sender As Object, e As EventArgs) Handles MyBas
             ' **Update attendance record**
             Dim updateQuery As String = "UPDATE StaffAttendanceTable SET CheckInTime = ?, CheckOutTime = ?, Shift = ?, Attendance = ? WHERE StaffID = ? AND CurrentDate = ?"
             Dim updateCmd As New OleDbCommand(updateQuery, conn)
-            updateCmd.Parameters.AddWithValue("?", checkInTime)
+            updateCmd.Parameters.AddWithValue("?", If(checkInTime = "", DBNull.Value, checkInTime)), 
             updateCmd.Parameters.AddWithValue("?", If(checkOutTime = "", DBNull.Value, checkOutTime))
             updateCmd.Parameters.AddWithValue("?", shift)
             updateCmd.Parameters.AddWithValue("?", status)

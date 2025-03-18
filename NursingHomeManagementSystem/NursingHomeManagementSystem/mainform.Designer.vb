@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class mainform
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -21,7 +21,7 @@ Partial Class mainform
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainform))
@@ -80,11 +80,12 @@ Partial Class mainform
         '
         'MenuStrip
         '
+        Me.MenuStrip.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.ResidentsToolStripMenuItem, Me.StaffToolStripMenuItem, Me.MedicinesToolStripMenuItem, Me.CarePlansToolStripMenuItem, Me.FamilyContactsToolStripMenuItem, Me.MaintenanceRequestsToolStripMenuItem, Me.ReportsToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(1296, 28)
+        Me.MenuStrip.Size = New System.Drawing.Size(1257, 36)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
@@ -149,7 +150,7 @@ Partial Class mainform
         '
         Me.ViewEditResidentDetailsToolStripMenuItem.Image = CType(resources.GetObject("ViewEditResidentDetailsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ViewEditResidentDetailsToolStripMenuItem.Name = "ViewEditResidentDetailsToolStripMenuItem"
-        Me.ViewEditResidentDetailsToolStripMenuItem.Size = New System.Drawing.Size(275, 26)
+        Me.ViewEditResidentDetailsToolStripMenuItem.Size = New System.Drawing.Size(334, 32)
         Me.ViewEditResidentDetailsToolStripMenuItem.Text = "View / Edit Resident Details"
         '
         'MedicalHistoryCarePlanToolStripMenuItem
@@ -296,10 +297,10 @@ Partial Class mainform
         '
         Me.ToolStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.ToolStripSeparator2, Me.ToolStripButton1, Me.ToolStripSeparator6, Me.ToolStripButton2, Me.ToolStripSeparator7, Me.ToolStripButton4, Me.ToolStripSeparator9, Me.ToolStripButton5, Me.ToolStripSeparator11, Me.ToolStripButton6, Me.ToolStripSeparator12, Me.ToolStripButton3, Me.ToolStripSeparator10})
-        Me.ToolStrip.Location = New System.Drawing.Point(0, 28)
+        Me.ToolStrip.Location = New System.Drawing.Point(0, 36)
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStrip.Size = New System.Drawing.Size(1296, 27)
+        Me.ToolStrip.Size = New System.Drawing.Size(1257, 27)
         Me.ToolStrip.TabIndex = 6
         Me.ToolStrip.Text = "ToolStrip"
         '
@@ -404,7 +405,7 @@ Partial Class mainform
         Me.StatusStrip.Location = New System.Drawing.Point(0, 532)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.Padding = New System.Windows.Forms.Padding(2, 0, 19, 0)
-        Me.StatusStrip.Size = New System.Drawing.Size(1296, 26)
+        Me.StatusStrip.Size = New System.Drawing.Size(1257, 26)
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
         '
@@ -418,7 +419,9 @@ Partial Class mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1296, 558)
+        Me.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(1257, 558)
         Me.Controls.Add(Me.ToolStrip)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
