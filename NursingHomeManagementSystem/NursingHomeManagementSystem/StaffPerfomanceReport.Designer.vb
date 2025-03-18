@@ -23,22 +23,23 @@ Partial Class StaffPerfomanceReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StaffPerfomanceReport))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.StaffPerfomanceDataGridView = New System.Windows.Forms.DataGridView()
-        Me.buttonLoadStaffPerfomance = New System.Windows.Forms.Button()
-        Me.buttonGenerateReport = New System.Windows.Forms.Button()
-        Me.Butsearch = New System.Windows.Forms.Button()
         Me.textsearch = New System.Windows.Forms.TextBox()
+        Me.Butsearch = New System.Windows.Forms.Button()
+        Me.StaffPerfomanceDataGridView = New System.Windows.Forms.DataGridView()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.StaffPerfomanceDataReportViewer = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.buttonGenerateReport = New System.Windows.Forms.Button()
+        Me.buttonLoadStaffPerfomance = New System.Windows.Forms.Button()
         Me.StaffPerfomanceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaffPerfomanceDataSet = New NursingHomeManagementSystem.StaffPerfomanceDataSet()
         Me.Panel1.SuspendLayout()
+        CType(Me.StaffPerfomanceDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.StaffPerfomanceDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaffPerfomanceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaffPerfomanceDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,37 +51,38 @@ Partial Class StaffPerfomanceReport
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1331, 50)
+        Me.Label1.Size = New System.Drawing.Size(1257, 50)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Staff Perfomance Reports"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.textsearch)
         Me.Panel1.Controls.Add(Me.Butsearch)
         Me.Panel1.Controls.Add(Me.StaffPerfomanceDataGridView)
-        Me.Panel1.Location = New System.Drawing.Point(663, 53)
+        Me.Panel1.Location = New System.Drawing.Point(589, 53)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(656, 578)
+        Me.Panel1.Size = New System.Drawing.Size(668, 578)
         Me.Panel1.TabIndex = 1
         '
-        'Panel2
+        'textsearch
         '
-        Me.Panel2.Controls.Add(Me.StaffPerfomanceDataReportViewer)
-        Me.Panel2.Location = New System.Drawing.Point(12, 302)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(645, 329)
-        Me.Panel2.TabIndex = 2
+        Me.textsearch.Location = New System.Drawing.Point(164, 72)
+        Me.textsearch.Name = "textsearch"
+        Me.textsearch.Size = New System.Drawing.Size(225, 22)
+        Me.textsearch.TabIndex = 4
         '
-        'Panel3
+        'Butsearch
         '
-        Me.Panel3.Controls.Add(Me.buttonGenerateReport)
-        Me.Panel3.Controls.Add(Me.buttonLoadStaffPerfomance)
-        Me.Panel3.Location = New System.Drawing.Point(12, 53)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(645, 243)
-        Me.Panel3.TabIndex = 3
+        Me.Butsearch.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Butsearch.Location = New System.Drawing.Point(421, 66)
+        Me.Butsearch.Name = "Butsearch"
+        Me.Butsearch.Size = New System.Drawing.Size(102, 34)
+        Me.Butsearch.TabIndex = 3
+        Me.Butsearch.Text = "Search"
+        Me.Butsearch.UseVisualStyleBackColor = False
         '
         'StaffPerfomanceDataGridView
         '
@@ -92,15 +94,34 @@ Partial Class StaffPerfomanceReport
         Me.StaffPerfomanceDataGridView.Size = New System.Drawing.Size(641, 409)
         Me.StaffPerfomanceDataGridView.TabIndex = 0
         '
-        'buttonLoadStaffPerfomance
+        'Panel2
         '
-        Me.buttonLoadStaffPerfomance.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.buttonLoadStaffPerfomance.Location = New System.Drawing.Point(143, 83)
-        Me.buttonLoadStaffPerfomance.Name = "buttonLoadStaffPerfomance"
-        Me.buttonLoadStaffPerfomance.Size = New System.Drawing.Size(172, 46)
-        Me.buttonLoadStaffPerfomance.TabIndex = 1
-        Me.buttonLoadStaffPerfomance.Text = "Load Staff Perfomance"
-        Me.buttonLoadStaffPerfomance.UseVisualStyleBackColor = False
+        Me.Panel2.BackColor = System.Drawing.Color.Transparent
+        Me.Panel2.Controls.Add(Me.StaffPerfomanceDataReportViewer)
+        Me.Panel2.Location = New System.Drawing.Point(12, 302)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(569, 329)
+        Me.Panel2.TabIndex = 2
+        '
+        'StaffPerfomanceDataReportViewer
+        '
+        Me.StaffPerfomanceDataReportViewer.LocalReport.ReportEmbeddedResource = "NursingHomeManagementSystem.MedicineUsageReport.rdlc"
+        Me.StaffPerfomanceDataReportViewer.Location = New System.Drawing.Point(10, 19)
+        Me.StaffPerfomanceDataReportViewer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.StaffPerfomanceDataReportViewer.Name = "StaffPerfomanceDataReportViewer"
+        Me.StaffPerfomanceDataReportViewer.ServerReport.BearerToken = Nothing
+        Me.StaffPerfomanceDataReportViewer.Size = New System.Drawing.Size(555, 295)
+        Me.StaffPerfomanceDataReportViewer.TabIndex = 34
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.Controls.Add(Me.buttonGenerateReport)
+        Me.Panel3.Controls.Add(Me.buttonLoadStaffPerfomance)
+        Me.Panel3.Location = New System.Drawing.Point(12, 53)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(569, 243)
+        Me.Panel3.TabIndex = 3
         '
         'buttonGenerateReport
         '
@@ -112,32 +133,15 @@ Partial Class StaffPerfomanceReport
         Me.buttonGenerateReport.Text = "Generate Report"
         Me.buttonGenerateReport.UseVisualStyleBackColor = False
         '
-        'Butsearch
+        'buttonLoadStaffPerfomance
         '
-        Me.Butsearch.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Butsearch.Location = New System.Drawing.Point(325, 66)
-        Me.Butsearch.Name = "Butsearch"
-        Me.Butsearch.Size = New System.Drawing.Size(102, 34)
-        Me.Butsearch.TabIndex = 3
-        Me.Butsearch.Text = "Search"
-        Me.Butsearch.UseVisualStyleBackColor = False
-        '
-        'textsearch
-        '
-        Me.textsearch.Location = New System.Drawing.Point(135, 72)
-        Me.textsearch.Name = "textsearch"
-        Me.textsearch.Size = New System.Drawing.Size(169, 22)
-        Me.textsearch.TabIndex = 4
-        '
-        'StaffPerfomanceDataReportViewer
-        '
-        Me.StaffPerfomanceDataReportViewer.LocalReport.ReportEmbeddedResource = "NursingHomeManagementSystem.MedicineUsageReport.rdlc"
-        Me.StaffPerfomanceDataReportViewer.Location = New System.Drawing.Point(10, 19)
-        Me.StaffPerfomanceDataReportViewer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.StaffPerfomanceDataReportViewer.Name = "StaffPerfomanceDataReportViewer"
-        Me.StaffPerfomanceDataReportViewer.ServerReport.BearerToken = Nothing
-        Me.StaffPerfomanceDataReportViewer.Size = New System.Drawing.Size(625, 295)
-        Me.StaffPerfomanceDataReportViewer.TabIndex = 34
+        Me.buttonLoadStaffPerfomance.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.buttonLoadStaffPerfomance.Location = New System.Drawing.Point(143, 83)
+        Me.buttonLoadStaffPerfomance.Name = "buttonLoadStaffPerfomance"
+        Me.buttonLoadStaffPerfomance.Size = New System.Drawing.Size(172, 46)
+        Me.buttonLoadStaffPerfomance.TabIndex = 1
+        Me.buttonLoadStaffPerfomance.Text = "Load Staff Perfomance"
+        Me.buttonLoadStaffPerfomance.UseVisualStyleBackColor = False
         '
         'StaffPerfomanceBindingSource
         '
@@ -154,7 +158,8 @@ Partial Class StaffPerfomanceReport
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1331, 643)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(1257, 643)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -163,9 +168,9 @@ Partial Class StaffPerfomanceReport
         Me.Text = "StaffPerfomanceReport"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.StaffPerfomanceDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        CType(Me.StaffPerfomanceDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaffPerfomanceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaffPerfomanceDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
