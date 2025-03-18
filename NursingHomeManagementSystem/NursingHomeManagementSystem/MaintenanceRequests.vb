@@ -201,7 +201,11 @@ Private Sub Butsearch_Click(sender As Object, e As EventArgs) Handles Butsearch.
     End Try
 End Sub
 
+    Private Sub textsearch_TextChanged(sender As Object, e As EventArgs) Handles textsearch.TextChanged
 
+    End Sub
 
+    Private Sub textreportedby_TextChanged(sender As Object, e As EventArgs) Handles textreportedby.TextChanged
 
+    End Sub
 End Class

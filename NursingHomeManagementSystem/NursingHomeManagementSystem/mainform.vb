@@ -300,5 +300,145 @@ Private Sub StaffPerformanceReportsToolStripMenuItem_Click(sender As Object, e A
     End If
 End Sub
 
-    
+	Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+     ' Check if the form is already open to prevent multiple instances
+    Dim residentsForm As Residents = Nothing
+
+        ' Loop through open forms to check if Staff form is already opened
+        For Each openForm As Form In Application.OpenForms
+            If TypeOf openForm Is Residents Then
+                residentsForm = CType(residentsForm, Residents)
+                Exit For
+            End If
+        Next
+
+    ' If the form is not open, create a new instance and show it
+    If residentsForm Is Nothing Then
+        residentsForm = New Residents()
+        residentsForm.Show()
+    Else
+        ' If already open, bring it to front
+        residentsForm.BringToFront()
+    End If
+End Sub
+
+
+
+Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+    ' Check if the form is already open to prevent multiple instances
+    Dim staffForm As Staff = Nothing
+
+    ' Loop through open forms to check if Staff form is already opened
+    For Each openForm As Form In Application.OpenForms
+        If TypeOf openForm Is Staff Then
+            staffForm = CType(openForm, Staff)
+            Exit For
+        End If
+    Next
+
+    ' If the form is not open, create a new instance and show it
+    If staffForm Is Nothing Then
+        staffForm = New Staff()
+        staffForm.Show()
+    Else
+        ' If already open, bring it to front
+        staffForm.BringToFront()
+    End If
+End Sub
+
+
+
+Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
+     ' Check if the form is already open to prevent multiple instances
+    Dim medicinesForm As MedicinesForm = Nothing
+
+    ' Loop through open forms to check if Staff form is already opened
+    For Each openForm As Form In Application.OpenForms
+        If TypeOf openForm Is Staff Then
+            medicinesForm = CType(openForm, MedicinesForm)
+            Exit For
+        End If
+    Next
+
+    ' If the form is not open, create a new instance and show it
+    If medicinesForm Is Nothing Then
+        medicinesForm = New MedicinesForm()
+        medicinesForm.Show()
+    Else
+        ' If already open, bring it to front
+        medicinesForm.BringToFront()
+    End If
+End Sub
+
+
+
+Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
+     ' Check if the form is already open to prevent multiple instances
+    Dim carePlans As CarePlans = Nothing
+
+        ' Loop through open forms to check if Staff form is already opened
+        For Each openForm As Form In Application.OpenForms
+            If TypeOf openForm Is CarePlans Then
+                carePlans = CType(carePlans, CarePlans)
+                Exit For
+            End If
+        Next
+
+    ' If the form is not open, create a new instance and show it
+    If carePlans Is Nothing Then
+        carePlans = New CarePlans()
+        carePlans.Show()
+    Else
+        ' If already open, bring it to front
+        carePlans.BringToFront()
+    End If
+End Sub
+
+
+Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) Handles ToolStripButton6.Click
+     ' Check if the form is already open to prevent multiple instances
+    Dim familyCommunication As FamilyCommunication = Nothing
+
+        ' Loop through open forms to check if Staff form is already opened
+        For Each openForm As Form In Application.OpenForms
+            If TypeOf openForm Is FamilyCommunication Then
+                familyCommunication = CType(familyCommunication, FamilyCommunication)
+                Exit For
+            End If
+        Next
+
+    ' If the form is not open, create a new instance and show it
+    If familyCommunication Is Nothing Then
+        familyCommunication = New FamilyCommunication()
+        familyCommunication.Show()
+    Else
+        ' If already open, bring it to front
+        familyCommunication.BringToFront()
+    End If
+End Sub
+
+
+Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
+     ' Check if the form is already open to prevent multiple instances
+    Dim maintenanceRequestForm As MaintenanceRequests = Nothing
+
+    ' Loop through open forms to check if Staff form is already opened
+    For Each openForm As Form In Application.OpenForms
+        If TypeOf openForm Is Staff Then
+            maintenanceRequestForm = CType(openForm, MaintenanceRequests)
+            Exit For
+        End If
+    Next
+
+    ' If the form is not open, create a new instance and show it
+    If maintenanceRequestForm Is Nothing Then
+        maintenanceRequestForm = New MaintenanceRequests()
+        maintenanceRequestForm.Show()
+    Else
+        ' If already open, bring it to front
+        maintenanceRequestForm.BringToFront()
+    End If
+End Sub
+
+
 End Class

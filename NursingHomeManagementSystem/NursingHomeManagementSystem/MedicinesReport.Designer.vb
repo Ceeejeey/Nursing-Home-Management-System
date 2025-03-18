@@ -23,6 +23,7 @@ Partial Class MedicinesReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedicinesReport))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ButSearch = New System.Windows.Forms.Button()
         Me.textsearch = New System.Windows.Forms.TextBox()
@@ -45,10 +46,11 @@ Partial Class MedicinesReport
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.ButSearch)
         Me.Panel1.Controls.Add(Me.textsearch)
         Me.Panel1.Controls.Add(Me.MedicinesUsageReportDataGridView)
-        Me.Panel1.Location = New System.Drawing.Point(674, 69)
+        Me.Panel1.Location = New System.Drawing.Point(596, 69)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(713, 558)
         Me.Panel1.TabIndex = 0
@@ -73,19 +75,20 @@ Partial Class MedicinesReport
         'MedicinesUsageReportDataGridView
         '
         Me.MedicinesUsageReportDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MedicinesUsageReportDataGridView.Location = New System.Drawing.Point(12, 119)
+        Me.MedicinesUsageReportDataGridView.Location = New System.Drawing.Point(12, 129)
         Me.MedicinesUsageReportDataGridView.Name = "MedicinesUsageReportDataGridView"
         Me.MedicinesUsageReportDataGridView.RowHeadersWidth = 51
         Me.MedicinesUsageReportDataGridView.RowTemplate.Height = 24
-        Me.MedicinesUsageReportDataGridView.Size = New System.Drawing.Size(687, 427)
+        Me.MedicinesUsageReportDataGridView.Size = New System.Drawing.Size(619, 387)
         Me.MedicinesUsageReportDataGridView.TabIndex = 4
         '
         'Panel2
         '
+        Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.Controls.Add(Me.MedicinesDataDataReportViewer)
         Me.Panel2.Location = New System.Drawing.Point(12, 342)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(656, 285)
+        Me.Panel2.Size = New System.Drawing.Size(578, 285)
         Me.Panel2.TabIndex = 1
         '
         'MedicinesDataDataReportViewer
@@ -95,7 +98,7 @@ Partial Class MedicinesReport
         Me.MedicinesDataDataReportViewer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MedicinesDataDataReportViewer.Name = "MedicinesDataDataReportViewer"
         Me.MedicinesDataDataReportViewer.ServerReport.BearerToken = Nothing
-        Me.MedicinesDataDataReportViewer.Size = New System.Drawing.Size(625, 258)
+        Me.MedicinesDataDataReportViewer.Size = New System.Drawing.Size(545, 258)
         Me.MedicinesDataDataReportViewer.TabIndex = 33
         '
         'Label1
@@ -105,18 +108,19 @@ Partial Class MedicinesReport
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1399, 50)
+        Me.Label1.Size = New System.Drawing.Size(1239, 50)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Medicines Usage Report"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Panel3
         '
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Panel3.Controls.Add(Me.buttonGenerateReport)
         Me.Panel3.Controls.Add(Me.buttonLoadMedicines)
         Me.Panel3.Location = New System.Drawing.Point(12, 69)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(656, 257)
+        Me.Panel3.Size = New System.Drawing.Size(578, 257)
         Me.Panel3.TabIndex = 3
         '
         'buttonGenerateReport
@@ -148,7 +152,8 @@ Partial Class MedicinesReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1399, 639)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(1239, 639)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)

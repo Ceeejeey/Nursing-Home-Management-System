@@ -57,7 +57,7 @@ Partial Class Staff
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1275, 50)
+        Me.Panel4.Size = New System.Drawing.Size(1239, 50)
         Me.Panel4.TabIndex = 0
         '
         'Label8
@@ -66,14 +66,14 @@ Partial Class Staff
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(0, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(1275, 50)
+        Me.Label8.Size = New System.Drawing.Size(1239, 50)
         Me.Label8.TabIndex = 1
         Me.Label8.Text = "staff management"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel5
         '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Panel5.Controls.Add(Me.deletebutton)
         Me.Panel5.Controls.Add(Me.updatebutton)
         Me.Panel5.Controls.Add(Me.addbutton)
@@ -135,9 +135,12 @@ Partial Class Staff
         'genderlabel
         '
         Me.genderlabel.AutoSize = True
+        Me.genderlabel.BackColor = System.Drawing.Color.Transparent
+        Me.genderlabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.genderlabel.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.genderlabel.Location = New System.Drawing.Point(39, 313)
         Me.genderlabel.Name = "genderlabel"
-        Me.genderlabel.Size = New System.Drawing.Size(52, 16)
+        Me.genderlabel.Size = New System.Drawing.Size(57, 18)
         Me.genderlabel.TabIndex = 53
         Me.genderlabel.Text = "Gender"
         '
@@ -153,36 +156,48 @@ Partial Class Staff
         'contactlabel
         '
         Me.contactlabel.AutoSize = True
+        Me.contactlabel.BackColor = System.Drawing.Color.Transparent
+        Me.contactlabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.contactlabel.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.contactlabel.Location = New System.Drawing.Point(39, 272)
         Me.contactlabel.Name = "contactlabel"
-        Me.contactlabel.Size = New System.Drawing.Size(52, 16)
+        Me.contactlabel.Size = New System.Drawing.Size(60, 18)
         Me.contactlabel.TabIndex = 50
         Me.contactlabel.Text = "Contact"
         '
         'rolelabel
         '
         Me.rolelabel.AutoSize = True
+        Me.rolelabel.BackColor = System.Drawing.Color.Transparent
+        Me.rolelabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rolelabel.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.rolelabel.Location = New System.Drawing.Point(39, 233)
         Me.rolelabel.Name = "rolelabel"
-        Me.rolelabel.Size = New System.Drawing.Size(36, 16)
+        Me.rolelabel.Size = New System.Drawing.Size(39, 18)
         Me.rolelabel.TabIndex = 49
         Me.rolelabel.Text = "Role"
         '
         'namelabel
         '
         Me.namelabel.AutoSize = True
+        Me.namelabel.BackColor = System.Drawing.Color.Transparent
+        Me.namelabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.namelabel.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.namelabel.Location = New System.Drawing.Point(39, 193)
         Me.namelabel.Name = "namelabel"
-        Me.namelabel.Size = New System.Drawing.Size(44, 16)
+        Me.namelabel.Size = New System.Drawing.Size(48, 18)
         Me.namelabel.TabIndex = 48
         Me.namelabel.Text = "Name"
         '
         'staffidlabel
         '
         Me.staffidlabel.AutoSize = True
+        Me.staffidlabel.BackColor = System.Drawing.Color.Transparent
+        Me.staffidlabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.staffidlabel.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.staffidlabel.Location = New System.Drawing.Point(39, 154)
         Me.staffidlabel.Name = "staffidlabel"
-        Me.staffidlabel.Size = New System.Drawing.Size(47, 16)
+        Me.staffidlabel.Size = New System.Drawing.Size(53, 18)
         Me.staffidlabel.TabIndex = 47
         Me.staffidlabel.Text = "Staff Id"
         '
@@ -215,7 +230,7 @@ Partial Class Staff
         '
         'Panel6
         '
-        Me.Panel6.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel6.BackColor = System.Drawing.Color.Transparent
         Me.Panel6.Controls.Add(Me.DataGridViewstafflist)
         Me.Panel6.Controls.Add(Me.Label14)
         Me.Panel6.Controls.Add(Me.Butsearch)
@@ -223,14 +238,14 @@ Partial Class Staff
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(488, 50)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(787, 627)
+        Me.Panel6.Size = New System.Drawing.Size(751, 627)
         Me.Panel6.TabIndex = 2
         '
         'DataGridViewstafflist
         '
         Me.DataGridViewstafflist.AllowUserToOrderColumns = True
         Me.DataGridViewstafflist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewstafflist.Location = New System.Drawing.Point(85, 224)
+        Me.DataGridViewstafflist.Location = New System.Drawing.Point(53, 224)
         Me.DataGridViewstafflist.Name = "DataGridViewstafflist"
         Me.DataGridViewstafflist.RowHeadersWidth = 51
         Me.DataGridViewstafflist.RowTemplate.Height = 28
@@ -254,7 +269,7 @@ Partial Class Staff
         Me.Butsearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Butsearch.Image = CType(resources.GetObject("Butsearch.Image"), System.Drawing.Image)
         Me.Butsearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Butsearch.Location = New System.Drawing.Point(589, 39)
+        Me.Butsearch.Location = New System.Drawing.Point(517, 48)
         Me.Butsearch.Name = "Butsearch"
         Me.Butsearch.Padding = New System.Windows.Forms.Padding(1)
         Me.Butsearch.Size = New System.Drawing.Size(123, 42)
@@ -265,14 +280,16 @@ Partial Class Staff
         '
         'textsearch
         '
-        Me.textsearch.Location = New System.Drawing.Point(245, 48)
+        Me.textsearch.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.textsearch.Location = New System.Drawing.Point(171, 59)
         Me.textsearch.Name = "textsearch"
         Me.textsearch.Size = New System.Drawing.Size(321, 22)
         Me.textsearch.TabIndex = 8
         '
         'Staff
         '
-        Me.ClientSize = New System.Drawing.Size(1275, 677)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(1239, 677)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)

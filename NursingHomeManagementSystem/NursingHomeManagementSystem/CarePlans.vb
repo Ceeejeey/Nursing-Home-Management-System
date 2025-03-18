@@ -261,4 +261,20 @@ End Sub
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles textResidentID.TextChanged
 
     End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub labelStartDate_Click(sender As Object, e As EventArgs) Handles labelStartDate.Click
+
+    End Sub
+
+    Private Sub labelEndDate_Click(sender As Object, e As EventArgs) Handles labelEndDate.Click
+
+    End Sub
 End Class
