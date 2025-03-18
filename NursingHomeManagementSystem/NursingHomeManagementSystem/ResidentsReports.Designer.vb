@@ -24,6 +24,7 @@ Partial Class ResidentsReports
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ResidentsReports))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.textsearch = New System.Windows.Forms.TextBox()
         Me.Butsearch = New System.Windows.Forms.Button()
@@ -46,19 +47,20 @@ Partial Class ResidentsReports
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.textsearch)
         Me.Panel1.Controls.Add(Me.Butsearch)
         Me.Panel1.Controls.Add(Me.ResidentsDataDataGridView)
-        Me.Panel1.Location = New System.Drawing.Point(706, 81)
+        Me.Panel1.Location = New System.Drawing.Point(657, 81)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(629, 550)
         Me.Panel1.TabIndex = 0
         '
         'textsearch
         '
-        Me.textsearch.Location = New System.Drawing.Point(188, 40)
+        Me.textsearch.Location = New System.Drawing.Point(143, 40)
         Me.textsearch.Name = "textsearch"
-        Me.textsearch.Size = New System.Drawing.Size(173, 22)
+        Me.textsearch.Size = New System.Drawing.Size(218, 22)
         Me.textsearch.TabIndex = 2
         '
         'Butsearch
@@ -76,19 +78,20 @@ Partial Class ResidentsReports
         Me.ResidentsDataDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ResidentsDataDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.ResidentsDataDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ResidentsDataDataGridView.Location = New System.Drawing.Point(27, 106)
+        Me.ResidentsDataDataGridView.Location = New System.Drawing.Point(3, 143)
         Me.ResidentsDataDataGridView.Name = "ResidentsDataDataGridView"
         Me.ResidentsDataDataGridView.RowHeadersWidth = 51
         Me.ResidentsDataDataGridView.RowTemplate.Height = 24
-        Me.ResidentsDataDataGridView.Size = New System.Drawing.Size(582, 424)
+        Me.ResidentsDataDataGridView.Size = New System.Drawing.Size(567, 404)
         Me.ResidentsDataDataGridView.TabIndex = 1
         '
         'Panel2
         '
+        Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.Controls.Add(Me.ResidentsDataReportViewer)
         Me.Panel2.Location = New System.Drawing.Point(12, 284)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(677, 347)
+        Me.Panel2.Size = New System.Drawing.Size(639, 347)
         Me.Panel2.TabIndex = 0
         '
         'ResidentsDataReportViewer
@@ -97,20 +100,21 @@ Partial Class ResidentsReports
         ReportDataSource1.Value = Nothing
         Me.ResidentsDataReportViewer.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ResidentsDataReportViewer.LocalReport.ReportEmbeddedResource = "NursingHomeManagementSystem.ResidentsReport.rdlc"
-        Me.ResidentsDataReportViewer.Location = New System.Drawing.Point(14, 16)
+        Me.ResidentsDataReportViewer.Location = New System.Drawing.Point(-5, 34)
         Me.ResidentsDataReportViewer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ResidentsDataReportViewer.Name = "ResidentsDataReportViewer"
         Me.ResidentsDataReportViewer.ServerReport.BearerToken = Nothing
-        Me.ResidentsDataReportViewer.Size = New System.Drawing.Size(649, 311)
+        Me.ResidentsDataReportViewer.Size = New System.Drawing.Size(630, 311)
         Me.ResidentsDataReportViewer.TabIndex = 32
         '
         'Panel3
         '
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Panel3.Controls.Add(Me.buttonGenerateReport)
         Me.Panel3.Controls.Add(Me.buttonResidentsData)
         Me.Panel3.Location = New System.Drawing.Point(12, 81)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(677, 182)
+        Me.Panel3.Size = New System.Drawing.Size(639, 182)
         Me.Panel3.TabIndex = 1
         '
         'buttonGenerateReport
@@ -140,7 +144,7 @@ Partial Class ResidentsReports
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1347, 50)
+        Me.Label1.Size = New System.Drawing.Size(1239, 50)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Residents Reports"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -159,7 +163,8 @@ Partial Class ResidentsReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1347, 643)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(1239, 643)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)

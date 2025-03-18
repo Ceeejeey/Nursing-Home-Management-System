@@ -135,4 +135,16 @@ Public Class MedicinesReport
     Private Sub ButSearch_Click_1(sender As Object, e As EventArgs) Handles ButSearch.Click
 
     End Sub
+
+    Private Sub MedicinesReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 End Class

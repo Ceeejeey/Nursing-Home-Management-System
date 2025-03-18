@@ -135,4 +135,11 @@ Private Sub buttonResidentsData_Click(sender As Object, e As EventArgs) Handles 
         End Try
     End Sub
 
+    Private Sub ResidentsDataReportViewer_Load(sender As Object, e As EventArgs) Handles ResidentsDataReportViewer.Load
+
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
 End Class

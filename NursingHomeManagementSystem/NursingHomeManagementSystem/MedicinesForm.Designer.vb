@@ -22,9 +22,12 @@ Partial Class MedicinesForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedicinesForm))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.textsearch = New System.Windows.Forms.TextBox()
+        Me.Butsearch = New System.Windows.Forms.Button()
         Me.IssueMedicineDataGridView = New System.Windows.Forms.DataGridView()
         Me.labelResidentID = New System.Windows.Forms.Label()
         Me.labelMedicineName = New System.Windows.Forms.Label()
@@ -43,8 +46,6 @@ Partial Class MedicinesForm
         Me.ButAddMedicine = New System.Windows.Forms.Button()
         Me.ButUpdate = New System.Windows.Forms.Button()
         Me.ButDelete = New System.Windows.Forms.Button()
-        Me.textsearch = New System.Windows.Forms.TextBox()
-        Me.Butsearch = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.IssueMedicineDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -70,13 +71,31 @@ Partial Class MedicinesForm
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.textsearch)
         Me.Panel1.Controls.Add(Me.Butsearch)
         Me.Panel1.Controls.Add(Me.IssueMedicineDataGridView)
-        Me.Panel1.Location = New System.Drawing.Point(668, 53)
+        Me.Panel1.Location = New System.Drawing.Point(551, 53)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(654, 513)
+        Me.Panel1.Size = New System.Drawing.Size(676, 513)
         Me.Panel1.TabIndex = 2
+        '
+        'textsearch
+        '
+        Me.textsearch.Location = New System.Drawing.Point(145, 52)
+        Me.textsearch.Name = "textsearch"
+        Me.textsearch.Size = New System.Drawing.Size(232, 22)
+        Me.textsearch.TabIndex = 20
+        '
+        'Butsearch
+        '
+        Me.Butsearch.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Butsearch.Location = New System.Drawing.Point(401, 46)
+        Me.Butsearch.Name = "Butsearch"
+        Me.Butsearch.Size = New System.Drawing.Size(112, 35)
+        Me.Butsearch.TabIndex = 21
+        Me.Butsearch.Text = "Search"
+        Me.Butsearch.UseVisualStyleBackColor = False
         '
         'IssueMedicineDataGridView
         '
@@ -85,69 +104,90 @@ Partial Class MedicinesForm
         Me.IssueMedicineDataGridView.Name = "IssueMedicineDataGridView"
         Me.IssueMedicineDataGridView.RowHeadersWidth = 51
         Me.IssueMedicineDataGridView.RowTemplate.Height = 24
-        Me.IssueMedicineDataGridView.Size = New System.Drawing.Size(627, 357)
+        Me.IssueMedicineDataGridView.Size = New System.Drawing.Size(656, 357)
         Me.IssueMedicineDataGridView.TabIndex = 3
         '
         'labelResidentID
         '
         Me.labelResidentID.AutoSize = True
+        Me.labelResidentID.BackColor = System.Drawing.Color.Transparent
+        Me.labelResidentID.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelResidentID.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelResidentID.Location = New System.Drawing.Point(39, 151)
         Me.labelResidentID.Name = "labelResidentID"
-        Me.labelResidentID.Size = New System.Drawing.Size(77, 16)
+        Me.labelResidentID.Size = New System.Drawing.Size(84, 18)
         Me.labelResidentID.TabIndex = 3
         Me.labelResidentID.Text = "Resident ID"
         '
         'labelMedicineName
         '
         Me.labelMedicineName.AutoSize = True
+        Me.labelMedicineName.BackColor = System.Drawing.Color.Transparent
+        Me.labelMedicineName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelMedicineName.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelMedicineName.Location = New System.Drawing.Point(39, 185)
         Me.labelMedicineName.Name = "labelMedicineName"
-        Me.labelMedicineName.Size = New System.Drawing.Size(102, 16)
+        Me.labelMedicineName.Size = New System.Drawing.Size(111, 18)
         Me.labelMedicineName.TabIndex = 4
         Me.labelMedicineName.Text = "Medicine Name"
         '
         'labelDosage
         '
         Me.labelDosage.AutoSize = True
+        Me.labelDosage.BackColor = System.Drawing.Color.Transparent
+        Me.labelDosage.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelDosage.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelDosage.Location = New System.Drawing.Point(39, 219)
         Me.labelDosage.Name = "labelDosage"
-        Me.labelDosage.Size = New System.Drawing.Size(56, 16)
+        Me.labelDosage.Size = New System.Drawing.Size(60, 18)
         Me.labelDosage.TabIndex = 5
         Me.labelDosage.Text = "Dosage"
         '
         'labelFrequency
         '
         Me.labelFrequency.AutoSize = True
+        Me.labelFrequency.BackColor = System.Drawing.Color.Transparent
+        Me.labelFrequency.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelFrequency.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelFrequency.Location = New System.Drawing.Point(39, 256)
         Me.labelFrequency.Name = "labelFrequency"
-        Me.labelFrequency.Size = New System.Drawing.Size(71, 16)
+        Me.labelFrequency.Size = New System.Drawing.Size(77, 18)
         Me.labelFrequency.TabIndex = 6
         Me.labelFrequency.Text = "Frequency"
         '
         'labelStartDate
         '
         Me.labelStartDate.AutoSize = True
+        Me.labelStartDate.BackColor = System.Drawing.Color.Transparent
+        Me.labelStartDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelStartDate.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelStartDate.Location = New System.Drawing.Point(39, 290)
         Me.labelStartDate.Name = "labelStartDate"
-        Me.labelStartDate.Size = New System.Drawing.Size(66, 16)
+        Me.labelStartDate.Size = New System.Drawing.Size(74, 18)
         Me.labelStartDate.TabIndex = 7
         Me.labelStartDate.Text = "Start Date"
         '
         'labelEndDate
         '
         Me.labelEndDate.AutoSize = True
+        Me.labelEndDate.BackColor = System.Drawing.Color.Transparent
+        Me.labelEndDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelEndDate.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelEndDate.Location = New System.Drawing.Point(39, 326)
         Me.labelEndDate.Name = "labelEndDate"
-        Me.labelEndDate.Size = New System.Drawing.Size(63, 16)
+        Me.labelEndDate.Size = New System.Drawing.Size(69, 18)
         Me.labelEndDate.TabIndex = 8
         Me.labelEndDate.Text = "End Date"
         '
         'labelDrugIssues
         '
         Me.labelDrugIssues.AutoSize = True
+        Me.labelDrugIssues.BackColor = System.Drawing.Color.Transparent
+        Me.labelDrugIssues.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelDrugIssues.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelDrugIssues.Location = New System.Drawing.Point(39, 359)
         Me.labelDrugIssues.Name = "labelDrugIssues"
-        Me.labelDrugIssues.Size = New System.Drawing.Size(78, 16)
+        Me.labelDrugIssues.Size = New System.Drawing.Size(87, 18)
         Me.labelDrugIssues.TabIndex = 9
         Me.labelDrugIssues.Text = "Drug Issues"
         '
@@ -230,28 +270,12 @@ Partial Class MedicinesForm
         Me.ButDelete.Text = "Delete Details"
         Me.ButDelete.UseVisualStyleBackColor = False
         '
-        'textsearch
-        '
-        Me.textsearch.Location = New System.Drawing.Point(197, 52)
-        Me.textsearch.Name = "textsearch"
-        Me.textsearch.Size = New System.Drawing.Size(180, 22)
-        Me.textsearch.TabIndex = 20
-        '
-        'Butsearch
-        '
-        Me.Butsearch.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Butsearch.Location = New System.Drawing.Point(401, 46)
-        Me.Butsearch.Name = "Butsearch"
-        Me.Butsearch.Size = New System.Drawing.Size(112, 35)
-        Me.Butsearch.TabIndex = 21
-        Me.Butsearch.Text = "Search"
-        Me.Butsearch.UseVisualStyleBackColor = False
-        '
         'MedicinesForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1324, 578)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(1239, 578)
         Me.Controls.Add(Me.ButDelete)
         Me.Controls.Add(Me.ButUpdate)
         Me.Controls.Add(Me.ButAddMedicine)

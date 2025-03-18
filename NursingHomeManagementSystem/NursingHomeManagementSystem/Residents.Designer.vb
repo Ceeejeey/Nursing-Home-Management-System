@@ -27,6 +27,7 @@ Partial Class Residents
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Residents))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -48,6 +49,7 @@ Partial Class Residents
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DataGridViewresidentlist = New System.Windows.Forms.DataGridView()
         Me.Butdelete = New System.Windows.Forms.Button()
@@ -55,18 +57,6 @@ Partial Class Residents
         Me.Butadd = New System.Windows.Forms.Button()
         Me.Butsearch = New System.Windows.Forms.Button()
         Me.textsearch = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-		Me.ResidentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateOfBirthDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MedicalHistoryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CarePlanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FamilyContactNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		 
-
-        Me.AdmissionDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.DischargeDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.picboxresidentphoto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,7 +72,7 @@ Partial Class Residents
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(7, 5, 7, 5)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1315, 51)
+        Me.Panel1.Size = New System.Drawing.Size(1239, 51)
         Me.Panel1.TabIndex = 0
         '
         'Label1
@@ -92,14 +82,14 @@ Partial Class Residents
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1315, 51)
+        Me.Label1.Size = New System.Drawing.Size(1239, 51)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Residents Management"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.InactiveBorder
+        Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.Controls.Add(Me.Butupload)
         Me.Panel2.Controls.Add(Me.picboxresidentphoto)
         Me.Panel2.Controls.Add(Me.txtcareplan)
@@ -120,7 +110,7 @@ Partial Class Residents
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 51)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(621, 662)
+        Me.Panel2.Size = New System.Drawing.Size(555, 602)
         Me.Panel2.TabIndex = 1
         '
         'Butupload
@@ -129,9 +119,9 @@ Partial Class Residents
         Me.Butupload.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.Butupload.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Butupload.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Butupload.Location = New System.Drawing.Point(482, 463)
+        Me.Butupload.Location = New System.Drawing.Point(257, 549)
         Me.Butupload.Name = "Butupload"
-        Me.Butupload.Size = New System.Drawing.Size(93, 66)
+        Me.Butupload.Size = New System.Drawing.Size(184, 41)
         Me.Butupload.TabIndex = 16
         Me.Butupload.Text = "Upload Photo"
         Me.Butupload.UseVisualStyleBackColor = False
@@ -140,7 +130,7 @@ Partial Class Residents
         '
         Me.picboxresidentphoto.Location = New System.Drawing.Point(217, 311)
         Me.picboxresidentphoto.Name = "picboxresidentphoto"
-        Me.picboxresidentphoto.Size = New System.Drawing.Size(259, 292)
+        Me.picboxresidentphoto.Size = New System.Drawing.Size(259, 218)
         Me.picboxresidentphoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picboxresidentphoto.TabIndex = 15
         Me.picboxresidentphoto.TabStop = False
@@ -210,86 +200,102 @@ Partial Class Residents
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(13, 311)
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label9.Location = New System.Drawing.Point(4, 416)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(144, 25)
+        Me.Label9.Size = New System.Drawing.Size(110, 18)
         Me.Label9.TabIndex = 7
         Me.Label9.Text = "Resident Photo"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label8.Location = New System.Drawing.Point(13, 263)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(148, 25)
+        Me.Label8.Size = New System.Drawing.Size(111, 18)
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Family Contact:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label7.Location = New System.Drawing.Point(13, 223)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(155, 25)
+        Me.Label7.Size = New System.Drawing.Size(116, 18)
         Me.Label7.TabIndex = 5
         Me.Label7.Text = "Admission Date:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label6.Location = New System.Drawing.Point(13, 184)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(105, 25)
+        Me.Label6.Size = New System.Drawing.Size(77, 18)
         Me.Label6.TabIndex = 4
         Me.Label6.Text = "Care Plan:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label5.Location = New System.Drawing.Point(13, 140)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(151, 25)
+        Me.Label5.Size = New System.Drawing.Size(114, 18)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Medical History:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label4.Location = New System.Drawing.Point(13, 97)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(124, 25)
+        Me.Label4.Size = New System.Drawing.Size(94, 18)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Date of Birth:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label3.Location = New System.Drawing.Point(13, 53)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(106, 25)
+        Me.Label3.Size = New System.Drawing.Size(79, 18)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Full Name:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label2.Location = New System.Drawing.Point(13, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 25)
+        Me.Label2.Size = New System.Drawing.Size(88, 18)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Resident ID:"
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.SystemColors.HighlightText
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.Label10)
         Me.Panel3.Controls.Add(Me.DataGridViewresidentlist)
@@ -299,15 +305,30 @@ Partial Class Residents
         Me.Panel3.Controls.Add(Me.Butsearch)
         Me.Panel3.Controls.Add(Me.textsearch)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(621, 51)
+        Me.Panel3.Location = New System.Drawing.Point(555, 51)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(694, 662)
+        Me.Panel3.Size = New System.Drawing.Size(684, 602)
         Me.Panel3.TabIndex = 2
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Button1.Location = New System.Drawing.Point(533, 536)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(1)
+        Me.Button1.Size = New System.Drawing.Size(102, 43)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Discharge"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label10.Location = New System.Drawing.Point(227, 110)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(123, 25)
@@ -317,12 +338,10 @@ Partial Class Residents
         'DataGridViewresidentlist
         '
         Me.DataGridViewresidentlist.AllowUserToOrderColumns = True
-        Me.DataGridViewresidentlist.AutoGenerateColumns = False
         Me.DataGridViewresidentlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewresidentlist.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ResidentIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DateOfBirthDataGridViewTextBoxColumn, Me.MedicalHistoryDataGridViewTextBoxColumn, Me.CarePlanDataGridViewTextBoxColumn, Me.FamilyContactNameDataGridViewTextBoxColumn, Me.AdmissionDateDataGridViewTextBoxColumn, Me.DischargeDateDataGridViewTextBoxColumn})
-
         Me.DataGridViewresidentlist.Location = New System.Drawing.Point(29, 142)
         Me.DataGridViewresidentlist.Name = "DataGridViewresidentlist"
+        Me.DataGridViewresidentlist.RowHeadersWidth = 51
         Me.DataGridViewresidentlist.RowTemplate.Height = 28
         Me.DataGridViewresidentlist.Size = New System.Drawing.Size(640, 333)
         Me.DataGridViewresidentlist.TabIndex = 5
@@ -333,7 +352,7 @@ Partial Class Residents
         Me.Butdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Butdelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Butdelete.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Butdelete.Location = New System.Drawing.Point(529, 536)
+        Me.Butdelete.Location = New System.Drawing.Point(385, 536)
         Me.Butdelete.Name = "Butdelete"
         Me.Butdelete.Padding = New System.Windows.Forms.Padding(1)
         Me.Butdelete.Size = New System.Drawing.Size(94, 43)
@@ -347,7 +366,7 @@ Partial Class Residents
         Me.Butupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Butupdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Butupdate.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Butupdate.Location = New System.Drawing.Point(302, 536)
+        Me.Butupdate.Location = New System.Drawing.Point(232, 536)
         Me.Butupdate.Name = "Butupdate"
         Me.Butupdate.Padding = New System.Windows.Forms.Padding(1)
         Me.Butupdate.Size = New System.Drawing.Size(94, 43)
@@ -375,7 +394,7 @@ Partial Class Residents
         Me.Butsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Butsearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Butsearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Butsearch.Location = New System.Drawing.Point(416, 17)
+        Me.Butsearch.Location = New System.Drawing.Point(420, 35)
         Me.Butsearch.Name = "Butsearch"
         Me.Butsearch.Padding = New System.Windows.Forms.Padding(1)
         Me.Butsearch.Size = New System.Drawing.Size(112, 33)
@@ -386,80 +405,17 @@ Partial Class Residents
         '
         'textsearch
         '
-        Me.textsearch.Location = New System.Drawing.Point(124, 15)
+        Me.textsearch.Location = New System.Drawing.Point(114, 35)
         Me.textsearch.Name = "textsearch"
         Me.textsearch.Size = New System.Drawing.Size(286, 36)
         Me.textsearch.TabIndex = 0
-        '
-
-        'ResidentIDDataGridViewTextBoxColumn
-        '
-        Me.ResidentIDDataGridViewTextBoxColumn.DataPropertyName = "ResidentID"
-        Me.ResidentIDDataGridViewTextBoxColumn.HeaderText = "ResidentID"
-        Me.ResidentIDDataGridViewTextBoxColumn.Name = "ResidentIDDataGridViewTextBoxColumn"
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "Name"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        '
-        'DateOfBirthDataGridViewTextBoxColumn
-        '
-        Me.DateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth"
-        Me.DateOfBirthDataGridViewTextBoxColumn.HeaderText = "DateOfBirth"
-        Me.DateOfBirthDataGridViewTextBoxColumn.Name = "DateOfBirthDataGridViewTextBoxColumn"
-        '
-        'MedicalHistoryDataGridViewTextBoxColumn
-        '
-        Me.MedicalHistoryDataGridViewTextBoxColumn.DataPropertyName = "MedicalHistory"
-        Me.MedicalHistoryDataGridViewTextBoxColumn.HeaderText = "MedicalHistory"
-        Me.MedicalHistoryDataGridViewTextBoxColumn.Name = "MedicalHistoryDataGridViewTextBoxColumn"
-        '
-        'CarePlanDataGridViewTextBoxColumn
-        '
-        Me.CarePlanDataGridViewTextBoxColumn.DataPropertyName = "CarePlan"
-        Me.CarePlanDataGridViewTextBoxColumn.HeaderText = "CarePlan"
-        Me.CarePlanDataGridViewTextBoxColumn.Name = "CarePlanDataGridViewTextBoxColumn"
-        '
-        'FamilyContactNameDataGridViewTextBoxColumn
-        '
-        Me.FamilyContactNameDataGridViewTextBoxColumn.DataPropertyName = "FamilyContact"
-        Me.FamilyContactNameDataGridViewTextBoxColumn.HeaderText = "FamilyContact"
-        Me.FamilyContactNameDataGridViewTextBoxColumn.Name = "FamilyContactNameDataGridViewTextBoxColumn"
-        '
-
-        '
-        'AdmissionDateDataGridViewTextBoxColumn
-        '
-        Me.AdmissionDateDataGridViewTextBoxColumn.DataPropertyName = "AdmissionDate"
-        Me.AdmissionDateDataGridViewTextBoxColumn.HeaderText = "AdmissionDate"
-        Me.AdmissionDateDataGridViewTextBoxColumn.Name = "AdmissionDateDataGridViewTextBoxColumn"
-		
-		'AdmissionDateDataGridViewTextBoxColumn
-        '
-        Me.DischargeDateDataGridViewTextBoxColumn.DataPropertyName = "DischargeDate"
-        Me.DischargeDateDataGridViewTextBoxColumn.HeaderText = "DischargeDate"
-        Me.DischargeDateDataGridViewTextBoxColumn.Name = "DischargeDateDataGridViewTextBoxColumn"
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button1.Location = New System.Drawing.Point(63, 607)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Padding = New System.Windows.Forms.Padding(1)
-        Me.Button1.Size = New System.Drawing.Size(102, 43)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Discharge"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'Residents
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(15.0!, 29.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1315, 713)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(1239, 653)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)

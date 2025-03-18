@@ -257,6 +257,27 @@ Private Sub Butsearch_Click(sender As Object, e As EventArgs) Handles Butsearch.
     End Try
 End Sub
 
+    Private Sub labelStaffID_Click(sender As Object, e As EventArgs) Handles labelStaffID.Click
 
-    
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub textFollowUpDetails_TextChanged(sender As Object, e As EventArgs) Handles textFollowUpDetails.TextChanged
+
+    End Sub
+
+    Private Sub textReasonForContact_TextChanged(sender As Object, e As EventArgs) Handles textReasonForContact.TextChanged
+
+    End Sub
+
+    Private Sub dateTimeContactDate_ValueChanged(sender As Object, e As EventArgs) Handles dateTimeContactDate.ValueChanged
+
+    End Sub
+
+    Private Sub labelResidentID_Click(sender As Object, e As EventArgs) Handles labelResidentID.Click
+
+    End Sub
 End Class

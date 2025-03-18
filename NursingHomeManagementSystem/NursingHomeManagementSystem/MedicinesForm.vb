@@ -246,5 +246,7 @@ Private Sub ClearInputFields()
     dateTimeEndDate.Value = DateTime.Now
 End Sub
 
+    Private Sub labelStartDate_Click(sender As Object, e As EventArgs) Handles labelStartDate.Click
 
+    End Sub
 End Class

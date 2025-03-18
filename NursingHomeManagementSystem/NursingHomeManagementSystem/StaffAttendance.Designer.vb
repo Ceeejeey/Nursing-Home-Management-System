@@ -22,6 +22,7 @@ Partial Class StaffAttendance
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StaffAttendance))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Butsearch = New System.Windows.Forms.Button()
@@ -59,6 +60,7 @@ Partial Class StaffAttendance
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.Butsearch)
         Me.Panel1.Controls.Add(Me.textsearch)
         Me.Panel1.Controls.Add(Me.StaffAttendanceDataGridView)
@@ -97,36 +99,48 @@ Partial Class StaffAttendance
         'labelcheckintime
         '
         Me.labelcheckintime.AutoSize = True
+        Me.labelcheckintime.BackColor = System.Drawing.Color.Transparent
+        Me.labelcheckintime.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelcheckintime.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelcheckintime.Location = New System.Drawing.Point(4, 263)
         Me.labelcheckintime.Name = "labelcheckintime"
-        Me.labelcheckintime.Size = New System.Drawing.Size(92, 16)
+        Me.labelcheckintime.Size = New System.Drawing.Size(103, 18)
         Me.labelcheckintime.TabIndex = 2
         Me.labelcheckintime.Text = "Check In Time"
         '
         'labelcheckouttime
         '
         Me.labelcheckouttime.AutoSize = True
+        Me.labelcheckouttime.BackColor = System.Drawing.Color.Transparent
+        Me.labelcheckouttime.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelcheckouttime.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelcheckouttime.Location = New System.Drawing.Point(4, 332)
         Me.labelcheckouttime.Name = "labelcheckouttime"
-        Me.labelcheckouttime.Size = New System.Drawing.Size(102, 16)
+        Me.labelcheckouttime.Size = New System.Drawing.Size(116, 18)
         Me.labelcheckouttime.TabIndex = 3
         Me.labelcheckouttime.Text = "Check Out Time"
         '
         'labelshift
         '
         Me.labelshift.AutoSize = True
+        Me.labelshift.BackColor = System.Drawing.Color.Transparent
+        Me.labelshift.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelshift.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelshift.Location = New System.Drawing.Point(4, 397)
         Me.labelshift.Name = "labelshift"
-        Me.labelshift.Size = New System.Drawing.Size(67, 16)
+        Me.labelshift.Size = New System.Drawing.Size(73, 18)
         Me.labelshift.TabIndex = 4
         Me.labelshift.Text = "Shift Type"
         '
         'labelstatus
         '
         Me.labelstatus.AutoSize = True
+        Me.labelstatus.BackColor = System.Drawing.Color.Transparent
+        Me.labelstatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelstatus.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelstatus.Location = New System.Drawing.Point(4, 455)
         Me.labelstatus.Name = "labelstatus"
-        Me.labelstatus.Size = New System.Drawing.Size(44, 16)
+        Me.labelstatus.Size = New System.Drawing.Size(50, 18)
         Me.labelstatus.TabIndex = 5
         Me.labelstatus.Text = "Status"
         '
@@ -217,6 +231,7 @@ Partial Class StaffAttendance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1257, 630)
         Me.Controls.Add(Me.checkouttimebutton)
         Me.Controls.Add(Me.checkintimebutton)

@@ -24,6 +24,7 @@ Partial Class MaintenanceRequests
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MaintenanceRequests))
         Me.MaintenanceRequests_TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NursingHomeManagemetSystemdbDataSet3 = New NursingHomeManagementSystem.NursingHomeManagemetSystemdbDataSet3()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -70,7 +71,7 @@ Partial Class MaintenanceRequests
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1322, 37)
+        Me.Panel1.Size = New System.Drawing.Size(1239, 37)
         Me.Panel1.TabIndex = 0
         '
         'Label1
@@ -79,7 +80,7 @@ Partial Class MaintenanceRequests
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1322, 37)
+        Me.Label1.Size = New System.Drawing.Size(1239, 37)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Maintenance Requests"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -111,7 +112,7 @@ Partial Class MaintenanceRequests
         'combomaintenancetype
         '
         Me.combomaintenancetype.FormattingEnabled = True
-        Me.combomaintenancetype.Location = New System.Drawing.Point(213, 144)
+        Me.combomaintenancetype.Location = New System.Drawing.Point(251, 146)
         Me.combomaintenancetype.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.combomaintenancetype.Name = "combomaintenancetype"
         Me.combomaintenancetype.Size = New System.Drawing.Size(211, 24)
@@ -119,7 +120,7 @@ Partial Class MaintenanceRequests
         '
         'textassignedtechnician
         '
-        Me.textassignedtechnician.Location = New System.Drawing.Point(213, 229)
+        Me.textassignedtechnician.Location = New System.Drawing.Point(251, 231)
         Me.textassignedtechnician.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.textassignedtechnician.Name = "textassignedtechnician"
         Me.textassignedtechnician.Size = New System.Drawing.Size(211, 22)
@@ -127,7 +128,7 @@ Partial Class MaintenanceRequests
         '
         'textreportedby
         '
-        Me.textreportedby.Location = New System.Drawing.Point(213, 69)
+        Me.textreportedby.Location = New System.Drawing.Point(251, 71)
         Me.textreportedby.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.textreportedby.Name = "textreportedby"
         Me.textreportedby.Size = New System.Drawing.Size(211, 22)
@@ -136,43 +137,55 @@ Partial Class MaintenanceRequests
         'labelassignedtechnician
         '
         Me.labelassignedtechnician.AutoSize = True
+        Me.labelassignedtechnician.BackColor = System.Drawing.Color.Transparent
+        Me.labelassignedtechnician.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelassignedtechnician.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelassignedtechnician.Location = New System.Drawing.Point(67, 235)
         Me.labelassignedtechnician.Name = "labelassignedtechnician"
-        Me.labelassignedtechnician.Size = New System.Drawing.Size(136, 16)
+        Me.labelassignedtechnician.Size = New System.Drawing.Size(147, 18)
         Me.labelassignedtechnician.TabIndex = 18
         Me.labelassignedtechnician.Text = "Assigned Technician:"
         '
         'labelstatus
         '
         Me.labelstatus.AutoSize = True
+        Me.labelstatus.BackColor = System.Drawing.Color.Transparent
+        Me.labelstatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelstatus.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelstatus.Location = New System.Drawing.Point(67, 193)
         Me.labelstatus.Name = "labelstatus"
-        Me.labelstatus.Size = New System.Drawing.Size(47, 16)
+        Me.labelstatus.Size = New System.Drawing.Size(54, 18)
         Me.labelstatus.TabIndex = 17
         Me.labelstatus.Text = "Status:"
         '
         'labelmaintenancetype
         '
         Me.labelmaintenancetype.AutoSize = True
+        Me.labelmaintenancetype.BackColor = System.Drawing.Color.Transparent
+        Me.labelmaintenancetype.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelmaintenancetype.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelmaintenancetype.Location = New System.Drawing.Point(67, 152)
         Me.labelmaintenancetype.Name = "labelmaintenancetype"
-        Me.labelmaintenancetype.Size = New System.Drawing.Size(122, 16)
+        Me.labelmaintenancetype.Size = New System.Drawing.Size(132, 18)
         Me.labelmaintenancetype.TabIndex = 16
         Me.labelmaintenancetype.Text = "Maintenance Type:"
         '
         'labelreportedby
         '
         Me.labelreportedby.AutoSize = True
+        Me.labelreportedby.BackColor = System.Drawing.Color.Transparent
+        Me.labelreportedby.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelreportedby.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelreportedby.Location = New System.Drawing.Point(67, 75)
         Me.labelreportedby.Name = "labelreportedby"
-        Me.labelreportedby.Size = New System.Drawing.Size(86, 16)
+        Me.labelreportedby.Size = New System.Drawing.Size(94, 18)
         Me.labelreportedby.TabIndex = 15
         Me.labelreportedby.Text = "Reported By:"
         '
         'combostatus
         '
         Me.combostatus.FormattingEnabled = True
-        Me.combostatus.Location = New System.Drawing.Point(213, 185)
+        Me.combostatus.Location = New System.Drawing.Point(251, 187)
         Me.combostatus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.combostatus.Name = "combostatus"
         Me.combostatus.Size = New System.Drawing.Size(211, 24)
@@ -182,7 +195,7 @@ Partial Class MaintenanceRequests
         '
         Me.Butsearch.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Butsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Butsearch.Location = New System.Drawing.Point(1120, 62)
+        Me.Butsearch.Location = New System.Drawing.Point(1023, 119)
         Me.Butsearch.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Butsearch.Name = "Butsearch"
         Me.Butsearch.Size = New System.Drawing.Size(127, 42)
@@ -202,12 +215,12 @@ Partial Class MaintenanceRequests
         'MaintenanceRequestDataGridView
         '
         Me.MaintenanceRequestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MaintenanceRequestDataGridView.Location = New System.Drawing.Point(742, 144)
+        Me.MaintenanceRequestDataGridView.Location = New System.Drawing.Point(659, 218)
         Me.MaintenanceRequestDataGridView.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaintenanceRequestDataGridView.Name = "MaintenanceRequestDataGridView"
         Me.MaintenanceRequestDataGridView.RowHeadersWidth = 51
         Me.MaintenanceRequestDataGridView.RowTemplate.Height = 28
-        Me.MaintenanceRequestDataGridView.Size = New System.Drawing.Size(568, 436)
+        Me.MaintenanceRequestDataGridView.Size = New System.Drawing.Size(568, 362)
         Me.MaintenanceRequestDataGridView.TabIndex = 30
         '
         'ReportViewer1
@@ -220,7 +233,7 @@ Partial Class MaintenanceRequests
         Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(706, 233)
+        Me.ReportViewer1.Size = New System.Drawing.Size(641, 233)
         Me.ReportViewer1.TabIndex = 31
         '
         'MaintenanceRequests_TableTableAdapter
@@ -230,22 +243,25 @@ Partial Class MaintenanceRequests
         'labelissuedescription
         '
         Me.labelissuedescription.AutoSize = True
+        Me.labelissuedescription.BackColor = System.Drawing.Color.Transparent
+        Me.labelissuedescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelissuedescription.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.labelissuedescription.Location = New System.Drawing.Point(67, 112)
         Me.labelissuedescription.Name = "labelissuedescription"
-        Me.labelissuedescription.Size = New System.Drawing.Size(110, 16)
+        Me.labelissuedescription.Size = New System.Drawing.Size(122, 18)
         Me.labelissuedescription.TabIndex = 32
         Me.labelissuedescription.Text = "Issue Description"
         '
         'textissuedescription
         '
-        Me.textissuedescription.Location = New System.Drawing.Point(213, 106)
+        Me.textissuedescription.Location = New System.Drawing.Point(251, 108)
         Me.textissuedescription.Name = "textissuedescription"
         Me.textissuedescription.Size = New System.Drawing.Size(211, 22)
         Me.textissuedescription.TabIndex = 33
         '
         'textsearch
         '
-        Me.textsearch.Location = New System.Drawing.Point(809, 72)
+        Me.textsearch.Location = New System.Drawing.Point(711, 129)
         Me.textsearch.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.textsearch.Name = "textsearch"
         Me.textsearch.Size = New System.Drawing.Size(273, 22)
@@ -256,7 +272,8 @@ Partial Class MaintenanceRequests
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1322, 620)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(1239, 620)
         Me.Controls.Add(Me.textsearch)
         Me.Controls.Add(Me.textissuedescription)
         Me.Controls.Add(Me.labelissuedescription)
