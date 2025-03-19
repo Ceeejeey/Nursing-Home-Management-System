@@ -212,7 +212,7 @@ Private Sub StaffAttendance_Load(sender As Object, e As EventArgs) Handles MyBas
             ' **Update attendance record**
             Dim updateQuery As String = "UPDATE StaffAttendanceTable SET CheckInTime = ?, CheckOutTime = ?, Shift = ?, Attendance = ? WHERE StaffID = ? AND CurrentDate = ?"
             Dim updateCmd As New OleDbCommand(updateQuery, conn)
-            updateCmd.Parameters.AddWithValue("?", If(checkInTime = "", DBNull.Value, checkInTime)), 
+            updateCmd.Parameters.AddWithValue("?", If(checkInTime = "", DBNull.Value, checkInTime))
             updateCmd.Parameters.AddWithValue("?", If(checkOutTime = "", DBNull.Value, checkOutTime))
             updateCmd.Parameters.AddWithValue("?", shift)
             updateCmd.Parameters.AddWithValue("?", status)

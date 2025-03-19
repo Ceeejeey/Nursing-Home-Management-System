@@ -52,7 +52,7 @@ Partial Class CarePlans
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1275, 50)
+        Me.Label1.Size = New System.Drawing.Size(1257, 50)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Care Plans"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -232,7 +232,7 @@ Partial Class CarePlans
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CornflowerBlue
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1275, 622)
+        Me.ClientSize = New System.Drawing.Size(1257, 653)
         Me.Controls.Add(Me.buttonDeletePlan)
         Me.Controls.Add(Me.buttonUpdatePlan)
         Me.Controls.Add(Me.buttonAddPlan)

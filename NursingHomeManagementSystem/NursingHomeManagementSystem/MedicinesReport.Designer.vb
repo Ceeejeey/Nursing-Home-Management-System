@@ -79,7 +79,7 @@ Partial Class MedicinesReport
         Me.MedicinesUsageReportDataGridView.Name = "MedicinesUsageReportDataGridView"
         Me.MedicinesUsageReportDataGridView.RowHeadersWidth = 51
         Me.MedicinesUsageReportDataGridView.RowTemplate.Height = 24
-        Me.MedicinesUsageReportDataGridView.Size = New System.Drawing.Size(619, 387)
+        Me.MedicinesUsageReportDataGridView.Size = New System.Drawing.Size(637, 417)
         Me.MedicinesUsageReportDataGridView.TabIndex = 4
         '
         'Panel2
@@ -98,7 +98,7 @@ Partial Class MedicinesReport
         Me.MedicinesDataDataReportViewer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MedicinesDataDataReportViewer.Name = "MedicinesDataDataReportViewer"
         Me.MedicinesDataDataReportViewer.ServerReport.BearerToken = Nothing
-        Me.MedicinesDataDataReportViewer.Size = New System.Drawing.Size(545, 258)
+        Me.MedicinesDataDataReportViewer.Size = New System.Drawing.Size(560, 258)
         Me.MedicinesDataDataReportViewer.TabIndex = 33
         '
         'Label1
@@ -108,7 +108,7 @@ Partial Class MedicinesReport
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1239, 50)
+        Me.Label1.Size = New System.Drawing.Size(1257, 50)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Medicines Usage Report"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -153,7 +153,7 @@ Partial Class MedicinesReport
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1239, 639)
+        Me.ClientSize = New System.Drawing.Size(1257, 653)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)

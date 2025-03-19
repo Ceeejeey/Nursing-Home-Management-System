@@ -77,7 +77,7 @@ Partial Class MedicinesForm
         Me.Panel1.Controls.Add(Me.IssueMedicineDataGridView)
         Me.Panel1.Location = New System.Drawing.Point(551, 53)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(676, 513)
+        Me.Panel1.Size = New System.Drawing.Size(702, 588)
         Me.Panel1.TabIndex = 2
         '
         'textsearch
@@ -100,11 +100,12 @@ Partial Class MedicinesForm
         'IssueMedicineDataGridView
         '
         Me.IssueMedicineDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.IssueMedicineDataGridView.Location = New System.Drawing.Point(17, 144)
+        Me.IssueMedicineDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.IssueMedicineDataGridView.Location = New System.Drawing.Point(0, 231)
         Me.IssueMedicineDataGridView.Name = "IssueMedicineDataGridView"
         Me.IssueMedicineDataGridView.RowHeadersWidth = 51
         Me.IssueMedicineDataGridView.RowTemplate.Height = 24
-        Me.IssueMedicineDataGridView.Size = New System.Drawing.Size(656, 357)
+        Me.IssueMedicineDataGridView.Size = New System.Drawing.Size(702, 357)
         Me.IssueMedicineDataGridView.TabIndex = 3
         '
         'labelResidentID
@@ -272,11 +273,11 @@ Partial Class MedicinesForm
         '
         'MedicinesForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoSize = True
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1239, 578)
+        Me.ClientSize = New System.Drawing.Size(1257, 653)
         Me.Controls.Add(Me.ButDelete)
         Me.Controls.Add(Me.ButUpdate)
         Me.Controls.Add(Me.ButAddMedicine)
