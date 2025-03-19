@@ -71,7 +71,7 @@ Partial Class FamilyCommunication
         Me.Panel1.Controls.Add(Me.FamilyContactsDataGridView)
         Me.Panel1.Location = New System.Drawing.Point(571, 53)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(674, 556)
+        Me.Panel1.Size = New System.Drawing.Size(674, 588)
         Me.Panel1.TabIndex = 1
         '
         'Butsearch
@@ -98,7 +98,7 @@ Partial Class FamilyCommunication
         Me.FamilyContactsDataGridView.Name = "FamilyContactsDataGridView"
         Me.FamilyContactsDataGridView.RowHeadersWidth = 51
         Me.FamilyContactsDataGridView.RowTemplate.Height = 24
-        Me.FamilyContactsDataGridView.Size = New System.Drawing.Size(649, 401)
+        Me.FamilyContactsDataGridView.Size = New System.Drawing.Size(649, 429)
         Me.FamilyContactsDataGridView.TabIndex = 2
         '
         'labelResidentID
@@ -296,7 +296,7 @@ Partial Class FamilyCommunication
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1257, 621)
+        Me.ClientSize = New System.Drawing.Size(1257, 653)
         Me.Controls.Add(Me.buttonDeleteFamilyContact)
         Me.Controls.Add(Me.buttonUpdateFamilyContact)
         Me.Controls.Add(Me.buttonAddFamilyContact)

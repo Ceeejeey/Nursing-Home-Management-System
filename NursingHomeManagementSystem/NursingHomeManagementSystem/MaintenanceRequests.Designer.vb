@@ -71,7 +71,7 @@ Partial Class MaintenanceRequests
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1239, 37)
+        Me.Panel1.Size = New System.Drawing.Size(1257, 37)
         Me.Panel1.TabIndex = 0
         '
         'Label1
@@ -80,7 +80,7 @@ Partial Class MaintenanceRequests
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1239, 37)
+        Me.Label1.Size = New System.Drawing.Size(1257, 37)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Maintenance Requests"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -112,6 +112,7 @@ Partial Class MaintenanceRequests
         'combomaintenancetype
         '
         Me.combomaintenancetype.FormattingEnabled = True
+        Me.combomaintenancetype.Items.AddRange(New Object() {"Electrical Maintenance", "Plumbing Maintenance", "Medical Equipment Maintenance ", "Furniture & Fixture Maintenance", "Housekeeping & Sanitation", "General Maintenance "})
         Me.combomaintenancetype.Location = New System.Drawing.Point(251, 146)
         Me.combomaintenancetype.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.combomaintenancetype.Name = "combomaintenancetype"
@@ -185,6 +186,7 @@ Partial Class MaintenanceRequests
         'combostatus
         '
         Me.combostatus.FormattingEnabled = True
+        Me.combostatus.Items.AddRange(New Object() {"Pending", "Ongoing", "Resolved", "Rejected"})
         Me.combostatus.Location = New System.Drawing.Point(251, 187)
         Me.combostatus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.combostatus.Name = "combostatus"
@@ -215,12 +217,12 @@ Partial Class MaintenanceRequests
         'MaintenanceRequestDataGridView
         '
         Me.MaintenanceRequestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MaintenanceRequestDataGridView.Location = New System.Drawing.Point(659, 218)
+        Me.MaintenanceRequestDataGridView.Location = New System.Drawing.Point(659, 214)
         Me.MaintenanceRequestDataGridView.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaintenanceRequestDataGridView.Name = "MaintenanceRequestDataGridView"
         Me.MaintenanceRequestDataGridView.RowHeadersWidth = 51
         Me.MaintenanceRequestDataGridView.RowTemplate.Height = 28
-        Me.MaintenanceRequestDataGridView.Size = New System.Drawing.Size(568, 362)
+        Me.MaintenanceRequestDataGridView.Size = New System.Drawing.Size(586, 428)
         Me.MaintenanceRequestDataGridView.TabIndex = 30
         '
         'ReportViewer1
@@ -233,7 +235,7 @@ Partial Class MaintenanceRequests
         Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(641, 233)
+        Me.ReportViewer1.Size = New System.Drawing.Size(641, 295)
         Me.ReportViewer1.TabIndex = 31
         '
         'MaintenanceRequests_TableTableAdapter
@@ -273,7 +275,7 @@ Partial Class MaintenanceRequests
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1239, 620)
+        Me.ClientSize = New System.Drawing.Size(1257, 653)
         Me.Controls.Add(Me.textsearch)
         Me.Controls.Add(Me.textissuedescription)
         Me.Controls.Add(Me.labelissuedescription)

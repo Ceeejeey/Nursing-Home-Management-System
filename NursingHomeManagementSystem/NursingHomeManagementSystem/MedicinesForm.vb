@@ -3,52 +3,54 @@
 Public Class MedicinesForm
 
 
-	Private Sub MedicineForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    RefreshMedicineData()
-	End Sub
 
-	
-	Private Sub ButAddMedicine_Click(sender As Object, e As EventArgs) Handles ButAddMedicine.Click
-    ' Database connection string
-    Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
-    
-    ' Create a new database connection
-    Using conn As New OleDbConnection(connString)
-        Try
-            conn.Open()
 
-            ' SQL query to insert data
-            Dim query As String = "INSERT INTO Medicines (ResidentID, MedicineName, Dosage, Frequency, StartDate, EndDate, DrugIssues) VALUES (?, ?, ?, ?, ?, ?, ?)"
-            Using cmd As New OleDbCommand(query, conn)
-                ' Add parameters
-                cmd.Parameters.AddWithValue("?", textResidentID.Text.Trim())
-                cmd.Parameters.AddWithValue("?", textMedicineName.Text.Trim())
-                cmd.Parameters.AddWithValue("?", textDosage.Text.Trim())
-                cmd.Parameters.AddWithValue("?", textFrequency.Text.Trim())
-                cmd.Parameters.AddWithValue("?", dateTimeStartDate.Value.ToString("yyyy-MM-dd"))
-                cmd.Parameters.AddWithValue("?", dateTimeEndDate.Value.ToString("yyyy-MM-dd"))
-                cmd.Parameters.AddWithValue("?", textDrugIssues.Text.Trim())
+    Private Sub MedicineForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RefreshMedicineData()
+    End Sub
 
-                ' Execute query
-                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 
-                ' Check if insertion was successful
-                If rowsAffected > 0 Then
-                    MessageBox.Show("Medicine issued successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    
-                    ' Refresh the DataGridView
-                    RefreshMedicineData()
-                Else
-                    MessageBox.Show("Failed to issue medicine.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-            End Using
-        Catch ex As Exception
-            MessageBox.Show("Database Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Using
-End Sub
+    Private Sub ButAddMedicine_Click(sender As Object, e As EventArgs) Handles ButAddMedicine.Click
+        ' Database connection string
+        Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
 
-Private Sub RefreshMedicineData()
+        ' Create a new database connection
+        Using conn As New OleDbConnection(connString)
+            Try
+                conn.Open()
+
+                ' SQL query to insert data
+                Dim query As String = "INSERT INTO Medicines (ResidentID, MedicineName, Dosage, Frequency, StartDate, EndDate, DrugIssues) VALUES (?, ?, ?, ?, ?, ?, ?)"
+                Using cmd As New OleDbCommand(query, conn)
+                    ' Add parameters
+                    cmd.Parameters.AddWithValue("?", textResidentID.Text.Trim())
+                    cmd.Parameters.AddWithValue("?", textMedicineName.Text.Trim())
+                    cmd.Parameters.AddWithValue("?", textDosage.Text.Trim())
+                    cmd.Parameters.AddWithValue("?", textFrequency.Text.Trim())
+                    cmd.Parameters.AddWithValue("?", dateTimeStartDate.Value.ToString("yyyy-MM-dd"))
+                    cmd.Parameters.AddWithValue("?", dateTimeEndDate.Value.ToString("yyyy-MM-dd"))
+                    cmd.Parameters.AddWithValue("?", textDrugIssues.Text.Trim())
+
+                    ' Execute query
+                    Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+                    ' Check if insertion was successful
+                    If rowsAffected > 0 Then
+                        MessageBox.Show("Medicine issued successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                        ' Refresh the DataGridView
+                        RefreshMedicineData()
+                    Else
+                        MessageBox.Show("Failed to issue medicine.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Database Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End Using
+    End Sub
+
+    Private Sub RefreshMedicineData()
     ' Database connection string
     Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VB.NET\NursingHomeManagementSystem\NursingHomeManagementSystem\NursingHomeManagemetSystemdb.accdb"
 
@@ -247,6 +249,10 @@ Private Sub ClearInputFields()
 End Sub
 
     Private Sub labelStartDate_Click(sender As Object, e As EventArgs) Handles labelStartDate.Click
+
+    End Sub
+
+    Private Sub IssueMedicineDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles IssueMedicineDataGridView.CellContentClick
 
     End Sub
 End Class

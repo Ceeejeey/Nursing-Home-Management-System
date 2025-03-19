@@ -88,5 +88,10 @@ Public Class RegisterForm
             Me.WindowState = FormWindowState.Maximized  ' Maximize the form
         End If
     End Sub
+	
+	Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Form1.Show()
+        Me.Hide()
+    End Sub
 
 End Class

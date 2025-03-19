@@ -26,12 +26,6 @@ Partial Class mainform
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainform))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
-        Me.FileMenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ResidentsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StaffToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MaintenanceRequestsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MedicinesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ResidentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddNewResidentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewEditResidentDetailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -82,68 +76,25 @@ Partial Class mainform
         '
         Me.MenuStrip.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.ResidentsToolStripMenuItem, Me.StaffToolStripMenuItem, Me.MedicinesToolStripMenuItem, Me.CarePlansToolStripMenuItem, Me.FamilyContactsToolStripMenuItem, Me.MaintenanceRequestsToolStripMenuItem, Me.ReportsToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ResidentsToolStripMenuItem, Me.StaffToolStripMenuItem, Me.MedicinesToolStripMenuItem, Me.CarePlansToolStripMenuItem, Me.FamilyContactsToolStripMenuItem, Me.MaintenanceRequestsToolStripMenuItem, Me.ReportsToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(1257, 36)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
-        'FileMenu
-        '
-        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ResidentsToolStripMenuItem1, Me.StaffToolStripMenuItem1, Me.MaintenanceRequestsToolStripMenuItem1, Me.MedicinesToolStripMenuItem1, Me.ExitToolStripMenuItem})
-        Me.FileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder
-        Me.FileMenu.Name = "FileMenu"
-        Me.FileMenu.Size = New System.Drawing.Size(64, 24)
-        Me.FileMenu.Text = "Home"
-        '
-        'ResidentsToolStripMenuItem1
-        '
-        Me.ResidentsToolStripMenuItem1.Image = Global.NursingHomeManagementSystem.My.Resources.Resources.user1
-        Me.ResidentsToolStripMenuItem1.Name = "ResidentsToolStripMenuItem1"
-        Me.ResidentsToolStripMenuItem1.Size = New System.Drawing.Size(240, 26)
-        Me.ResidentsToolStripMenuItem1.Text = "Residents"
-        '
-        'StaffToolStripMenuItem1
-        '
-        Me.StaffToolStripMenuItem1.Image = Global.NursingHomeManagementSystem.My.Resources.Resources.group_chat
-        Me.StaffToolStripMenuItem1.Name = "StaffToolStripMenuItem1"
-        Me.StaffToolStripMenuItem1.Size = New System.Drawing.Size(240, 26)
-        Me.StaffToolStripMenuItem1.Text = "Staff"
-        '
-        'MaintenanceRequestsToolStripMenuItem1
-        '
-        Me.MaintenanceRequestsToolStripMenuItem1.Image = Global.NursingHomeManagementSystem.My.Resources.Resources.requirement
-        Me.MaintenanceRequestsToolStripMenuItem1.Name = "MaintenanceRequestsToolStripMenuItem1"
-        Me.MaintenanceRequestsToolStripMenuItem1.Size = New System.Drawing.Size(240, 26)
-        Me.MaintenanceRequestsToolStripMenuItem1.Text = "Maintenance Requests"
-        '
-        'MedicinesToolStripMenuItem1
-        '
-        Me.MedicinesToolStripMenuItem1.Image = Global.NursingHomeManagementSystem.My.Resources.Resources.medicine
-        Me.MedicinesToolStripMenuItem1.Name = "MedicinesToolStripMenuItem1"
-        Me.MedicinesToolStripMenuItem1.Size = New System.Drawing.Size(240, 26)
-        Me.MedicinesToolStripMenuItem1.Text = "Medicines"
-        '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Image = Global.NursingHomeManagementSystem.My.Resources.Resources.sign_out
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(240, 26)
-        Me.ExitToolStripMenuItem.Text = "E&xit"
-        '
         'ResidentsToolStripMenuItem
         '
         Me.ResidentsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNewResidentToolStripMenuItem, Me.ViewEditResidentDetailsToolStripMenuItem, Me.MedicalHistoryCarePlanToolStripMenuItem, Me.DischargeResidentToolStripMenuItem})
         Me.ResidentsToolStripMenuItem.Name = "ResidentsToolStripMenuItem"
-        Me.ResidentsToolStripMenuItem.Size = New System.Drawing.Size(86, 24)
+        Me.ResidentsToolStripMenuItem.Size = New System.Drawing.Size(108, 32)
         Me.ResidentsToolStripMenuItem.Text = "Residents"
         '
         'AddNewResidentToolStripMenuItem
         '
         Me.AddNewResidentToolStripMenuItem.Image = Global.NursingHomeManagementSystem.My.Resources.Resources.user
         Me.AddNewResidentToolStripMenuItem.Name = "AddNewResidentToolStripMenuItem"
-        Me.AddNewResidentToolStripMenuItem.Size = New System.Drawing.Size(275, 26)
+        Me.AddNewResidentToolStripMenuItem.Size = New System.Drawing.Size(334, 32)
         Me.AddNewResidentToolStripMenuItem.Text = "Add New Resident"
         '
         'ViewEditResidentDetailsToolStripMenuItem
@@ -157,140 +108,140 @@ Partial Class mainform
         '
         Me.MedicalHistoryCarePlanToolStripMenuItem.Image = CType(resources.GetObject("MedicalHistoryCarePlanToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MedicalHistoryCarePlanToolStripMenuItem.Name = "MedicalHistoryCarePlanToolStripMenuItem"
-        Me.MedicalHistoryCarePlanToolStripMenuItem.Size = New System.Drawing.Size(275, 26)
+        Me.MedicalHistoryCarePlanToolStripMenuItem.Size = New System.Drawing.Size(334, 32)
         Me.MedicalHistoryCarePlanToolStripMenuItem.Text = "Medical History & Care Plan"
         '
         'DischargeResidentToolStripMenuItem
         '
         Me.DischargeResidentToolStripMenuItem.Image = CType(resources.GetObject("DischargeResidentToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DischargeResidentToolStripMenuItem.Name = "DischargeResidentToolStripMenuItem"
-        Me.DischargeResidentToolStripMenuItem.Size = New System.Drawing.Size(275, 26)
+        Me.DischargeResidentToolStripMenuItem.Size = New System.Drawing.Size(334, 32)
         Me.DischargeResidentToolStripMenuItem.Text = "Discharge Resident"
         '
         'StaffToolStripMenuItem
         '
         Me.StaffToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddUpdateStaffToolStripMenuItem, Me.AssignDutiesShiftsToolStripMenuItem, Me.StaffAttendanceToolStripMenuItem})
         Me.StaffToolStripMenuItem.Name = "StaffToolStripMenuItem"
-        Me.StaffToolStripMenuItem.Size = New System.Drawing.Size(54, 24)
+        Me.StaffToolStripMenuItem.Size = New System.Drawing.Size(65, 32)
         Me.StaffToolStripMenuItem.Text = "Staff"
         '
         'AddUpdateStaffToolStripMenuItem
         '
         Me.AddUpdateStaffToolStripMenuItem.Image = CType(resources.GetObject("AddUpdateStaffToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AddUpdateStaffToolStripMenuItem.Name = "AddUpdateStaffToolStripMenuItem"
-        Me.AddUpdateStaffToolStripMenuItem.Size = New System.Drawing.Size(225, 26)
+        Me.AddUpdateStaffToolStripMenuItem.Size = New System.Drawing.Size(273, 32)
         Me.AddUpdateStaffToolStripMenuItem.Text = "Add / Update Staff"
         '
         'AssignDutiesShiftsToolStripMenuItem
         '
         Me.AssignDutiesShiftsToolStripMenuItem.Image = CType(resources.GetObject("AssignDutiesShiftsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AssignDutiesShiftsToolStripMenuItem.Name = "AssignDutiesShiftsToolStripMenuItem"
-        Me.AssignDutiesShiftsToolStripMenuItem.Size = New System.Drawing.Size(225, 26)
+        Me.AssignDutiesShiftsToolStripMenuItem.Size = New System.Drawing.Size(273, 32)
         Me.AssignDutiesShiftsToolStripMenuItem.Text = "Assign Duties & Shifts"
         '
         'StaffAttendanceToolStripMenuItem
         '
         Me.StaffAttendanceToolStripMenuItem.Image = CType(resources.GetObject("StaffAttendanceToolStripMenuItem.Image"), System.Drawing.Image)
         Me.StaffAttendanceToolStripMenuItem.Name = "StaffAttendanceToolStripMenuItem"
-        Me.StaffAttendanceToolStripMenuItem.Size = New System.Drawing.Size(225, 26)
+        Me.StaffAttendanceToolStripMenuItem.Size = New System.Drawing.Size(273, 32)
         Me.StaffAttendanceToolStripMenuItem.Text = "Staff Attendance"
         '
         'MedicinesToolStripMenuItem
         '
         Me.MedicinesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IssueMedicinesToResidentsToolStripMenuItem})
         Me.MedicinesToolStripMenuItem.Name = "MedicinesToolStripMenuItem"
-        Me.MedicinesToolStripMenuItem.Size = New System.Drawing.Size(90, 24)
+        Me.MedicinesToolStripMenuItem.Size = New System.Drawing.Size(114, 32)
         Me.MedicinesToolStripMenuItem.Text = "Medicines"
         '
         'IssueMedicinesToResidentsToolStripMenuItem
         '
         Me.IssueMedicinesToResidentsToolStripMenuItem.Image = CType(resources.GetObject("IssueMedicinesToResidentsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.IssueMedicinesToResidentsToolStripMenuItem.Name = "IssueMedicinesToResidentsToolStripMenuItem"
-        Me.IssueMedicinesToResidentsToolStripMenuItem.Size = New System.Drawing.Size(280, 26)
+        Me.IssueMedicinesToResidentsToolStripMenuItem.Size = New System.Drawing.Size(344, 32)
         Me.IssueMedicinesToResidentsToolStripMenuItem.Text = "Issue Medicines to Residents"
         '
         'CarePlansToolStripMenuItem
         '
         Me.CarePlansToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ResidentSpecificCarePlansToolStripMenuItem})
         Me.CarePlansToolStripMenuItem.Name = "CarePlansToolStripMenuItem"
-        Me.CarePlansToolStripMenuItem.Size = New System.Drawing.Size(91, 24)
+        Me.CarePlansToolStripMenuItem.Size = New System.Drawing.Size(115, 32)
         Me.CarePlansToolStripMenuItem.Text = "Care Plans"
         '
         'ResidentSpecificCarePlansToolStripMenuItem
         '
         Me.ResidentSpecificCarePlansToolStripMenuItem.Image = CType(resources.GetObject("ResidentSpecificCarePlansToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ResidentSpecificCarePlansToolStripMenuItem.Name = "ResidentSpecificCarePlansToolStripMenuItem"
-        Me.ResidentSpecificCarePlansToolStripMenuItem.Size = New System.Drawing.Size(279, 26)
+        Me.ResidentSpecificCarePlansToolStripMenuItem.Size = New System.Drawing.Size(341, 32)
         Me.ResidentSpecificCarePlansToolStripMenuItem.Text = "Resident-Specific Care Plans"
         '
         'FamilyContactsToolStripMenuItem
         '
         Me.FamilyContactsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ResidentFamilyContactsToolStripMenuItem})
         Me.FamilyContactsToolStripMenuItem.Name = "FamilyContactsToolStripMenuItem"
-        Me.FamilyContactsToolStripMenuItem.Size = New System.Drawing.Size(126, 24)
+        Me.FamilyContactsToolStripMenuItem.Size = New System.Drawing.Size(163, 32)
         Me.FamilyContactsToolStripMenuItem.Text = "Family Contacts"
         '
         'ResidentFamilyContactsToolStripMenuItem
         '
         Me.ResidentFamilyContactsToolStripMenuItem.Image = CType(resources.GetObject("ResidentFamilyContactsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ResidentFamilyContactsToolStripMenuItem.Name = "ResidentFamilyContactsToolStripMenuItem"
-        Me.ResidentFamilyContactsToolStripMenuItem.Size = New System.Drawing.Size(256, 26)
+        Me.ResidentFamilyContactsToolStripMenuItem.Size = New System.Drawing.Size(314, 32)
         Me.ResidentFamilyContactsToolStripMenuItem.Text = "Resident Family Contacts"
         '
         'MaintenanceRequestsToolStripMenuItem
         '
         Me.MaintenanceRequestsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportMaintenanceIssuesToolStripMenuItem, Me.TrackStatusOfRequestsToolStripMenuItem, Me.AssignMaintenanceStaffToolStripMenuItem})
         Me.MaintenanceRequestsToolStripMenuItem.Name = "MaintenanceRequestsToolStripMenuItem"
-        Me.MaintenanceRequestsToolStripMenuItem.Size = New System.Drawing.Size(171, 24)
+        Me.MaintenanceRequestsToolStripMenuItem.Size = New System.Drawing.Size(220, 32)
         Me.MaintenanceRequestsToolStripMenuItem.Text = "Maintenance Requests"
         '
         'ReportMaintenanceIssuesToolStripMenuItem
         '
         Me.ReportMaintenanceIssuesToolStripMenuItem.Image = CType(resources.GetObject("ReportMaintenanceIssuesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReportMaintenanceIssuesToolStripMenuItem.Name = "ReportMaintenanceIssuesToolStripMenuItem"
-        Me.ReportMaintenanceIssuesToolStripMenuItem.Size = New System.Drawing.Size(268, 26)
+        Me.ReportMaintenanceIssuesToolStripMenuItem.Size = New System.Drawing.Size(329, 32)
         Me.ReportMaintenanceIssuesToolStripMenuItem.Text = "Report Maintenance Issues"
         '
         'TrackStatusOfRequestsToolStripMenuItem
         '
         Me.TrackStatusOfRequestsToolStripMenuItem.Image = CType(resources.GetObject("TrackStatusOfRequestsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TrackStatusOfRequestsToolStripMenuItem.Name = "TrackStatusOfRequestsToolStripMenuItem"
-        Me.TrackStatusOfRequestsToolStripMenuItem.Size = New System.Drawing.Size(268, 26)
+        Me.TrackStatusOfRequestsToolStripMenuItem.Size = New System.Drawing.Size(329, 32)
         Me.TrackStatusOfRequestsToolStripMenuItem.Text = "Track Status of Requests"
         '
         'AssignMaintenanceStaffToolStripMenuItem
         '
         Me.AssignMaintenanceStaffToolStripMenuItem.Image = CType(resources.GetObject("AssignMaintenanceStaffToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AssignMaintenanceStaffToolStripMenuItem.Name = "AssignMaintenanceStaffToolStripMenuItem"
-        Me.AssignMaintenanceStaffToolStripMenuItem.Size = New System.Drawing.Size(268, 26)
+        Me.AssignMaintenanceStaffToolStripMenuItem.Size = New System.Drawing.Size(329, 32)
         Me.AssignMaintenanceStaffToolStripMenuItem.Text = "Assign Maintenance Staff"
         '
         'ReportsToolStripMenuItem
         '
         Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ResidentReportsToolStripMenuItem, Me.StaffPerformanceReportsToolStripMenuItem, Me.MedicineUsageReportsToolStripMenuItem})
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
-        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
+        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(98, 32)
         Me.ReportsToolStripMenuItem.Text = "Reports "
         '
         'ResidentReportsToolStripMenuItem
         '
         Me.ResidentReportsToolStripMenuItem.Image = CType(resources.GetObject("ResidentReportsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ResidentReportsToolStripMenuItem.Name = "ResidentReportsToolStripMenuItem"
-        Me.ResidentReportsToolStripMenuItem.Size = New System.Drawing.Size(265, 26)
+        Me.ResidentReportsToolStripMenuItem.Size = New System.Drawing.Size(323, 32)
         Me.ResidentReportsToolStripMenuItem.Text = "Resident Reports"
         '
         'StaffPerformanceReportsToolStripMenuItem
         '
         Me.StaffPerformanceReportsToolStripMenuItem.Image = CType(resources.GetObject("StaffPerformanceReportsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.StaffPerformanceReportsToolStripMenuItem.Name = "StaffPerformanceReportsToolStripMenuItem"
-        Me.StaffPerformanceReportsToolStripMenuItem.Size = New System.Drawing.Size(265, 26)
+        Me.StaffPerformanceReportsToolStripMenuItem.Size = New System.Drawing.Size(323, 32)
         Me.StaffPerformanceReportsToolStripMenuItem.Text = "Staff Performance Reports"
         '
         'MedicineUsageReportsToolStripMenuItem
         '
         Me.MedicineUsageReportsToolStripMenuItem.Image = CType(resources.GetObject("MedicineUsageReportsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MedicineUsageReportsToolStripMenuItem.Name = "MedicineUsageReportsToolStripMenuItem"
-        Me.MedicineUsageReportsToolStripMenuItem.Size = New System.Drawing.Size(265, 26)
+        Me.MedicineUsageReportsToolStripMenuItem.Size = New System.Drawing.Size(323, 32)
         Me.MedicineUsageReportsToolStripMenuItem.Text = "Medicine Usage Reports"
         '
         'ToolStrip
@@ -447,8 +398,6 @@ Partial Class mainform
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
     Friend WithEvents ToolStrip As System.Windows.Forms.ToolStrip
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents FileMenu As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
     Friend WithEvents StaffToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MedicinesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -459,10 +408,6 @@ Partial Class mainform
     Friend WithEvents AddUpdateStaffToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StaffAttendanceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents IssueMedicinesToResidentsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ResidentsToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents StaffToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MaintenanceRequestsToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MedicinesToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ResidentsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AddNewResidentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewEditResidentDetailsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
